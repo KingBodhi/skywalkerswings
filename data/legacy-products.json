@@ -1,0 +1,344 @@
+{
+  "products": [
+    {
+      "title": "Tower Lineman's Safety Class III Harness",
+      "handle": "tower-lineman-safety-harness",
+      "description": "Professional-grade safety harness designed specifically for tower work and linemen. Built to ANSI Z359.1 standards with enhanced comfort and durability for extended wear during electrical work.",
+      "status": "ACTIVE",
+      "variants": [
+        {
+          "sku": "WH-TLSH-M",
+          "price": 44995,
+          "size": "Medium",
+          "color": "Black"
+        },
+        {
+          "sku": "WH-TLSH-L", 
+          "price": 44995,
+          "size": "Large",
+          "color": "Black"
+        },
+        {
+          "sku": "WH-TLSH-XL",
+          "price": 44995,
+          "size": "X-Large", 
+          "color": "Black"
+        }
+      ],
+      "features": [
+        "ANSI Z359.1 Certified",
+        "Class III fall protection",
+        "Made in USA",
+        "3-year warranty",
+        "Quick-connect buckles"
+      ]
+    },
+    {
+      "title": "Oil Rigging Flash Fire Chemical Class III Safety Harness", 
+      "handle": "oil-rigging-chemical-safety-harness",
+      "description": "Specialized safety harness designed for hazardous environments including oil rigging operations. Features flash fire and chemical resistance while maintaining full ANSI compliance for maximum protection.",
+      "status": "ACTIVE",
+      "variants": [
+        {
+          "sku": "WH-ORFF-M",
+          "price": 29995,
+          "size": "Medium",
+          "color": "Orange"
+        },
+        {
+          "sku": "WH-ORFF-L",
+          "price": 29995,
+          "size": "Large", 
+          "color": "Orange"
+        },
+        {
+          "sku": "WH-ORFF-XL",
+          "price": 29995,
+          "size": "X-Large",
+          "color": "Orange"
+        }
+      ],
+      "features": [
+        "Flash fire resistant",
+        "Chemical resistant",
+        "ANSI Z359.1 Certified",
+        "High visibility",
+        "Made in USA"
+      ]
+    },
+    {
+      "title": "Rescue Command Tactical Safety Harness",
+      "handle": "rescue-command-tactical-harness", 
+      "description": "The most advanced rescue harness in the world built into a tactical vest. Designed to give you the ability to swiftly transport yourself and your equipment during rescue operations and tactical missions.",
+      "status": "ACTIVE",
+      "variants": [
+        {
+          "sku": "WH-RCH-M",
+          "price": 94995,
+          "size": "Medium",
+          "color": "Black"
+        },
+        {
+          "sku": "WH-RCH-L",
+          "price": 94995,
+          "size": "Large",
+          "color": "Black"
+        },
+        {
+          "sku": "WH-RCH-XL", 
+          "price": 94995,
+          "size": "X-Large",
+          "color": "Black"
+        }
+      ],
+      "features": [
+        "Tactical vest integration",
+        "Advanced rescue capabilities",
+        "Equipment transport system", 
+        "ANSI certified",
+        "Made in USA"
+      ]
+    },
+    {
+      "title": "Fall Master Tech Class III Safety Harness",
+      "handle": "fall-master-tech-harness",
+      "description": "Advanced technical safety harness engineered for professional applications requiring maximum protection and comfort. Features innovative design for extended wear and superior safety performance.",
+      "status": "ACTIVE", 
+      "variants": [
+        {
+          "sku": "WH-FMSH-M",
+          "price": 37495,
+          "size": "Medium",
+          "color": "Black"
+        },
+        {
+          "sku": "WH-FMSH-L",
+          "price": 37495,
+          "size": "Large",
+          "color": "Black"
+        },
+        {
+          "sku": "WH-FMSH-XL",
+          "price": 37495,
+          "size": "X-Large", 
+          "color": "Black"
+        }
+      ],
+      "features": [
+        "Technical grade construction",
+        "Class III protection",
+        "Extended comfort design",
+        "ANSI Z359.1 certified",
+        "Made in USA"
+      ]
+    },
+    {
+      "title": "Elite Rappelling Harness",
+      "handle": "elite-rappelling-harness",
+      "description": "Lightweight and durable rappelling harness designed for tactical operations and recreational climbing. Features ergonomic design for maximum comfort during extended use.",
+      "status": "ACTIVE",
+      "variants": [
+        {
+          "sku": "WH-ERH-M", 
+          "price": 12995,
+          "size": "Medium",
+          "color": "Black"
+        },
+        {
+          "sku": "WH-ERH-L",
+          "price": 12995,
+          "size": "Large",
+          "color": "Black"
+        },
+        {
+          "sku": "WH-ERH-XL",
+          "price": 12995,
+          "size": "X-Large",
+          "color": "Black"
+        }
+      ],
+      "features": [
+        "Lightweight design",
+        "Rappelling optimized",
+        "Ergonomic fit",
+        "Durable construction",
+        "Made in USA"
+      ]
+    },
+    {
+      "title": "Professional Rigger's Belt",
+      "handle": "professional-riggers-belt",
+      "description": "Heavy-duty rigger's belt made from 1-3/4\" nylon webbing rated at 7,000-lbs tensile strength. Includes forged steel components and parachute-grade hardware for maximum reliability.",
+      "status": "ACTIVE",
+      "variants": [
+        {
+          "sku": "WH-RB-S",
+          "price": 3995,
+          "size": "Small",
+          "color": "Black"
+        },
+        {
+          "sku": "WH-RB-M",
+          "price": 3995,
+          "size": "Medium", 
+          "color": "Black"
+        },
+        {
+          "sku": "WH-RB-L",
+          "price": 3995,
+          "size": "Large",
+          "color": "Black"
+        },
+        {
+          "sku": "WH-RB-XL",
+          "price": 3995,
+          "size": "X-Large",
+          "color": "Black"
+        }
+      ],
+      "features": [
+        "7,000-lbs tensile strength",
+        "Forged steel hardware",
+        "Parachute-grade delta mount",
+        "Hook and loop closure",
+        "Made in USA"
+      ]
+    },
+    {
+      "title": "Load-Bearing Construction Duty Belt",
+      "handle": "construction-duty-belt", 
+      "description": "Heavy-duty construction belt designed for professionals who need to carry tools and equipment safely while maintaining fall protection compliance.",
+      "status": "ACTIVE",
+      "variants": [
+        {
+          "sku": "WH-CDB-M",
+          "price": 19995,
+          "size": "Medium",
+          "color": "Black"
+        },
+        {
+          "sku": "WH-CDB-L", 
+          "price": 19995,
+          "size": "Large",
+          "color": "Black"
+        },
+        {
+          "sku": "WH-CDB-XL",
+          "price": 19995,
+          "size": "X-Large",
+          "color": "Black"
+        }
+      ],
+      "features": [
+        "Load-bearing design",
+        "Construction optimized",
+        "Tool carrying capability",
+        "Durable materials",
+        "Made in USA"
+      ]
+    },
+    {
+      "title": "300ft Rope Deployment Bag",
+      "handle": "rope-deployment-bag-300",
+      "description": "Professional rope deployment bag designed to organize and deploy up to 300 feet of rope quickly and efficiently during rescue and tactical operations.",
+      "status": "ACTIVE",
+      "variants": [
+        {
+          "sku": "WH-RDB-300",
+          "price": 4995,
+          "size": "One Size",
+          "color": "Black"
+        }
+      ],
+      "features": [
+        "300ft capacity",
+        "Quick deployment",
+        "Durable construction",
+        "Compact storage",
+        "Made in USA"
+      ]
+    },
+    {
+      "title": "Tactical Escape Belt",
+      "handle": "tactical-escape-belt",
+      "description": "Compact escape belt designed for emergency situations and tactical operations. Lightweight yet strong enough for reliable emergency use.",
+      "status": "ACTIVE",
+      "variants": [
+        {
+          "sku": "WH-EB-M",
+          "price": 6995,
+          "size": "Medium",
+          "color": "Black"
+        },
+        {
+          "sku": "WH-EB-L",
+          "price": 6995,
+          "size": "Large", 
+          "color": "Black"
+        }
+      ],
+      "features": [
+        "Emergency escape design",
+        "Lightweight construction",
+        "Tactical applications",
+        "Reliable hardware",
+        "Made in USA"
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "title": "Construction & Industrial",
+      "handle": "construction",
+      "description": "Professional-grade safety harnesses designed for construction workers, linemen, and industrial applications. Built to exceed OSHA standards with enhanced comfort for all-day wear.",
+      "status": "ACTIVE"
+    },
+    {
+      "title": "Military & Tactical", 
+      "handle": "military",
+      "description": "Advanced tactical safety systems designed for military personnel, law enforcement, and emergency responders. Features low-profile designs for high-mobility operations.",
+      "status": "ACTIVE"
+    },
+    {
+      "title": "Recreation & Sports",
+      "handle": "recreation", 
+      "description": "Lightweight and ergonomic harnesses optimized for climbing, rappelling, and adventure sports. Designed for comfort and performance during recreational activities.",
+      "status": "ACTIVE"
+    },
+    {
+      "title": "Rescue & Emergency",
+      "handle": "rescue",
+      "description": "Specialized equipment for first responders and rescue personnel. Built for rapid deployment and reliable performance in critical situations.",
+      "status": "ACTIVE"
+    }
+  ],
+  "marketingCopy": {
+    "taglines": [
+      "Made in America!",
+      "Field-tested safety harnesses",
+      "Light-weight and sturdy", 
+      "Meets ANSI and government agency standards",
+      "Custom products and sizes available",
+      "Satisfaction guaranteed!!"
+    ],
+    "warranties": [
+      "3-year warranty",
+      "Satisfaction guaranteed",
+      "Made in USA quality"
+    ],
+    "compliance": [
+      "OSHA 1926.502",
+      "ANSI Z359.1-1992", 
+      "ANSI A10.14-1991",
+      "CSA Z259.1-1976",
+      "CSA Z259.10-M90"
+    ],
+    "materials": [
+      "100% woven TEX600 Nylon",
+      "100% woven TEX1000 Nylon", 
+      "TEX138 Nylon thread",
+      "Forged steel hardware",
+      "Parachute-grade components"
+    ]
+  }
+}

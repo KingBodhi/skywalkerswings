@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Google Fonts for the new design system */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap');
+
+/* Base styles with new color system */
+body { 
+  @apply bg-neutral-50 text-neutral-900 font-body antialiased;
+}
+
+/* FIXED FORM INPUT TEXT VISIBILITY */
+input, textarea, select {
+  @apply text-neutral-900 placeholder-neutral-500 bg-white border-neutral-300;
+}
+
+input:focus, textarea:focus, select:focus {
+  @apply text-neutral-900 bg-white border-primary-500 ring-2 ring-primary-200;
+}
+
+/* Dark mode form text fixes */
+@media (prefers-color-scheme: dark) {
+  body {
+    @apply bg-neutral-900 text-neutral-50;
+  }
+  
+  input, textarea, select {
+    @apply text-neutral-900 placeholder-neutral-500 bg-white border-neutral-300;
+  }
+  
+  input:focus, textarea:focus, select:focus {
+    @apply text-neutral-900 bg-white border-primary-500 ring-2 ring-primary-200;
+  }
+}
+
+/* Font faces - keeping your custom fonts as fallbacks */
+@font-face { 
+  font-family: 'Mokoto'; 
+  src: local('Mokoto'); 
+  font-display: swap; 
+}
+
+@font-face { 
+  font-family: 'Bicubik'; 
+  src: local('Bicubik'); 
+  font-display: swap; 
+}
+
+/* Enhanced marquee animation */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-240px); }
+}
+
+.animate-marquee {
+  animation: marquee 5s linear infinite;
+}
+
+/* Additional conversion-optimized animations */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse-accent {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s ease-out;
+}
+
+.animate-pulse-accent {
+  animation: pulse-accent 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* ENHANCED FORM STYLES - READABLE TEXT */
+.btn-primary {
+  @apply bg-accent-500 hover:bg-accent-600 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 hover:shadow-medium hover:scale-105;
+}
+
+.btn-secondary {
+  @apply border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200;
+}
+
+.card {
+  @apply bg-white rounded-xl shadow-soft border border-neutral-200 hover:shadow-medium transition-all duration-300;
+}
+
+.input-field {
+  @apply border border-neutral-300 rounded-xl px-4 py-3 text-neutral-900 placeholder-neutral-400 bg-white focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-all duration-200;
+}
+
+/* ADMIN SPECIFIC FORM STYLES */
+.admin-input {
+  @apply w-full px-4 py-3 border border-neutral-300 rounded-xl text-neutral-900 placeholder-neutral-400 bg-white focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-all duration-200;
+}
+
+.admin-select {
+  @apply w-full px-4 py-3 border border-neutral-300 rounded-xl text-neutral-900 bg-white focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-all duration-200;
+}
+
+.admin-textarea {
+  @apply w-full px-4 py-3 border border-neutral-300 rounded-xl text-neutral-900 placeholder-neutral-400 bg-white focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-all duration-200 resize-none;
+}
+
+/* Accessibility improvements */
+.focus-visible:focus {
+  @apply ring-2 ring-accent-500 ring-offset-2 outline-none;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better text rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Loading states */
+.loading-skeleton {
+  @apply bg-neutral-200 animate-pulse rounded;
+}
+
+/* Print styles for technical specs */
+@media print {
+  body {
+    @apply bg-white text-black;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+}
