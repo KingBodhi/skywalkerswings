@@ -1,43 +1,42 @@
-import { certBadgeMap } from '@/lib/certBadgeMap';
-
 interface TrustBadgesProps {
-  certifications?: string[];
   className?: string;
 }
 
-export default function TrustBadges({ certifications = ['ansi_z359_1', 'osha', 'csa', 'made_in_usa'], className = '' }: TrustBadgesProps) {
-  if (!certifications || certifications.length === 0) {
-    return null;
-  }
+const badges = [
+  {
+    icon: '🪢',
+    heading: '600 lb Rating',
+  },
+  {
+    icon: '🎁',
+    heading: 'Discreet Delivery',
+  },
+  {
+    icon: '🫧',
+    heading: 'Body-Safe Textiles',
+  },
+  {
+    icon: '🧘',
+    heading: 'Inclusive Fit',
+  },
+];
 
+export default function TrustBadges({ className = '' }: TrustBadgesProps) {
   return (
-    <div className={`trust-badges ${className}`}>
-      <div className="text-xs text-neutral-600 dark:text-neutral-400 mb-2">Safety Certifications:</div>
-      <div className="flex gap-3 items-center flex-wrap">
-        {certifications.map(id => {
-          const badge = certBadgeMap[id];
-          if (!badge) return null;
-          
-          return (
-            <div key={id} className="cert-badge flex items-center gap-2" title={badge.label}>
-              <img
-                src={`/logos/${badge.svg}`}
-                alt={badge.label}
-                className="h-8 w-8 opacity-90"
-                loading="lazy"
-                width="32"
-                height="32"
-              />
-              <span className="text-xs text-neutral-700 dark:text-neutral-300 hidden sm:inline">
-                {badge.shortLabel}
-              </span>
+    <section className={`bg-white py-6 ${className}`.trim()}>
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-5">
+          {badges.map((badge) => (
+            <div
+              key={badge.heading}
+              className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1.5 text-xs font-semibold text-neutral-700 shadow-soft"
+            >
+              <span className="text-lg">{badge.icon}</span>
+              <span>{badge.heading}</span>
             </div>
-          );
-        })}
+          ))}
+        </div>
       </div>
-      <p className="text-xs text-neutral-600 dark:text-neutral-400 mt-2">
-        ✓ Trusted by 5,000+ worksites • Meets ANSI Z359.1 & OSHA standards
-      </p>
-    </div>
+    </section>
   );
 }

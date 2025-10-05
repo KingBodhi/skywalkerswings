@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="swingGradient" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ff7ab0" />
+      <stop offset="100%" stop-color="#ff4f97" />
+    </linearGradient>
+    <linearGradient id="strapGradient" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ae3ea3" />
+      <stop offset="100%" stop-color="#6a1c5f" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="rgba(41,13,45,0.25)" />
+    </filter>
+  </defs>
+
+  <rect width="320" height="320" rx="24" fill="#f8f0f6" />
+
+  <g filter="url(#shadow)">
+    <path d="M160 32 L90 128" stroke="url(#strapGradient)" stroke-width="14" stroke-linecap="round" />
+    <path d="M160 32 L230 128" stroke="url(#strapGradient)" stroke-width="14" stroke-linecap="round" />
+
+    <path d="M94 140 C105 200 120 238 160 246 C200 238 215 200 226 140 C206 138 187 144 160 168 C133 144 114 138 94 140 Z"
+          fill="url(#swingGradient)" />
+    <path d="M140 210 Q160 220 180 210" stroke="#ffffff" stroke-width="6" stroke-linecap="round" />
+    <path d="M130 188 Q160 202 190 188" stroke="#ffb6d9" stroke-width="10" stroke-linecap="round" />
+
+    <path d="M108 152 C120 210 126 240 160 248 C194 240 200 210 212 152" stroke="#ffffff" stroke-opacity="0.25" stroke-width="12" stroke-linecap="round" />
+
+    <path d="M118 222 Q160 270 202 222" stroke="#ff8ec0" stroke-width="16" stroke-linecap="round" />
+  </g>
+
+  <text x="50%" y="300" text-anchor="middle" font-family="'Inter', sans-serif" font-size="18" fill="#6b2a6a" opacity="0.65">
+    Skywalker Swings Placeholder
+  </text>
+</svg>

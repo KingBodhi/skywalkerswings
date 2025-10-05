@@ -1,205 +1,154 @@
-"use client";
-import Section from "../../components/Section";
-import { useState } from "react";
+'use client';
 
-export default function Page(){
-  const [sent,setSent]=useState(false); 
-  const [err,setErr]=useState("");
-  const [loading,setLoading]=useState(false);
+import { useState } from 'react';
 
-  async function submit(e:React.FormEvent<HTMLFormElement>){ 
-    e.preventDefault(); 
-    setErr(""); 
+import Section from '../../components/Section';
+
+export default function ContactPage() {
+  const [sent, setSent] = useState(false);
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
     setSent(false);
+    setError('');
     setLoading(true);
 
-    try{
-      const formData = new FormData(e.currentTarget);
-      const data = {
-        name: formData.get("name") as string,
-        email: formData.get("email") as string,
-        company: formData.get("company") as string,
-        message: formData.get("message") as string,
+    try {
+      const formData = new FormData(event.currentTarget);
+      const payload = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        vibe: formData.get('vibe'),
+        message: formData.get('message'),
       };
-      const res=await fetch("/api/contact",{ 
-        method:"POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
+
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
       });
-      if(!res.ok) throw new Error(await res.text());
+
+      if (!response.ok) {
+        throw new Error(await response.text());
+      }
+
       setSent(true);
-      e.currentTarget.reset();
-    }catch(e:any){ 
-      setErr(e.message || "Something went wrong"); 
+      event.currentTarget.reset();
+    } catch (err: any) {
+      setError(err?.message || 'Something went wrong.');
     } finally {
       setLoading(false);
     }
   }
 
   return (
-    <div className="bg-gradient-to-br from-neutral-50 to-white min-h-screen">
-      <Section className="py-20">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          {/* Header */}
-          <div className="text-center mb-16">
-            <h1 className="font-display text-display-1 font-bold text-primary-600 mb-4">
-              Get Your Volume Quote
-            </h1>
-            <p className="text-body-lg text-neutral-600 max-w-2xl mx-auto">
-              Tell us about your safety program needs. Our experts will provide a custom quote within 2 hours.
-            </p>
+    <div className='bg-neutral-50'>
+      <Section className='py-16'>
+        <div className='mx-auto max-w-5xl px-4 sm:px-6 lg:px-8'>
+          <div className='mb-14 text-center'>
+            <span className='inline-flex items-center gap-2 rounded-full bg-accent-100 px-4 py-2 text-sm font-semibold text-accent-700'>
+              <span>💌</span> Concierge Awaits
+            </span>
+            <h1 className='mt-4 font-display text-3xl font-bold text-primary-800 sm:text-4xl'>Book Your Suspension Consult</h1>
+            <p className='mt-3 text-base text-neutral-600 sm:text-lg'>Tell us about your fantasy suite, favorite fabrics, or rigging questions. We respond within one business day with curated recommendations.</p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Contact Form */}
-            <div className="card p-8">
-              <form onSubmit={submit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
+          <div className='grid gap-8 lg:grid-cols-[1.4fr,1fr]'>
+            <div className='card border border-neutral-200 bg-white p-6'>
+              <form className='space-y-5' onSubmit={handleSubmit}>
+                <div className='grid gap-6 md:grid-cols-2'>
                   <div>
-                    <label className="block text-sm font-semibold text-primary-600 mb-2">Full Name *</label>
-                    <input 
-                      name="name" 
-                      className="input-field w-full" 
-                      placeholder="Enter your full name" 
-                      required 
-                    />
+                    <label className='mb-2 block text-sm font-semibold text-primary-700'>Name *</label>
+                    <input className='input-field w-full' name='name' placeholder='How should we greet you?' required />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-primary-600 mb-2">Email Address *</label>
-                    <input 
-                      name="email" 
-                      type="email"
-                      className="input-field w-full" 
-                      placeholder="your.email@company.com" 
-                      required 
-                    />
+                    <label className='mb-2 block text-sm font-semibold text-primary-700'>Email *</label>
+                    <input className='input-field w-full' name='email' placeholder='you@skywalkerswing.com' required type='email' />
+                  </div>
+                </div>
+
+                <div className='grid gap-6 md:grid-cols-2'>
+                  <div>
+                    <label className='mb-2 block text-sm font-semibold text-primary-700'>Phone</label>
+                    <input className='input-field w-full' name='phone' placeholder='Optional' />
+                  </div>
+                  <div>
+                    <label className='mb-2 block text-sm font-semibold text-primary-700'>Desired Mood</label>
+                    <select className='input-field w-full' defaultValue='' name='vibe'>
+                      <option value='' disabled>Pick the vibe</option>
+                      <option value='romantic-retreat'>Romantic retreat</option>
+                      <option value='kink-suite'>Kink suite</option>
+                      <option value='content-studio'>Content studio</option>
+                      <option value='hospitality'>Boutique hospitality</option>
+                      <option value='other'>Other dream</option>
+                    </select>
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-primary-600 mb-2">Company / Organization</label>
-                  <input 
-                    name="company" 
-                    className="input-field w-full" 
-                    placeholder="Your company name" 
+                  <label className='mb-2 block text-sm font-semibold text-primary-700'>Tell Us Everything *</label>
+                  <textarea
+                    className='input-field w-full'
+                    name='message'
+                    placeholder='Room dimensions, mounting preferences, fabric crushes, accessibility notes, guest experience goals...'
+                    required
+                    rows={6}
                   />
                 </div>
 
-                <div>
-                  <label className="block text-sm font-semibold text-primary-600 mb-2">Project Details *</label>
-                  <textarea 
-                    name="message" 
-                    className="input-field w-full" 
-                    placeholder="Please include: number of workers, industry type, timeline, specific requirements..." 
-                    rows={6} 
-                    required 
-                  />
-                </div>
-
-                <button 
-                  type="submit" 
+                <button
+                  className='btn-primary w-full sm:w-auto flex items-center justify-center gap-2'
                   disabled={loading}
-                  className="w-full bg-accent-500 hover:bg-accent-600 disabled:bg-neutral-400 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-200 hover:shadow-medium hover:scale-105 disabled:hover:scale-100"
+                  type='submit'
                 >
-                  {loading ? "Sending..." : "Get My Custom Quote"}
+                  {loading ? 'Sending...' : 'Send to Concierge'}
                 </button>
 
                 {sent && (
-                  <div className="bg-success-50 border border-success-200 rounded-xl p-4">
-                    <div className="flex items-center gap-3">
-                      <svg className="w-5 h-5 text-success-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                      </svg>
-                      <div>
-                        <div className="font-semibold text-success-800">Quote request sent!</div>
-                        <div className="text-sm text-success-700">We'll respond within 2 hours with your custom pricing.</div>
-                      </div>
-                    </div>
+                  <div className='rounded-xl border border-success-200 bg-success-50 p-4 text-success-700'>
+                    We received your note! A concierge stylist will slip into your inbox soon.
                   </div>
                 )}
 
-                {err && (
-                  <div className="bg-danger-50 border border-danger-200 rounded-xl p-4">
-                    <div className="flex items-center gap-3">
-                      <svg className="w-5 h-5 text-danger-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-                      </svg>
-                      <div className="text-danger-800">{err}</div>
-                    </div>
-                  </div>
+                {error && (
+                  <div className='rounded-xl border border-danger-200 bg-danger-50 p-4 text-danger-600'>{error}</div>
                 )}
               </form>
             </div>
 
-            {/* Contact Info & Benefits */}
-            <div className="space-y-8">
-              {/* Contact Methods */}
-              <div className="card p-6">
-                <h3 className="font-display text-xl font-bold text-primary-600 mb-4">Prefer to Talk?</h3>
-                <div className="space-y-4">
-                  <a href="tel:+1-800-SKYWALKER" className="flex items-center gap-4 p-4 bg-neutral-50 rounded-xl hover:bg-neutral-100 transition-colors">
-                    <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
-                      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <div className="font-bold text-primary-600">1-800-SKYWALKER</div>
-                      <div className="text-sm text-neutral-600">Mon-Fri 7AM-6PM EST</div>
-                    </div>
+            <aside className='space-y-6'>
+              <div className='card border border-neutral-200 bg-white p-6'>
+                <h2 className='font-display text-xl font-semibold text-primary-800'>Talk to a Human</h2>
+                <p className='mt-3 text-sm text-neutral-600'>Concierge stylists are available daily to help with mounting, materials, gifting, and custom builds.</p>
+                <div className='mt-6 space-y-4 text-sm text-neutral-700'>
+                  <a className='flex items-center gap-3 rounded-xl bg-neutral-100 px-4 py-3 transition-colors hover:bg-neutral-200' href='tel:+18337946464'>
+                    <span className='inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary-700 text-white'>📞</span>
+                    <span>1-833-SWINGS (10a–10p ET)</span>
                   </a>
-
-                  <a href="mailto:sales@skywalker.com" className="flex items-center gap-4 p-4 bg-neutral-50 rounded-xl hover:bg-neutral-100 transition-colors">
-                    <div className="w-10 h-10 bg-accent-500 rounded-lg flex items-center justify-center">
-                      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <div className="font-bold text-primary-600">sales@skywalker.com</div>
-                      <div className="text-sm text-neutral-600">24/7 email support</div>
-                    </div>
+                  <a className='flex items-center gap-3 rounded-xl bg-neutral-100 px-4 py-3 transition-colors hover:bg-neutral-200' href='mailto:concierge@skywalkerswings.com'>
+                    <span className='inline-flex h-10 w-10 items-center justify-center rounded-lg bg-accent-500 text-neutral-900'>✉️</span>
+                    <span>concierge@skywalkerswings.com</span>
                   </a>
+                  <div className='rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-3'>
+                    <div className='font-semibold text-neutral-800'>Text (Beta)</div>
+                    <div className='text-xs text-neutral-600'>Message “FLOAT” to (917) 555-7420 for quick-fit tips and hardware guidance.</div>
+                  </div>
                 </div>
               </div>
 
-              {/* Volume Pricing Benefits */}
-              <div className="card p-6">
-                <h3 className="font-display text-xl font-bold text-primary-600 mb-4">Volume Pricing Benefits</h3>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3">
-                    <svg className="w-5 h-5 text-success-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-neutral-700">Up to 30% off retail pricing</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <svg className="w-5 h-5 text-success-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-neutral-700">Free shipping on orders over $2,500</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <svg className="w-5 h-5 text-success-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-neutral-700">Dedicated safety consultant</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <svg className="w-5 h-5 text-success-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-neutral-700">Custom training programs</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <svg className="w-5 h-5 text-success-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-neutral-700">Priority technical support</span>
-                  </div>
-                </div>
+              <div className='card border border-neutral-200 bg-white p-6'>
+                <h2 className='font-display text-xl font-semibold text-primary-800'>What Happens Next</h2>
+                <ul className='mt-4 space-y-3 text-sm text-neutral-600'>
+                  <li>✓ Concierge review within one business day</li>
+                  <li>✓ Curated swing + accessory recommendations</li>
+                  <li>✓ Mounting checklist and installer referrals</li>
+                  <li>✓ Optional fabric swatch mailer</li>
+                </ul>
               </div>
-            </div>
+            </aside>
           </div>
         </div>
       </Section>

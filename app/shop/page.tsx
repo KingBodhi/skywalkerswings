@@ -5,38 +5,39 @@ import { money } from "@/lib/utils";
 
 const categories = [
   {
-    title: "Construction & Industrial",
-    description: "OSHA-compliant harnesses built for jobsite durability",
-    image: "/images/apps/construction.svg",
-    href: "/collection/construction",
-    stats: "Most Popular",
-    features: ["OSHA 1926 Compliant", "Jobsite Durability", "Quick Connect D-Rings"]
+    title: 'Signature Velvet Swings',
+    description: 'Midnight velvet, vegan leather, and satin cradles engineered for weightless indulgence.',
+    image: '/images/products/WH-ORFF-CSFH-1.jpg',
+    href: '/collection/signature-swings',
+    stats: 'Most Loved',
+    features: ['Plush washable covers', '600 lb weight tested', 'Concierge styling call']
   },
   {
-    title: "Military & Tactical",
-    description: "Low-profile designs for high-mobility operations",
-    image: "/images/apps/military.svg", 
-    href: "/collection/military",
-    stats: "Mission Critical",
-    features: ["Low Signature Profile", "Rapid Deployment", "Multi-Point Attachment"]
+    title: 'Faux Fur & Fantasy',
+    description: 'Limited faux fur trims, feather tassels, and statement textiles direct from the Skywalker studio.',
+    image: '/images/products/swing-placeholder.svg',
+    href: '/collection/faux-fur',
+    stats: 'Limited Run',
+    features: ['Feather & faux fur accents', 'Monochrome or neon palettes', 'Ships with care guide']
   },
   {
-    title: "Recreation & Sports",
-    description: "Ergonomic harnesses for climbing and adventure sports",
-    image: "/images/apps/recreation.svg",
-    href: "/collection/recreation", 
-    stats: "Adventure Ready",
-    features: ["Comfort Padding", "Gear Loops", "Lightweight Design"]
+    title: 'Doorway & Travel Kits',
+    description: 'Apartment-friendly rigs with padded straps, quick installs, and discreet storage bags.',
+    image: '/images/products/WH-TLSH-1.jpg',
+    href: '/collection/doorway',
+    stats: 'Traveler Fave',
+    features: ['Under 10-minute install', 'Fits standard frames', 'Padded pressure points']
   },
   {
-    title: "Rescue & Emergency",
-    description: "Professional-grade equipment for first responders",
-    image: "/images/apps/rescue.svg",
-    href: "/collection/rescue",
-    stats: "Life Saving",
-    features: ["Rapid Deployment", "High Visibility", "Emergency Certified"]
+    title: 'Frames & Anchor Systems',
+    description: 'Freestanding Nebula frames and Aurora anchor bundles for suites, studios, and hospitality installs.',
+    image: '/images/products/WH-RCH-21-1.jpg',
+    href: '/collection/support-stands',
+    stats: 'Pro Install',
+    features: ['Indoor/outdoor frame options', 'Dual-mount hardware', 'Concierge install support']
   }
 ];
+
 
 async function getProducts() {
   try {
@@ -62,22 +63,21 @@ export default async function ShopPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-accent-100 text-accent-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-              <span className="text-lg">🛒</span>
+              <span className="text-lg">🪢</span>
               Shop Our Products
             </div>
             <h1 className="font-display text-display-1 font-bold text-primary-600 mb-4">
-              Fall Protection Equipment Store
+              Skywalker Swings Collections
             </h1>
             <p className="text-body-lg text-neutral-600 max-w-3xl mx-auto">
-              Professional-grade safety harnesses, accessories, and fall protection systems 
-              trusted by professionals worldwide. All products meet or exceed ANSI Z359.1 standards.
+              Explore Skywalker Swings collections curated for suites, studios, travel play, and hospitality installs. Weight-tested hardware, concierge styling, and indulgent textiles come standard.
             </p>
           </div>
 
           {/* Category Cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 mb-20">
             {categories.map((category, index) => (
-              <Link key={index} href={category.href} className="group card p-6 hover:shadow-strong transition-all duration-300">
+              <Link key={index} href={category.href} className="group card p-6 hover:shadow-md transition-shadow duration-200">
                 <div className="relative mb-6">
                   <div className="aspect-square bg-gradient-to-br from-neutral-100 to-neutral-200 rounded-2xl overflow-hidden">
                     <img 
@@ -124,7 +124,7 @@ export default async function ShopPage() {
                 All Products
               </h2>
               <p className="text-body-lg text-neutral-600">
-                Browse our complete catalog of fall protection equipment and safety gear
+                Browse the full Skywalker Swings lineup and find the suspension style that fits your space.
               </p>
             </div>
 
@@ -180,7 +180,7 @@ export default async function ShopPage() {
                 <p className="text-neutral-600 mb-8">Products will appear here once they are added through the admin panel.</p>
                 <Link 
                   href="/admin/products/new"
-                  className="bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 rounded-xl font-bold transition-all duration-200 hover:shadow-lg hover:scale-105"
+                  className="btn-primary px-6 py-3"
                 >
                   Add First Product
                 </Link>
@@ -191,23 +191,23 @@ export default async function ShopPage() {
           {/* CTA Section */}
           <div className="bg-gradient-to-r from-primary-600 to-primary-700 rounded-3xl text-white p-12 text-center">
             <h2 className="font-display text-2xl font-bold mb-4">
-              Need Help Choosing the Right Equipment?
+              Need Help Styling Your Suspension Suite?
             </h2>
             <p className="text-white/90 mb-6 max-w-2xl mx-auto">
-              Our safety experts are here to help you select the perfect fall protection system for your specific needs and applications.
+              Our concierge stylists will help you select textiles, hardware, and install options tailored to your vibe and venue.
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link 
                 href="/contact"
-                className="bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 rounded-xl font-bold transition-all duration-200 hover:shadow-lg hover:scale-105"
+                className="btn-primary px-6 py-3"
               >
                 Get Expert Advice
               </Link>
               
               <a 
                 href="tel:+1-800-SKYWALKER"
-                className="bg-white/20 hover:bg-white/30 text-white px-8 py-4 rounded-xl font-bold transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/60 px-6 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-white/15"
               >
                 Call 1-800-SKYWALKER
               </a>
