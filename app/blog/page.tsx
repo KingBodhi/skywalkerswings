@@ -1,7 +1,8 @@
-import Section from "../../components/Section";
-import Link from "next/link";
+import Link from 'next/link';
 
-// Force dynamic rendering for blog pages
+import Section from '@/components/Section';
+import blogPostsData from '@/data/blog-posts.json';
+
 export const dynamic = 'force-dynamic';
 
 type BlogPost = {
@@ -17,37 +18,12 @@ type BlogPost = {
   createdAt: string;
 };
 
-async function getBlogPosts(): Promise<BlogPost[]> {
-  try {
-    // Server-side: use full URL in production, localhost in development
-    // Client-side: use relative URLs
-    const isServer = typeof window === 'undefined';
-    const baseUrl = isServer
-      ? (process.env.NODE_ENV === 'production'
-          ? 'https://skywalker.vercel.app'
-          : 'http://localhost:3001')
-      : '';
-
-    const response = await fetch(`${baseUrl}/api/blog`, {
-      cache: 'no-store'
-    });
-
-    if (!response.ok) {
-      console.error('Failed to fetch blog posts:', response.statusText);
-      return [];
-    }
-
-    return await response.json();
-  } catch (error) {
-    console.error('Error fetching blog posts:', error);
-    return [];
-  }
-}
+const blogPosts = blogPostsData as unknown as BlogPost[];
 
 export default async function BlogPage() {
-  const blogPosts = await getBlogPosts();
-  const featuredPosts = blogPosts.filter(post => post.slug === 'introducing-kinetic-fall-arrest').slice(0, 1);
-  const regularPosts = blogPosts.filter(post => post.slug !== 'introducing-kinetic-fall-arrest').slice(0, 11);
+  const posts = blogPosts;
+  const featuredPosts = posts.filter(post => post.slug === 'introducing-kinetic-fall-arrest').slice(0, 1);
+  const regularPosts = posts.filter(post => post.slug !== 'introducing-kinetic-fall-arrest').slice(0, 11);
 
   return (
     <div className="bg-gradient-to-br from-neutral-50 to-white min-h-screen">
