@@ -19,26 +19,90 @@ async function main(){
     prisma.collection.upsert({ where: { handle: "construction" }, update: {}, create: { title: "Construction", handle: "construction" } }),
     prisma.collection.upsert({ where: { handle: "pleasure" }, update: {}, create: { title: "Pleasure", handle: "pleasure" } }),
   ]);
-  const p = await prisma.product.upsert({
-    where: { handle: "kinetic-harness" },
-    update: {},
-    create: { title: "Kinetic Fall-Arrest Harness", handle: "kinetic-harness", description: "Patent-pending kinetic geometry with posture protection." }
+  const deluxeSwing = await prisma.product.upsert({
+    where: { handle: "deluxe-swing-with-faux-fur" },
+    update: {
+      title: "Deluxe Swing with Faux Fur",
+      description: "Premium swing outfitted with faux fur seat and trim, available in curated color selections for high-impact visuals.",
+      status: "ACTIVE"
+    },
+    create: {
+      title: "Deluxe Swing with Faux Fur",
+      handle: "deluxe-swing-with-faux-fur",
+      description: "Premium swing outfitted with faux fur seat and trim, available in curated color selections for high-impact visuals.",
+      status: "ACTIVE"
+    }
   });
-  await prisma.productImage.create({ data: { productId: p.id, url: "/images/hero.svg", alt: "Harness" } });
-  const v1 = await prisma.variant.upsert({
-    where: { sku: "KH-BLK-S" },
-    update: {},
-    create: { productId: p.id, sku: "KH-BLK-S", price: 39900, size: "S", color: "Black", isDefault: true }
+
+  await prisma.productImage.create({
+    data: {
+      productId: deluxeSwing.id,
+      url: "/images/skyfox-placeholder.png",
+      alt: "Deluxe Swing with Faux Fur primary image"
+    }
   });
-  await prisma.inventoryLevel.upsert({ where: { variantId: v1.id }, create: { variantId: v1.id, quantity: 10 }, update: { quantity: 10 } });
-  const v2 = await prisma.variant.upsert({
-    where: { sku: "KH-BLK-M" },
-    update: {},
-    create: { productId: p.id, sku: "KH-BLK-M", price: 39900, size: "M", color: "Black" }
+
+  const defaultVariant = await prisma.variant.upsert({
+    where: { sku: "SW-SWG-DLX-FUR" },
+    update: {
+      productId: deluxeSwing.id,
+      price: 45000,
+      size: "Standard",
+      color: "Custom",
+      isDefault: true
+    },
+    create: {
+      productId: deluxeSwing.id,
+      sku: "SW-SWG-DLX-FUR",
+      price: 45000,
+      size: "Standard",
+      color: "Custom",
+      isDefault: true
+    }
   });
-  await prisma.inventoryLevel.upsert({ where: { variantId: v2.id }, create: { variantId: v2.id, quantity: 15 }, update: { quantity: 15 } });
-  await prisma.collectionProduct.upsert({ where: { productId_collectionId: { productId: p.id, collectionId: mil.id } }, update: {}, create: { productId: p.id, collectionId: mil.id } });
-  await prisma.collectionProduct.upsert({ where: { productId_collectionId: { productId: p.id, collectionId: con.id } }, update: {}, create: { productId: p.id, collectionId: con.id } });
+
+  await prisma.inventoryLevel.upsert({
+    where: { variantId: defaultVariant.id },
+    create: { variantId: defaultVariant.id, quantity: 12 },
+    update: { quantity: 12 }
+  });
+
+  const onyxVariant = await prisma.variant.upsert({
+    where: { sku: "SW-SWG-DLX-FUR-ONX" },
+    update: {
+      productId: deluxeSwing.id,
+      price: 47500,
+      size: "Standard",
+      color: "Onyx"
+    },
+    create: {
+      productId: deluxeSwing.id,
+      sku: "SW-SWG-DLX-FUR-ONX",
+      price: 47500,
+      size: "Standard",
+      color: "Onyx"
+    }
+  });
+
+  await prisma.inventoryLevel.upsert({
+    where: { variantId: onyxVariant.id },
+    create: { variantId: onyxVariant.id, quantity: 8 },
+    update: { quantity: 8 }
+  });
+
+  await prisma.collectionProduct.upsert({
+    where: {
+      productId_collectionId: {
+        productId: deluxeSwing.id,
+        collectionId: ple.id
+      }
+    },
+    update: {},
+    create: {
+      productId: deluxeSwing.id,
+      collectionId: ple.id
+    }
+  });
 
   // QUICK WINS IMPLEMENTATION
   await implementQuickWins();
@@ -103,7 +167,7 @@ async function updateContactForm() {
       )
       .replace(
         '<input className="rounded border border-alloy/50 p-2" placeholder="Company / Organization (optional)" />',
-        '<input name="company" className="rounded border border-alloy/50 p-2" placeholder="Company / Organization (optional)" />'
+        '<input name=.company" className="rounded border border-alloy/50 p-2" placeholder="Company / Organization (optional)" />'
       )
       .replace(
         '<textarea className="rounded border border-alloy/50 p-2" placeholder="How can we help?" rows={4} required />',
@@ -138,7 +202,7 @@ const transporter = nodemailer.createTransporter({
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { name, email, company, message } = body;
+    const { name, email,.company, message } = body;
     
     // Validate required fields
     if (!name || !email || !message) {
@@ -147,15 +211,15 @@ export async function POST(req: NextRequest) {
 
     // Send email
     await transporter.sendMail({
-      from: \`"Skywalker Unlimited" <\${process.env.SMTP_FROM || process.env.SMTP_USER}>\`,
+      from: \`"SkyFox Swings" <\${process.env.SMTP_FROM || process.env.SMTP_USER}>\`,
       to: process.env.CONTACT_RECEIVER_EMAIL,
       replyTo: email,
-      subject: \`New Contact: \${name}\${company ? \` - \${company}\` : ''}\`,
+      subject: \`New Contact: \${name}\$.company ? \` - \$.company}\` : ''}\`,
       html: \`
         <h3>New Contact Form Submission</h3>
         <p><strong>Name:</strong> \${name}</p>
         <p><strong>Email:</strong> \${email}</p>
-        \${company ? \`<p><strong>Company:</strong> \${company}</p>\` : ''}
+        \$.company ? \`<p><strong>Company:</strong> \$.company}</p>\` : ''}
         <p><strong>Message:</strong></p>
         <p>\${message.replace(/\\n/g, '<br>')}</p>
       \`,
@@ -246,7 +310,7 @@ async function enhanceProductPage() {
             "sku": data.variants?.[0]?.sku || "",
             "brand": {
               "@type": "Brand",
-              "name": "Skywalker Unlimited"
+              "name": "SkyFox Swings"
             },
             "offers": {
               "@type": "Offer",

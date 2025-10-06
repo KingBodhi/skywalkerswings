@@ -112,7 +112,7 @@ export default function PatentsPage() {
             <div className="text-center text-sm text-neutral-600">
               <p>
                 All product names and marks are the property of their respective owners. 
-                © 2024 Skywalker Unlimited. All rights reserved.
+                © 2024 SkyFox Swings. All rights reserved.
               </p>
             </div>
           </div>

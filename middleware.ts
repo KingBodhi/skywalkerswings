@@ -23,7 +23,7 @@ export function middleware(request: NextRequest) {
     );
   }
 
-  // Content Security Policy - Tailored for Skywalker
+  // Content Security Policy - Tailored for SkyFox
   const csp = [
     "default-src 'self'",
     "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://js.stripe.com https://maps.googleapis.com",

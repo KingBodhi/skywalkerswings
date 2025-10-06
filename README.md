@@ -1,4 +1,4 @@
-# Skywalker Unlimited — MVP (Next.js 14 + Prisma SQLite + Stripe)
+# SkyFox Swings — MVP (Next.js 14 + Prisma SQLite + Stripe)
 
 ## Setup
 ```bash

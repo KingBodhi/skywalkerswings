@@ -3,9 +3,9 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 export const metadata = {
-  title: 'Skywalker Swings — Luxury Suspension Play',
+  title: 'SkyFox Swings — Luxury Suspension Play',
   description:
-    'Skywalker Swings crafts indulgent suspension swings, concierge installs, and body-positive accessories for adults seeking weightless pleasure.',
+    'SkyFox Swings crafts indulgent suspension swings, concierge installs, and body-positive accessories for adults seeking weightless pleasure.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

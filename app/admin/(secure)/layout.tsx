@@ -117,7 +117,7 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-white/10 h-16 flex-shrink-0">
           <Link href="/admin" className={`font-display font-bold transition-all ${sidebarCollapsed ? 'lg:text-sm' : 'text-xl'}`}>
-            {sidebarCollapsed ? 'WR' : 'SKYWALKER ADMIN'}
+            {sidebarCollapsed ? 'SF' : 'SKYFOX ADMIN'}
           </Link>
           <div className="flex items-center gap-2">
             <button 

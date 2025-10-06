@@ -1,7 +1,7 @@
 module.exports = [
   {
     slug: 'introducing-kinetic-fall-arrest',
-    excerpt: 'See why the Skywalker kinetic harness keeps crews upright, responsive, and rescue-ready after a fall event.',
+    excerpt: 'See why the SkyFox kinetic harness keeps crews upright, responsive, and rescue-ready after a fall event.',
     content: `
       <h2>Why Traditional Arrest Gear Fails Suspended Workers</h2>
       <p>Stopping a fall is only the first step. Standard harness geometries concentrate load on the legs and lower back, forcing the worker forward and restricting both breath and circulation. Within minutes numbness, nausea, and suspension trauma can appear, turning a successful arrest into a medical emergency.</p>
@@ -15,12 +15,12 @@ module.exports = [
         </ul>
       </div>
 
-      <h2>The Skywalker Kinetic Difference</h2>
-      <p>The Skywalker Kinetic Fall-Arrest System rebalances force through a tri-panel support matrix and active energy routing. Instead of a single choke point at the dorsal D-ring, the harness disperses load across the torso, hips, and thighs while a floating lumbar cradle keeps the spine aligned.</p>
+      <h2>The SkyFox Kinetic Difference</h2>
+      <p>The SkyFox Kinetic Fall-Arrest System rebalances force through a tri-panel support matrix and active energy routing. Instead of a single choke point at the dorsal D-ring, the harness disperses load across the torso, hips, and thighs while a floating lumbar cradle keeps the spine aligned.</p>
       <ul>
         <li><strong>Distributed web architecture:</strong> Triple-layer bands spread forces across 40 percent more surface area.</li>
-        <li><strong>Neutral spine geometry:</strong> A pivoting waist yoke stabilizes the worker so they remain upright and communicative.</li>
-        <li><strong>Dynamic energy management:</strong> Shock modules bleed off peak arrest loads, maintaining comfort while staying ANSI Z359 compliant.</li>
+        <li><strong>Neutral spine geometry:</strong> A pivoting waist yoke stabilizes the worker so they remain upright and.communicative.</li>
+        <li><strong>Dynamic energy management:</strong> Shock modules bleed off peak arrest loads, maintaining.comfort while staying ANSI Z359.compliant.</li>
         <li><strong>Rescue-friendly design:</strong> Integrated retrieval loops and color-coded connection points shorten rescue time by up to 35 percent.</li>
       </ul>
 
@@ -36,27 +36,27 @@ module.exports = [
       <ol>
         <li><strong>Site assessment:</strong> Map anchor points and rescue pathways, documenting swing clearance per work zone.</li>
         <li><strong>Fit session:</strong> Size each worker, locking in strap memory with the harness fit protocol.</li>
-        <li><strong>Drill scenarios:</strong> Run quarterly mock rescues focusing on communication and suspension relief deployment.</li>
-        <li><strong>Performance review:</strong> Capture post-incident or drill data in your Skywalker safety log to drive continuous improvement.</li>
+        <li><strong>Drill scenarios:</strong> Run quarterly mock rescues focusing on.communication and suspension relief deployment.</li>
+        <li><strong>Performance review:</strong> Capture post-incident or drill data in your SkyFox safety log to drive continuous improvement.</li>
       </ol>
 
       <h2>Measuring the Impact</h2>
-      <p>Field data from tier-one contractors shows a 62 percent reduction in suspension-related medical responses after switching to the Kinetic system. Workers reported sustained leg circulation for up to 11 minutes compared with 4 minutes in legacy harnesses, giving rescue teams the time they need to secure an extraction.</p>
+      <p>Field data from tier-one contractors shows a 62 percent reduction in suspension-related medical responses after switching to the Kinetic system. Workers reported sustained leg circulation for up to 11 minutes.compared with 4 minutes in legacy harnesses, giving rescue teams the time they need to secure an extraction.</p>
 
       <blockquote>
-        <p>"With the kinetic harness, our crews stay calm and stable. We now have the confidence to operate on high-exposure steel work without compromising rescue readiness." &mdash; Safety Director, Gulf Coast Megaproject</p>
+        <p>"With the kinetic harness, our crews stay calm and stable. We now have the confidence to operate on high-exposure steel work without.compromising rescue readiness." &mdash; Safety Director, Gulf Coast Megaproject</p>
       </blockquote>
 
       <h2>Next Steps for Your Team</h2>
-      <p>Start with a pilot on your highest-risk crew, gather worker feedback, and roll out to adjacent teams once they confirm the comfort and control gains. Pair the harness upgrade with refreshed rescue training to compound the benefit. Your people get home safe, and you gain documented proof of duty-of-care.</p>
+      <p>Start with a pilot on your highest-risk crew, gather worker feedback, and roll out to adjacent teams once they confirm the.comfort and control gains. Pair the harness upgrade with refreshed rescue training to.compound the benefit. Your people get home safe, and you gain documented proof of duty-of-care.</p>
 
-      <p>Reach out to the Skywalker technical team for sizing kits, job hazard analysis templates, and a personalized deployment roadmap.</p>
+      <p>Reach out to the SkyFox technical team for sizing kits, job hazard analysis templates, and a personalized deployment roadmap.</p>
     `.trim(),
     imagePrompt: 'Dynamic industrial safety illustration of a construction worker suspended calmly in a modern kinetic fall-arrest harness, focus on distributed straps and upright posture, high-rise jobsite backdrop, sunrise lighting, cinematic realism.'
   },
   {
     slug: 'osha-fall-protection-guide',
-    excerpt: 'Turn OSHA 1926 Subpart M from dense regulation into a field-ready compliance playbook.',
+    excerpt: 'Turn OSHA 1926 Subpart M from dense regulation into a field-ready.compliance playbook.',
     content: `
       <h2>Why OSHA Compliance Demands More Than a Binder</h2>
       <p>Falls remain the leading cause of construction fatalities, and OSHA 1926 Subpart M is clear: employers must prevent them with engineered controls, safe work practices, and documented training. Yet many firms get cited not for lack of effort, but for missing connections between policy and field execution.</p>
@@ -64,7 +64,7 @@ module.exports = [
       <h2>Know Your Exposure Profile</h2>
       <ul>
         <li><strong>Task breakdown:</strong> Identify where crews exceed six feet, work near leading edges, or stage materials at height.</li>
-        <li><strong>Worker mix:</strong> Evaluate subcontractor integration, language requirements, and competency levels.</li>
+        <li><strong>Worker mix:</strong> Evaluate subcontractor integration, language requirements, and.competency levels.</li>
         <li><strong>Environmental factors:</strong> Wind, weather, and shifting surfaces change the fall-risk equation daily.</li>
       </ul>
 
@@ -82,8 +82,8 @@ module.exports = [
           <h3 class="font-semibold text-neutral-900 mb-2">Training &amp; Supervision</h3>
           <ul class="space-y-1 text-neutral-700">
             <li>Train workers before exposure and retrain when conditions or equipment change.</li>
-            <li>Designate competent persons to identify hazards and authorized persons to supervise anchors and rigging.</li>
-            <li>Document attendance, topics, and comprehension checks.</li>
+            <li>Designate.competent persons to identify hazards and authorized persons to supervise anchors and rigging.</li>
+            <li>Document attendance, topics, and.comprehension checks.</li>
           </ul>
         </div>
       </div>
@@ -140,18 +140,18 @@ module.exports = [
       </table>
 
       <h2>Action Plan for Field Leaders</h2>
-      <p>Begin each week with a toolbox talk that links the current work scope to fall protection requirements. Walk the site with a competent person to verify anchor placement and tag any defective gear. Close the loop with a rapid documentation upload so your safety office has real-time records. Compliance then becomes a byproduct of a disciplined safety culture.</p>
+      <p>Begin each week with a toolbox talk that links the current work scope to fall protection requirements. Walk the site with a.competent person to verify anchor placement and tag any defective gear. Close the loop with a rapid documentation upload so your safety office has real-time records. Compliance then b.comes a byproduct of a disciplined safety culture.</p>
 
-      <p>Need help tailoring OSHA requirements to your project? The Skywalker compliance team can review your plan, supply documentation templates, and conduct onsite training audits.</p>
+      <p>Need help tailoring OSHA requirements to your project? The SkyFox.compliance team can review your plan, supply documentation templates, and conduct onsite training audits.</p>
     `.trim(),
-    imagePrompt: 'Detailed infographic-style illustration of a commercial jobsite safety audit with supervisors reviewing fall protection plans, OSHA documentation, and workers using harnesses on steel framing, clean vector realism.'
+    imagePrompt: 'Detailed infographic-style illustration of a.commercial jobsite safety audit with supervisors reviewing fall protection plans, OSHA documentation, and workers using harnesses on steel framing, clean vector realism.'
   },
   {
     slug: 'bench-protocol-overview',
-    excerpt: 'Run the Skywalker bench validation protocol to document strength, energy management, and hardware integrity with lab-grade rigor.',
+    excerpt: 'Run the SkyFox bench validation protocol to document strength, energy management, and hardware integrity with lab-grade rigor.',
     content: `
       <h2>Purpose of the Bench Protocol</h2>
-      <p>Bench testing proves that harnesses and connectors are performing to spec before they reach the field. The Skywalker protocol combines ANSI Z359 requirements with additional kinetic metrics so you can certify equipment readiness, document lot traceability, and feed continuous improvement.</p>
+      <p>Bench testing proves that harnesses and connectors are performing to spec before they reach the field. The SkyFox protocol.combines ANSI Z359 requirements with additional kinetic metrics so you can certify equipment readiness, document lot traceability, and feed continuous improvement.</p>
 
       <h2>Test Environment Requirements</h2>
       <ul>
@@ -166,7 +166,7 @@ module.exports = [
         <li>Record harness model, production lot, and serial number.</li>
         <li>Condition samples for 24 hours in the test environment.</li>
         <li>Inspect hardware, stitching, and webbing; photograph any cosmetic anomalies.</li>
-        <li>Fit the harness on the Skywalker anthropometric test torso to replicate field geometry.</li>
+        <li>Fit the harness on the SkyFox anthropometric test torso to replicate field geometry.</li>
       </ol>
 
       <h2>Core Test Sequence</h2>
@@ -190,7 +190,7 @@ module.exports = [
       <ul>
         <li>Attach pressure mapping pads to the legs, waist, and shoulders.</li>
         <li>Record pressure distribution every 30 seconds for 15 minutes of static suspension.</li>
-        <li>Note subjective comfort markers from the test subject or sensor feedback.</li>
+        <li>Note subjective.comfort markers from the test subject or sensor feedback.</li>
       </ul>
 
       <h2>Acceptance Criteria</h2>
@@ -222,7 +222,7 @@ module.exports = [
       </table>
 
       <h2>Reporting and Traceability</h2>
-      <p>Attach the full data pack to the harness record in your asset management system. Skywalker bench templates include acceptance statements, calibration certificates, and sign-off fields for engineering approval. Retain records for a minimum of five years or the life of the product lot, whichever is longer.</p>
+      <p>Attach the full data pack to the harness record in your asset management system. SkyFox bench templates include acceptance statements, calibration certificates, and sign-off fields for engineering approval. Retain records for a minimum of five years or the life of the product lot, whichever is longer.</p>
 
       <p>Need a turnkey bench setup? Our technical services team can outfit your facility with calibrated rigs, data capture software, and training for your quality staff.</p>
     `.trim(),
@@ -233,12 +233,12 @@ module.exports = [
     excerpt: 'Navigate ANSI, OSHA, CSA, and EN fall protection standards with a single, practical reference.',
     content: `
       <h2>Why the Standards Landscape Matters</h2>
-      <p>Global construction and industrial operations rarely fit neatly inside one regulatory framework. When crews, products, and projects move across borders, safety leaders must reconcile overlapping standards without slowing down deployment. The Skywalker standards map keeps your fall protection program compliant wherever you build.</p>
+      <p>Global construction and industrial operations rarely fit neatly inside one regulatory framework. When crews, products, and projects move across borders, safety leaders must reconcile overlapping standards without slowing down deployment. The SkyFox standards map keeps your fall protection program.compliant wherever you build.</p>
 
       <h2>Foundational Frameworks</h2>
       <ul>
         <li><strong>OSHA 29 CFR 1910 &amp; 1926:</strong> U.S. regulatory requirements for general industry and construction, focused on employer responsibility.</li>
-        <li><strong>ANSI/ASSP Z359 Series:</strong> Consensus standards detailing design, testing, and user instructions for fall protection components and systems.</li>
+        <li><strong>ANSI/ASSP Z359 Series:</strong> Consensus standards detailing design, testing, and user instructions for fall protection.components and systems.</li>
         <li><strong>CSA Z259 Series:</strong> Canadian standards mirroring ANSI structure with climate-specific considerations and bilingual documentation rules.</li>
         <li><strong>EN 361/362/363/364:</strong> European Union directives covering harnesses, connectors, fall arrest systems, and test methods, harmonized with the PPE Regulation (EU) 2016/425.</li>
       </ul>
@@ -270,7 +270,7 @@ module.exports = [
             <td class="border border-neutral-200 p-2">Documentation</td>
             <td class="border border-neutral-200 p-2">User instructions required per Z359.2.</td>
             <td class="border border-neutral-200 p-2">Requires traceability to manufacturer quality system.</td>
-            <td class="border border-neutral-200 p-2">Type-examination certificate demanded for CE compliance.</td>
+            <td class="border border-neutral-200 p-2">Type-examination certificate demanded for CE.compliance.</td>
           </tr>
         </tbody>
       </table>
@@ -285,18 +285,18 @@ module.exports = [
 
       <h2>Emerging Trends to Watch</h2>
       <ul>
-        <li><strong>Performance-based metrics:</strong> Regulators increasingly ask for outcome data (incident rate, rescue time) in addition to paperwork.</li>
-        <li><strong>Digital recordkeeping:</strong> Electronic inspection and training logs are fast becoming the expectation during audits.</li>
+        <li><strong>Performance-based metrics:</strong> Regulators increasingly ask for ou.come data (incident rate, rescue time) in addition to paperwork.</li>
+        <li><strong>Digital recordkeeping:</strong> Electronic inspection and training logs are fast b.coming the expectation during audits.</li>
         <li><strong>Climate resilience:</strong> Standards bodies are evaluating additional requirements for extreme heat and cold performance.</li>
         <li><strong>Global supply chain audits:</strong> Expect deeper scrutiny of manufacturer quality management and sustainability practices.</li>
       </ul>
 
-      <h2>How Skywalker Supports Compliance</h2>
-      <p>Every Skywalker harness ships with multi-standard certification, QR-coded instructions, and direct access to our compliance team. We maintain technical files for ANSI, CSA, and EN audits and provide crosswalk documentation so you can quickly demonstrate equivalency to inspectors.</p>
+      <h2>How SkyFox Supports Compliance</h2>
+      <p>Every SkyFox harness ships with multi-standard certification, QR-coded instructions, and direct access to our.compliance team. We maintain technical files for ANSI, CSA, and EN audits and provide crosswalk documentation so you can quickly demonstrate equivalency to inspectors.</p>
 
       <p>Contact us for a customized standards matrix that aligns with your portfolio, including contractor onboarding checklists and inspection templates tailored to your jurisdictions.</p>
     `.trim(),
-    imagePrompt: 'Conceptual world map overlayed with OSHA, ANSI, CSA, and EN compliance icons connected by technical lines, representing global safety standards alignment, clean corporate style.'
+    imagePrompt: 'Conceptual world map overlayed with OSHA, ANSI, CSA, and EN.compliance icons connected by technical lines, representing global safety standards alignment, clean corporate style.'
   },
   {
     slug: 'suspension-trauma-prevention',
@@ -349,21 +349,21 @@ module.exports = [
       <h2>Rescue Plan Essentials</h2>
       <ul>
         <li><strong>Dedicated rescue kit:</strong> Include controlled descent devices, reach poles, and cutting tools rated for loaded lines.</li>
-        <li><strong>Rescue team competency:</strong> Assign trained personnel on every shift; conduct quarterly scenario drills.</li>
+        <li><strong>Rescue team.competency:</strong> Assign trained personnel on every shift; conduct quarterly scenario drills.</li>
         <li><strong>Medical integration:</strong> Coordinate with site medics or local EMS on suspension trauma protocols.</li>
         <li><strong>Post-incident review:</strong> Capture time stamps, gear performance, and worker feedback to refine procedures.</li>
       </ul>
 
-      <h2>Culture Drives Outcomes</h2>
-      <p>Workers need psychological safety to report near misses or discomfort. Encourage crews to speak up about harness fit, fatigue, or dizziness. Logging and addressing these signals is the fastest way to prevent genuine emergencies.</p>
+      <h2>Culture Drives Ou.comes</h2>
+      <p>Workers need psychological safety to report near misses or di.comfort. Encourage crews to speak up about harness fit, fatigue, or dizziness. Logging and addressing these signals is the fastest way to prevent genuine emergencies.</p>
 
-      <p>The Skywalker technical team can audit your suspension preparedness, recommend kinetic upgrades, and facilitate high-angle rescue training tailored to your site.</p>
+      <p>The SkyFox technical team can audit your suspension preparedness, r.commend kinetic upgrades, and facilitate high-angle rescue training tailored to your site.</p>
     `.trim(),
     imagePrompt: 'Illustration of a high-angle rescue team assisting a suspended worker using relief straps and controlled descent gear, focus on circulation and upright posture, cinematic lighting.'
   },
   {
     slug: 'pre-use-inspection-checklist',
-    excerpt: 'Walk the Skywalker pre-use inspection loop to keep every harness, lanyard, and anchor site-ready before work begins.',
+    excerpt: 'Walk the SkyFox pre-use inspection loop to keep every harness, lanyard, and anchor site-ready before work begins.',
     content: `
       <h2>Start with a Structured Routine</h2>
       <p>Consistent inspections keep defective gear out of circulation and give crews confidence before they tether in. Build this checklist into your daily stretch-and-flex or toolbox talk so every worker follows the same sequence.</p>
@@ -371,8 +371,8 @@ module.exports = [
       <h2>1. Verify Documentation</h2>
       <ul>
         <li>Confirm the harness, lanyard, and connectors are assigned to the correct worker.</li>
-        <li>Check inspection tags for the last competent-person review date.</li>
-        <li>Scan Skywalker QR codes to pull digital maintenance history.</li>
+        <li>Check inspection tags for the last.competent-person review date.</li>
+        <li>Scan SkyFox QR codes to pull digital maintenance history.</li>
       </ul>
 
       <h2>2. Inspect the Harness</h2>
@@ -405,7 +405,7 @@ module.exports = [
       <h2>4. Test Connectors</h2>
       <ol>
         <li>Open and release each snap hook and carabiner three times to confirm automatic locking.</li>
-        <li>Verify gates close fully with no binding or missing components.</li>
+        <li>Verify gates close fully with no binding or missing.components.</li>
         <li>Ensure markings show load rating and relevant certifications.</li>
       </ol>
 
@@ -415,12 +415,12 @@ module.exports = [
       <h2>6. Remove and Tag-Out Defects</h2>
       <ul>
         <li>Red-tag any item that fails inspection; note the defect and remove it from service immediately.</li>
-        <li>Log the issue in your digital inspection system and notify the competent person.</li>
+        <li>Log the issue in your digital inspection system and notify the.competent person.</li>
         <li>Store failed gear in a controlled location to prevent accidental reuse.</li>
       </ul>
 
       <h2>7. Document the Check</h2>
-      <p>Record the date, worker name, equipment serial numbers, and findings. The Skywalker Safety Hub app captures signatures, photos, and automated reminders so no inspection is missed.</p>
+      <p>Record the date, worker name, equipment serial numbers, and findings. The SkyFox Safety Hub app captures signatures, photos, and automated reminders so no inspection is missed.</p>
 
       <h2>Inspection Best Practices</h2>
       <ul>
@@ -429,7 +429,7 @@ module.exports = [
         <li>Rotate harnesses periodically to allow padding to recover between shifts.</li>
       </ul>
 
-      <p>Need a printable or digital version of this checklist? Contact Skywalker for customizable templates aligned with your site procedures.</p>
+      <p>Need a printable or digital version of this checklist? Contact SkyFox for customizable templates aligned with your site procedures.</p>
     `.trim(),
     imagePrompt: 'Detailed scene of a safety professional inspecting a fall protection harness on a workbench with checklist clipboard and QR code scanner, daylight workshop lighting.'
   },
@@ -469,11 +469,11 @@ module.exports = [
         </div>
       </div>
 
-      <h2>Accommodating Layering and Tools</h2>
+      <h2>A.commodating Layering and Tools</h2>
       <ul>
         <li>Adjust for seasonal clothing; re-check strap tension whenever layers change.</li>
         <li>Route lanyards and SRLs to avoid rubbing on tool belts or sharp edges.</li>
-        <li>Use Skywalker padding kits for workers carrying heavy bags or wearing harnesses all shift.</li>
+        <li>Use SkyFox padding kits for workers carrying heavy bags or wearing harnesses all shift.</li>
       </ul>
 
       <h2>Common Fit Issues &amp; Fixes</h2>
@@ -511,7 +511,7 @@ module.exports = [
         <li>Document the fit and note any custom accessories or medical considerations.</li>
       </ul>
 
-      <p>Skywalker offers onsite fit clinics and virtual coaching sessions to help supervisors master harness sizing across diverse crews. Reach out for scheduling.</p>
+      <p>SkyFox offers onsite fit clinics and virtual coaching sessions to help supervisors master harness sizing across diverse crews. Reach out for scheduling.</p>
     `.trim(),
     imagePrompt: 'Step-by-step illustration of a worker fitting a full-body safety harness with callouts for chest strap, leg straps, and dorsal D-ring alignment, clean instructional style.'
   },
@@ -534,7 +534,7 @@ module.exports = [
       <ol>
         <li><strong>Layout:</strong> Mark centerlines to maintain required edge distances and spacing between anchors.</li>
         <li><strong>Prepare surface:</strong> Remove coatings, corrosion, or debris. For concrete, core drill to the specified depth.</li>
-        <li><strong>Install hardware:</strong> Use the recommended fasteners and tighten in stages, alternating bolts to seat evenly.</li>
+        <li><strong>Install hardware:</strong> Use the r.commended fasteners and tighten in stages, alternating bolts to seat evenly.</li>
         <li><strong>Torque verification:</strong> Apply final torque with a calibrated wrench. Record actual values.</li>
         <li><strong>Seal and finish:</strong> Apply corrosion protection or weatherproofing as required.</li>
       </ol>
@@ -547,7 +547,7 @@ module.exports = [
       </ul>
 
       <h2>Documentation Packet</h2>
-      <p>Maintain a record that includes designer approval, install photos, torque logs, test certificates, and maintenance schedule. Upload the packet to your fall protection program so competent persons can verify anchors before each use.</p>
+      <p>Maintain a record that includes designer approval, install photos, torque logs, test certificates, and maintenance schedule. Upload the packet to your fall protection program so.competent persons can verify anchors before each use.</p>
 
       <h2>Ongoing Maintenance</h2>
       <ul>
@@ -556,16 +556,16 @@ module.exports = [
         <li>Track environmental exposure. Freeze-thaw cycles, salt spray, or chemical vapors may require more frequent checks.</li>
       </ul>
 
-      <p>Need support selecting or installing anchors for a complex project? Skywalker field engineers can provide site-specific plans, testing services, and training for your installation crews.</p>
+      <p>Need support selecting or installing anchors for a.complex project? SkyFox field engineers can provide site-specific plans, testing services, and training for your installation crews.</p>
     `.trim(),
     imagePrompt: 'Cutaway illustration of technicians installing a permanent roof anchor on structural steel with torque tools and engineering drawings visible, technical yet realistic style.'
   },
   {
     slug: 'system-inspection-checklist',
-    excerpt: 'Use this quarterly Skywalker inspection framework to verify every component of your fall protection system.',
+    excerpt: 'Use this quarterly SkyFox inspection framework to verify every.component of your fall protection system.',
     content: `
       <h2>Inspection Frequency</h2>
-      <p>OSHA and ANSI require competent-person inspections at least annually, but Skywalker recommends quarterly reviews for high-use systems. Frequent audits catch wear early, confirm documentation, and keep rescue plans aligned with current operations.</p>
+      <p>OSHA and ANSI require.competent-person inspections at least annually, but SkyFox r.commends quarterly reviews for high-use systems. Frequent audits catch wear early, confirm documentation, and keep rescue plans aligned with current operations.</p>
 
       <h2>Prepare the Inspection</h2>
       <ul>
@@ -588,7 +588,7 @@ module.exports = [
       <ul>
         <li>Inspect permanent anchors for corrosion, loosened fasteners, or deformation.</li>
         <li>For horizontal lifelines, measure sag, check tension indicators, and evaluate end terminations.</li>
-        <li>Review engineered drawings to ensure any field modifications maintain compliance.</li>
+        <li>Review engineered drawings to ensure any field modifications maintain.compliance.</li>
       </ul>
 
       <h2>Connectors and SRLs</h2>
@@ -606,9 +606,9 @@ module.exports = [
       </ul>
 
       <h2>Closeout and Follow-Up</h2>
-      <p>Provide a written summary noting pass/fail items, required repairs, and removal-from-service actions. Assign owners and deadlines for corrective measures. Schedule re-inspection dates and communicate findings during the next safety meeting.</p>
+      <p>Provide a written summary noting pass/fail items, required repairs, and removal-from-service actions. Assign owners and deadlines for corrective measures. Schedule re-inspection dates and.communicate findings during the next safety meeting.</p>
 
-      <p>Skywalker offers inspection services and digital recordkeeping tools that align with ANSI/ASSP Z359.2. Contact us for a tailored inspection package.</p>
+      <p>SkyFox offers inspection services and digital recordkeeping tools that align with ANSI/ASSP Z359.2. Contact us for a tailored inspection package.</p>
     `.trim(),
     imagePrompt: 'Safety inspector reviewing fall protection equipment on site with checklist tablet, examining harnesses and horizontal lifeline, industrial rooftop setting, realistic style.'
   },
@@ -617,7 +617,7 @@ module.exports = [
     excerpt: 'Adopt a five-minute pre-use safety ritual that keeps crews alert, anchored, and ready every shift.',
     content: `
       <h2>Make Safety the First Task</h2>
-      <p>A fast, consistent safety routine builds muscle memory and catches problems before work starts. The Skywalker pre-use check is designed to fit into the first five minutes of any shift.</p>
+      <p>A fast, consistent safety routine builds muscle memory and catches problems before work starts. The SkyFox pre-use check is designed to fit into the first five minutes of any shift.</p>
 
       <h2>Step 1: Brief the Plan</h2>
       <ul>
@@ -644,21 +644,21 @@ module.exports = [
       </ol>
 
       <h2>Step 5: Document Completion</h2>
-      <p>Log the check in your Skywalker Safety Hub app or daily worksheet. Note any issues found and their resolution. Consistent records demonstrate compliance and build accountability.</p>
+      <p>Log the check in your SkyFox Safety Hub app or daily worksheet. Note any issues found and their resolution. Consistent records demonstrate.compliance and build accountability.</p>
 
       <h2>Reinforce the Habit</h2>
       <p>Rotate the crew member who leads the safety check each week to keep engagement high. Use the closing minutes to celebrate hazard reports or quick fixes that kept the team safe.</p>
 
-      <p>Need a laminated card or mobile checklist for your team? Contact Skywalker and we will customize the pre-use safety routine to match your site procedures.</p>
+      <p>Need a laminated card or mobile checklist for your team? Contact SkyFox and we will customize the pre-use safety routine to match your site procedures.</p>
     `.trim(),
     imagePrompt: 'Crew of construction workers gathered for a dawn safety huddle reviewing checklists and harnesses before heading to elevated work, warm light, documentary style.'
   },
   {
     slug: 'safety-training-videos',
-    excerpt: 'Build a fall protection video library that keeps workers engaged and meeting competency requirements.',
+    excerpt: 'Build a fall protection video library that keeps workers engaged and meeting.competency requirements.',
     content: `
       <h2>Why Video Training Works</h2>
-      <p>Video lets crews see correct techniques, hear from subject matter experts, and revisit complex topics on demand. Pairing visuals with hands-on drills accelerates retention and helps multilingual teams stay aligned.</p>
+      <p>Video lets crews see correct techniques, hear from subject matter experts, and revisit.complex topics on demand. Pairing visuals with hands-on drills accelerates retention and helps multilingual teams stay aligned.</p>
 
       <h2>Core Video Categories</h2>
       <ul>
@@ -678,7 +678,7 @@ module.exports = [
 
       <h2>Integrate into Your Program</h2>
       <ul>
-        <li>Host videos in a learning management system that tracks completion.</li>
+        <li>Host videos in a learning management system that tracks.completion.</li>
         <li>Assign prerequisite modules before hands-on training days.</li>
         <li>Use QR codes on equipment racks linking to relevant refresher clips.</li>
         <li>Collect feedback after each viewing to refine future production.</li>
@@ -712,16 +712,16 @@ module.exports = [
         </tbody>
       </table>
 
-      <p>Skywalker offers ready-to-deploy video modules and production support. We can co-brand content, translate scripts, and integrate tracking with your existing LMS.</p>
+      <p>SkyFox offers ready-to-deploy video modules and production support. We can co-brand content, translate scripts, and integrate tracking with your existing LMS.</p>
     `.trim(),
     imagePrompt: 'Modern training room where workers watch a large screen showing fall protection video modules, with captions and safety gear demonstrations, bright professional look.'
   },
   {
     slug: 'certification-programs',
-    excerpt: 'Chart a path from authorized user to competent and qualified fall protection expert with Skywalker certification tracks.',
+    excerpt: 'Chart a path from authorized user to.competent and qualified fall protection expert with SkyFox certification tracks.',
     content: `
       <h2>Why Certification Matters</h2>
-      <p>Formal certification proves your team meets OSHA, ANSI, and client requirements while demonstrating due diligence. Skywalker certification programs blend classroom theory, hands-on evaluation, and scenario-based testing.</p>
+      <p>Formal certification proves your team meets OSHA, ANSI, and client requirements while demonstrating due diligence. SkyFox certification programs blend classroom theory, hands-on evaluation, and scenario-based testing.</p>
 
       <h2>Certification Levels</h2>
       <table class="w-full border border-neutral-200 text-sm">
@@ -749,7 +749,7 @@ module.exports = [
           <tr>
             <td class="border border-neutral-200 p-2">Qualified Person</td>
             <td class="border border-neutral-200 p-2">Engineers, safety managers</td>
-            <td class="border border-neutral-200 p-2">System design, load calculations, compliance documentation</td>
+            <td class="border border-neutral-200 p-2">System design, load calculations,.compliance documentation</td>
             <td class="border border-neutral-200 p-2">3 years</td>
           </tr>
         </tbody>
@@ -765,15 +765,15 @@ module.exports = [
 
       <h2>Delivery Options</h2>
       <ol>
-        <li><strong>Regional academies:</strong> Instructor-led training at Skywalker facilities with fully equipped training towers.</li>
+        <li><strong>Regional academies:</strong> Instructor-led training at SkyFox facilities with fully equipped training towers.</li>
         <li><strong>Onsite sessions:</strong> We bring mobile training rigs to your project and tailor content to your hazards.</li>
         <li><strong>Virtual blended learning:</strong> Combine self-paced e-learning with live coaching and certification exams.</li>
       </ol>
 
       <h2>Staying Current</h2>
-      <p>Certification is the beginning, not the end. Graduates gain access to quarterly micro-learning refreshers, regulatory updates, and emergent hazard briefings. Use these resources to maintain competency between formal recertifications.</p>
+      <p>Certification is the beginning, not the end. Graduates gain access to quarterly micro-learning refreshers, regulatory updates, and emergent hazard briefings. Use these resources to maintain.competency between formal recertifications.</p>
 
-      <p>Ready to schedule a certification cohort or integrate Skywalker credentials into your contractor prequalification program? Contact us for upcoming dates and private session availability.</p>
+      <p>Ready to schedule a certification cohort or integrate SkyFox credentials into your contractor prequalification program? Contact us for u.coming dates and private session availability.</p>
     `.trim(),
     imagePrompt: 'Professional classroom scene with trainees wearing safety gear receiving certification from instructor in front of fall protection training tower, bright and authoritative.'
   },
@@ -782,7 +782,7 @@ module.exports = [
     excerpt: 'Equip your safety instructors with lesson plans, skill drills, and assessment tools to drive lasting behavior change.',
     content: `
       <h2>Build Confidence in Your Instructors</h2>
-      <p>Great training programs depend on prepared, supported instructors. Skywalker trainer resources help your safety leaders deliver consistent, high-impact sessions regardless of audience or job type.</p>
+      <p>Great training programs depend on prepared, supported instructors. SkyFox trainer resources help your safety leaders deliver consistent, high-impact sessions regardless of audience or job type.</p>
 
       <h2>Lesson Planning Toolkit</h2>
       <ul>
@@ -801,14 +801,14 @@ module.exports = [
       <h2>Assessment Tools</h2>
       <ul>
         <li>Pre- and post-training knowledge checks delivered digitally or on paper.</li>
-        <li>Practical evaluation rubrics that score technique, communication, and safety.</li>
+        <li>Practical evaluation rubrics that score technique,.communication, and safety.</li>
         <li>Competency sign-off forms with space for corrective coaching notes.</li>
       </ul>
 
       <h2>Trainer Development</h2>
-      <p>Ensure your instructors stay current with quarterly webinars, updated regulatory summaries, and peer coaching sessions. Encourage trainers to shadow each other and share best practices through an internal community of practice.</p>
+      <p>Ensure your instructors stay current with quarterly webinars, updated regulatory summaries, and peer coaching sessions. Encourage trainers to shadow each other and share best practices through an internal.community of practice.</p>
 
-      <p>Skywalker can equip your trainers with customizable materials, instructor certification, and access to our digital content library. Reach out to assemble the resource package that matches your program goals.</p>
+      <p>SkyFox can equip your trainers with customizable materials, instructor certification, and access to our digital content library. Reach out to assemble the resource package that matches your program goals.</p>
     `.trim(),
     imagePrompt: 'Instructor leading a hands-on safety training workshop with trainees practicing harness fitting and rescue drills, energetic and collaborative atmosphere.'
   },
@@ -817,12 +817,12 @@ module.exports = [
     excerpt: 'Design a fall protection protocol that connects policy, field execution, and continuous improvement.',
     content: `
       <h2>Protocols Create Predictability</h2>
-      <p>A protocol translates regulations into step-by-step expectations. When everyone knows the sequence, work flows faster and safer. Use the Skywalker framework to build or refresh your fall protection procedures.</p>
+      <p>A protocol translates regulations into step-by-step expectations. When everyone knows the sequence, work flows faster and safer. Use the SkyFox framework to build or refresh your fall protection procedures.</p>
 
       <h2>Define Scope and Roles</h2>
       <ul>
         <li>List the tasks and environments covered by the protocol (steel erection, maintenance platforms, confined spaces).</li>
-        <li>Identify role responsibilities: authorized user, competent person, qualified person, rescue leader.</li>
+        <li>Identify role responsibilities: authorized user,.competent person, qualified person, rescue leader.</li>
         <li>Specify training and certification prerequisites for each role.</li>
       </ul>
 
@@ -830,7 +830,7 @@ module.exports = [
       <ol>
         <li><strong>Pre-job planning:</strong> Hazard analysis, anchor selection, and rescue strategy approval.</li>
         <li><strong>Daily readiness:</strong> Toolbox talk, equipment inspection, and permit verification.</li>
-        <li><strong>Work execution:</strong> Tie-off requirements, movement restrictions, and communication protocols.</li>
+        <li><strong>Work execution:</strong> Tie-off requirements, movement restrictions, and.communication protocols.</li>
         <li><strong>Post-work review:</strong> Debrief, equipment maintenance, and documentation upload.</li>
       </ol>
 
@@ -848,10 +848,10 @@ module.exports = [
       <ol>
         <li>Collect leading indicators: near misses, stop-work events, and inspection findings.</li>
         <li>Review data monthly with safety leadership and field representatives.</li>
-        <li>Update the protocol and communicate changes through toolbox talks and email bulletins.</li>
+        <li>Update the protocol and.communicate changes through toolbox talks and email bulletins.</li>
       </ol>
 
-      <p>Skywalker consultants can facilitate protocol development workshops, align your documentation with ANSI/ASSP Z359.2, and digitize workflows in the Safety Hub platform.</p>
+      <p>SkyFox consultants can facilitate protocol development workshops, align your documentation with ANSI/ASSP Z359.2, and digitize workflows in the Safety Hub platform.</p>
     `.trim(),
     imagePrompt: 'Project safety team reviewing a fall protection protocol binder with flowcharts and decision trees in a jobsite trailer, collaborative professional style.'
   },
@@ -860,7 +860,7 @@ module.exports = [
     excerpt: 'Follow this daily inspection routine to keep harnesses, SRLs, and anchors mission-ready.',
     content: `
       <h2>Start Every Shift with a Quick Scan</h2>
-      <p>Daily inspections take minutes but prevent catastrophic failures. Use this guide alongside your pre-use checklist to maintain confidence in every component.</p>
+      <p>Daily inspections take minutes but prevent catastrophic failures. Use this guide alongside your pre-use checklist to maintain confidence in every.component.</p>
 
       <h2>Harness Checklist</h2>
       <ul>
@@ -890,25 +890,25 @@ module.exports = [
 
       <h2>Document and Escalate</h2>
       <ul>
-        <li>Tag out questionable gear immediately and report findings to the competent person.</li>
-        <li>Log inspections in your Skywalker Safety Hub app or daily logbook.</li>
+        <li>Tag out questionable gear immediately and report findings to the.competent person.</li>
+        <li>Log inspections in your SkyFox Safety Hub app or daily logbook.</li>
         <li>Capture photos of defects to support warranty claims or engineering reviews.</li>
       </ul>
 
-      <p>A disciplined daily inspection habit reinforces your safety culture and keeps crews confident at height. Contact Skywalker for printable check cards or digital inspection workflows.</p>
+      <p>A disciplined daily inspection habit reinforces your safety culture and keeps crews confident at height. Contact SkyFox for printable check cards or digital inspection workflows.</p>
     `.trim(),
     imagePrompt: 'Close-up of a technician performing a daily inspection on a safety harness and SRL at a workbench with checklist tablet, crisp industrial lighting.'
   },
   {
     slug: 'cleaning-instructions',
-    excerpt: 'Clean and condition fall protection gear without compromising fibers or hardware integrity.',
+    excerpt: 'Clean and condition fall protection gear without.compromising fibers or hardware integrity.',
     content: `
       <h2>Set a Cleaning Schedule</h2>
       <p>Regular cleaning preserves webbing strength, keeps hardware operating smoothly, and extends service life. Establish cleaning intervals based on exposure: daily for concrete or petrochemical work, weekly for general construction, and immediately after contamination.</p>
 
       <h2>Approved Supplies</h2>
       <ul>
-        <li>Mild soap (pH-neutral) or Skywalker harness cleaner.</li>
+        <li>Mild soap (pH-neutral) or SkyFox harness cleaner.</li>
         <li>Soft-bristle brushes and clean cloths.</li>
         <li>Room-temperature water (do not exceed 110&deg;F).</li>
         <li>Plastic tubs or wash stations dedicated to safety gear.</li>
@@ -933,11 +933,11 @@ module.exports = [
       <h2>Special Contaminants</h2>
       <ul>
         <li><strong>Oil and grease:</strong> Pre-treat with citrus-based cleaners approved for synthetic fibers.</li>
-        <li><strong>Chemicals:</strong> Follow MSDS guidance and contact Skywalker if neutralizing agents are required.</li>
+        <li><strong>Chemicals:</strong> Follow MSDS guidance and contact SkyFox if neutralizing agents are required.</li>
         <li><strong>Biological exposure:</strong> Disinfect with approved solutions and document the process for health and safety records.</li>
       </ul>
 
-      <p>After cleaning, log the activity in your maintenance records. Need a turnkey wash station or supply kit? Skywalker can outfit your facility with everything required to keep gear inspection-ready.</p>
+      <p>After cleaning, log the activity in your maintenance records. Need a turnkey wash station or supply kit? SkyFox can outfit your facility with everything required to keep gear inspection-ready.</p>
     `.trim(),
     imagePrompt: 'Technician gently washing a safety harness in a dedicated cleaning station with soft brushes and drying rack, clean industrial aesthetic.'
   },
@@ -971,9 +971,9 @@ module.exports = [
       </ul>
 
       <h2>Digital Tracking</h2>
-      <p>Pair storage with RFID or QR code scanning to track check-in/check-out. The Skywalker Safety Hub app logs who used each harness, inspection dates, and cleaning cycles.</p>
+      <p>Pair storage with RFID or QR code scanning to track check-in/check-out. The SkyFox Safety Hub app logs who used each harness, inspection dates, and cleaning cycles.</p>
 
-      <p>Investing in proper storage extends equipment life, reduces replacement costs, and keeps crews confident. Contact Skywalker for modular storage systems matched to your fleet size.</p>
+      <p>Investing in proper storage extends equipment life, reduces replacement costs, and keeps crews confident. Contact SkyFox for modular storage systems matched to your fleet size.</p>
     `.trim(),
     imagePrompt: 'Organized safety equipment room with harnesses hanging on labeled racks, SRLs on shelves, clean lighting and clear signage, professional photograph.'
   },
@@ -982,13 +982,13 @@ module.exports = [
     excerpt: 'Know exactly when to remove fall protection gear from service and how to document the decision.',
     content: `
       <h2>Retirement Protects Workers</h2>
-      <p>Keeping damaged or expired gear in circulation puts lives at risk and exposes your company to liability. Use these criteria to decide when equipment must be pulled from service.</p>
+      <p>Keeping damaged or expired gear in circulation puts lives at risk and exposes your.company to liability. Use these criteria to decide when equipment must be pulled from service.</p>
 
       <h2>Trigger Events</h2>
       <ul>
         <li>Any fall arrest or shock load event.</li>
         <li>Exposure to corrosive chemicals, flames, or extreme heat.</li>
-        <li>Unauthorized modifications or missing components.</li>
+        <li>Unauthorized modifications or missing.components.</li>
       </ul>
 
       <h2>Wear and Damage Indicators</h2>
@@ -1020,41 +1020,41 @@ module.exports = [
       </table>
 
       <h2>Service Life Limits</h2>
-      <p>Always follow manufacturer recommendations. Skywalker harnesses carry a ten-year service life from first use if inspection records are complete and the gear passes all checks. Lanyards and SRLs may have shorter timelines depending on exposure.</p>
+      <p>Always follow manufacturer r.commendations. SkyFox harnesses carry a ten-year service life from first use if inspection records are.complete and the gear passes all checks. Lanyards and SRLs may have shorter timelines depending on exposure.</p>
 
       <h2>Retirement Process</h2>
       <ol>
         <li>Tag equipment immediately to prevent further use.</li>
         <li>Document serial number, reason for retirement, and inspector details.</li>
         <li>Notify procurement or safety leadership to schedule replacement.</li>
-        <li>Dispose according to company policy or return to Skywalker for analysis.</li>
+        <li>Dispose according to.company policy or return to SkyFox for analysis.</li>
       </ol>
 
-      <p>Our technical support team can review inspection findings, confirm retirement decisions, and recommend replacement products tailored to your environment.</p>
+      <p>Our technical support team can review inspection findings, confirm retirement decisions, and r.commend replacement products tailored to your environment.</p>
     `.trim(),
     imagePrompt: 'Infographic showing worn fall protection gear being tagged out and replaced, with icons for harness, lanyard, and SRL retirement criteria, clean visual style.'
   },
   {
     slug: 'service-request-process',
-    excerpt: 'Submit service requests that get rapid answers, repairs, or replacements from the Skywalker technical team.',
+    excerpt: 'Submit service requests that get rapid answers, repairs, or replacements from the SkyFox technical team.',
     content: `
       <h2>Support That Keeps You Working</h2>
-      <p>Whether you need a quick part replacement or a detailed engineering review, the Skywalker service desk is built for fast turnaround. Follow this process to get the help you need.</p>
+      <p>Whether you need a quick part replacement or a detailed engineering review, the SkyFox service desk is built for fast turnaround. Follow this process to get the help you need.</p>
 
       <h2>When to Open a Ticket</h2>
       <ul>
         <li>Equipment damage or suspected defect.</li>
-        <li>Questions about compatibility, installation, or inspection findings.</li>
+        <li>Questions about.compatibility, installation, or inspection findings.</li>
         <li>Requests for calibration certificates, manuals, or technical drawings.</li>
         <li>Field incidents requiring engineering analysis.</li>
       </ul>
 
       <h2>How to Submit</h2>
       <ol>
-        <li>Visit the Skywalker Service Portal or email support@skywalker.com.</li>
+        <li>Visit the SkyFox Service Portal or email support@skyfoxswings.com.</li>
         <li>Provide serial numbers, photos, and a brief description of the issue.</li>
         <li>Select priority level (urgent, high, standard) based on job impact.</li>
-        <li>Include site contact information and preferred communication method.</li>
+        <li>Include site contact information and preferred.communication method.</li>
       </ol>
 
       <h2>What Happens Next</h2>
@@ -1094,15 +1094,15 @@ module.exports = [
   },
   {
     slug: 'warranty-claims-process',
-    excerpt: 'Navigate the Skywalker warranty process with clear documentation, timelines, and support options.',
+    excerpt: 'Navigate the SkyFox warranty process with clear documentation, timelines, and support options.',
     content: `
       <h2>Warranty Coverage Overview</h2>
-      <p>Skywalker warrants harnesses, connectors, and anchors against manufacturing defects for the published service life when used as intended. Follow these steps to keep your claim moving quickly.</p>
+      <p>SkyFox warrants harnesses, connectors, and anchors against manufacturing defects for the published service life when used as intended. Follow these steps to keep your claim moving quickly.</p>
 
       <h2>Gather Documentation</h2>
       <ul>
         <li>Proof of purchase or asset assignment record.</li>
-        <li>Serial numbers and inspection history from the Skywalker Safety Hub.</li>
+        <li>Serial numbers and inspection history from the SkyFox Safety Hub.</li>
         <li>Photos or video clearly showing the defect.</li>
         <li>Description of how the issue was discovered and any associated incidents.</li>
       </ul>
@@ -1120,7 +1120,7 @@ module.exports = [
           <tr>
             <th class="border border-neutral-200 p-2 text-left">Stage</th>
             <th class="border border-neutral-200 p-2 text-left">Timeline</th>
-            <th class="border border-neutral-200 p-2 text-left">Outcome</th>
+            <th class="border border-neutral-200 p-2 text-left">Ou.come</th>
           </tr>
         </thead>
         <tbody>
@@ -1143,7 +1143,7 @@ module.exports = [
       </table>
 
       <h2>After the Decision</h2>
-      <p>Approved claims ship with prepaid labels for returning the defective product if needed. If a claim is denied, Skywalker provides a root-cause report and preventive recommendations.</p>
+      <p>Approved claims ship with prepaid labels for returning the defective product if needed. If a claim is denied, SkyFox provides a root-cause report and preventive r.commendations.</p>
 
       <h2>Keep Your Claim Moving</h2>
       <ul>
@@ -1152,21 +1152,21 @@ module.exports = [
         <li>Update your inspection records to note the pending warranty evaluation.</li>
       </ul>
 
-      <p>Questions about warranty coverage? Contact the Skywalker support desk for guidance before submitting a claim.</p>
+      <p>Questions about warranty coverage? Contact the SkyFox support desk for guidance before submitting a claim.</p>
     `.trim(),
     imagePrompt: 'Illustration of a warranty claim workflow with documents, shipping box, and customer support agent reviewing safety gear, clean corporate style.'
   },
   {
     slug: 'contact-technical-support',
-    excerpt: 'Reach the Skywalker technical support team through phone, portal, or live chat for instant answers.',
+    excerpt: 'Reach the SkyFox technical support team through phone, portal, or live chat for instant answers.',
     content: `
       <h2>Your Direct Line to Experts</h2>
-      <p>The Skywalker technical support desk connects you with engineers, trainers, and product specialists who know fall protection inside and out. Choose the channel that fits your urgency.</p>
+      <p>The SkyFox technical support desk connects you with engineers, trainers, and product specialists who know fall protection inside and out. Choose the channel that fits your urgency.</p>
 
       <h2>Support Channels</h2>
       <ul>
-        <li><strong>Phone:</strong> 1-800-SKYWALKER (Mon-Fri, 6am-6pm CT) for immediate assistance.</li>
-        <li><strong>Email:</strong> support@skywalker.com for non-urgent requests with attachments.</li>
+        <li><strong>Phone:</strong> 1-800-SKYFOX (Mon-Fri, 6am-6pm CT) for immediate assistance.</li>
+        <li><strong>Email:</strong> support@skyfoxswings.com for non-urgent requests with attachments.</li>
         <li><strong>Portal:</strong> Submit tickets, track status, and access knowledge base articles.</li>
         <li><strong>Live chat:</strong> Available inside the Safety Hub app for on-site questions.</li>
       </ul>
@@ -1207,16 +1207,16 @@ module.exports = [
         </tbody>
       </table>
 
-      <p>For after-hours emergencies, call the hotline and select option 9 to page the on-call engineer. We are committed to keeping your crews safe around the clock.</p>
+      <p>For after-hours emergencies, call the hotline and select option 9 to page the on-call engineer. We are.committed to keeping your crews safe around the clock.</p>
     `.trim(),
     imagePrompt: 'Technical support representative assisting a field technician via video call, with schematics and fall protection gear visible, modern collaborative setting.'
   },
   {
     slug: 'equipment-returns-process',
-    excerpt: 'Ship Skywalker equipment back with confidence using this streamlined returns checklist.',
+    excerpt: 'Ship SkyFox equipment back with confidence using this streamlined returns checklist.',
     content: `
       <h2>Returns Made Simple</h2>
-      <p>Whether you ordered the wrong size or need to exchange unused stock, the Skywalker returns process keeps things straightforward and fast.</p>
+      <p>Whether you ordered the wrong size or need to exchange unused stock, the SkyFox returns process keeps things straightforward and fast.</p>
 
       <h2>Check Eligibility</h2>
       <ul>
@@ -1227,7 +1227,7 @@ module.exports = [
 
       <h2>Submit a Return Request</h2>
       <ol>
-        <li>Log into your Skywalker account or email returns@skywalker.com.</li>
+        <li>Log into your SkyFox account or email returns@skywalker.com.</li>
         <li>Provide order number, item details, and reason for return.</li>
         <li>Select your preferred resolution: exchange, refund, or account credit.</li>
       </ol>
@@ -1267,7 +1267,7 @@ module.exports = [
       <h2>Stay Informed</h2>
       <p>Track your return status through the portal. You will receive email updates when the package is received, inspected, and refunded. Reach out to your account manager for bulk returns or project demobilizations.</p>
 
-      <p>Need packaging supplies or freight scheduling assistance? The Skywalker logistics team can help coordinate pickup and ensure your equipment arrives safely.</p>
+      <p>Need packaging supplies or freight scheduling assistance? The SkyFox logistics team can help coordinate pickup and ensure your equipment arrives safely.</p>
     `.trim(),
     imagePrompt: 'Warehouse scene with safety gear being packed for return shipment, labeled boxes, RMA paperwork, and shipping station, clean realistic style.'
   }

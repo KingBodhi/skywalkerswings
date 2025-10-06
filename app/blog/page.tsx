@@ -22,8 +22,8 @@ const blogPosts = blogPostsData as unknown as BlogPost[];
 
 export default async function BlogPage() {
   const posts = blogPosts;
-  const featuredPosts = posts.filter(post => post.slug === 'introducing-kinetic-fall-arrest').slice(0, 1);
-  const regularPosts = posts.filter(post => post.slug !== 'introducing-kinetic-fall-arrest').slice(0, 11);
+  const [featuredPost, ...rest] = posts;
+  const regularPosts = rest;
 
   return (
     <div className="bg-gradient-to-br from-neutral-50 to-white min-h-screen">
@@ -31,23 +31,22 @@ export default async function BlogPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="font-display text-display-1 font-bold text-primary-600 mb-4">
-              Safety Insights & Research
+              SkyFox Suspension Journal
             </h1>
             <p className="text-body-lg text-neutral-800 max-w-3xl mx-auto leading-relaxed">
-              Expert insights on fall protection technology, industry standards, and safety best practices
-              to keep your team protected on the job.
+              Concierge notes on rigging, styling, aftercare, and troubleshooting so your SkyFox suite always feels weightless, safe, and indulgent.
             </p>
           </div>
 
           {/* Featured Article */}
-          {featuredPosts.length > 0 && (
+          {featuredPost && (
             <div className="mb-16">
               <h2 className="font-display text-2xl font-bold text-primary-600 mb-8">Featured Article</h2>
               <div className="card overflow-hidden lg:flex">
                 <div className="lg:w-1/2 aspect-[16/9] lg:aspect-auto bg-gradient-to-br from-primary-50 to-primary-100 relative overflow-hidden">
                   <img
-                    src={featuredPosts[0].featuredImage || "/images/blog/kinetic.svg"}
-                    alt={featuredPosts[0].title}
+                    src={featuredPost.featuredImage || "/images/skyfox-placeholder.png"}
+                    alt={featuredPost.title}
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute top-6 left-6 bg-accent-500 text-white px-4 py-2 rounded-full text-sm font-bold">
@@ -56,23 +55,23 @@ export default async function BlogPage() {
                 </div>
                 <div className="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
                   <div className="flex items-center gap-4 mb-4">
-                    {featuredPosts[0].category && (
+                    {featuredPost.category && (
                       <span className="bg-primary-100 text-primary-700 px-3 py-1 rounded-full text-sm font-semibold">
-                        {featuredPosts[0].category}
+                        {featuredPost.category}
                       </span>
                     )}
-                    {featuredPosts[0].readTime && (
-                      <span className="text-neutral-500 text-sm">{featuredPosts[0].readTime}</span>
+                    {featuredPost.readTime && (
+                      <span className="text-neutral-500 text-sm">{featuredPost.readTime}</span>
                     )}
                   </div>
                   <h3 className="font-display text-3xl font-bold text-primary-600 mb-4">
-                    {featuredPosts[0].title}
+                    {featuredPost.title}
                   </h3>
                   <p className="text-neutral-800 mb-6 leading-relaxed text-lg">
-                    {featuredPosts[0].excerpt}
+                    {featuredPost.excerpt}
                   </p>
                   <Link
-                    href={`/blog/${featuredPosts[0].slug}`}
+                    href={`/blog/${featuredPost.slug}`}
                     className="inline-flex items-center text-accent-500 hover:text-accent-600 font-bold transition-colors"
                   >
                     Read Full Article
@@ -87,7 +86,7 @@ export default async function BlogPage() {
 
           {/* Recent Articles */}
           <div className="mb-16">
-            <h2 className="font-display text-2xl font-bold text-primary-600 mb-8">All Articles</h2>
+            <h2 className="font-display text-2xl font-bold text-primary-600 mb-8">Latest Entries</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {regularPosts.map((post) => (
                 <Link
@@ -97,7 +96,7 @@ export default async function BlogPage() {
                 >
                   <div className="aspect-[16/9] bg-gradient-to-br from-primary-50 to-primary-100 relative overflow-hidden">
                     <img
-                      src={post.featuredImage || "/images/blog/placeholder.svg"}
+                    src={post.featuredImage || "/images/skyfox-placeholder.png"}
                       alt={post.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />

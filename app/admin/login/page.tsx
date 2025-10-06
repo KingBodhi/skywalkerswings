@@ -38,7 +38,7 @@ export default function Page() {
         <div className="card p-8">
           <div className="text-center mb-8">
             <div className="font-display text-2xl font-bold text-primary-600 mb-2">
-              SKYWALKER ADMIN
+              SKYFOX ADMIN
             </div>
             <p className="text-neutral-600">Sign in to your admin panel</p>
           </div>
@@ -51,7 +51,7 @@ export default function Page() {
               <input
                 value={email}
                 onChange={e => setEmail(e.target.value)}
-                placeholder="admin@skywalker.com"
+                placeholder="admin@skyfoxswings.com"
                 type="email"
                 className="admin-input"
                 required

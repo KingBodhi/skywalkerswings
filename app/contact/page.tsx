@@ -66,7 +66,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <label className='mb-2 block text-sm font-semibold text-primary-700'>Email *</label>
-                    <input className='input-field w-full' name='email' placeholder='you@skywalkerswing.com' required type='email' />
+                    <input className='input-field w-full' name='email' placeholder='you@skyfoxswings.com' required type='email' />
                   </div>
                 </div>
 
@@ -124,13 +124,13 @@ export default function ContactPage() {
                 <h2 className='font-display text-xl font-semibold text-primary-800'>Talk to a Human</h2>
                 <p className='mt-3 text-sm text-neutral-600'>Concierge stylists are available daily to help with mounting, materials, gifting, and custom builds.</p>
                 <div className='mt-6 space-y-4 text-sm text-neutral-700'>
-                  <a className='flex items-center gap-3 rounded-xl bg-neutral-100 px-4 py-3 transition-colors hover:bg-neutral-200' href='tel:+18337946464'>
+                  <a className='flex items-center gap-3 rounded-xl bg-neutral-100 px-4 py-3 transition-colors hover:bg-neutral-200' href='tel:+1833759369'>
                     <span className='inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary-700 text-white'>📞</span>
-                    <span>1-833-SWINGS (10a–10p ET)</span>
+                    <span>1-833-SKYFOX (10a–10p ET)</span>
                   </a>
-                  <a className='flex items-center gap-3 rounded-xl bg-neutral-100 px-4 py-3 transition-colors hover:bg-neutral-200' href='mailto:concierge@skywalkerswings.com'>
+                  <a className='flex items-center gap-3 rounded-xl bg-neutral-100 px-4 py-3 transition-colors hover:bg-neutral-200' href='mailto:concierge@skyfoxswings.com'>
                     <span className='inline-flex h-10 w-10 items-center justify-center rounded-lg bg-accent-500 text-neutral-900'>✉️</span>
-                    <span>concierge@skywalkerswings.com</span>
+                    <span>concierge@skyfoxswings.com</span>
                   </a>
                   <div className='rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-3'>
                     <div className='font-semibold text-neutral-800'>Text (Beta)</div>

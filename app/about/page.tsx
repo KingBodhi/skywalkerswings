@@ -4,56 +4,56 @@ import Link from "next/link";
 
 const team = [
   {
-    name: "Dr. Sarah Mitchell",
-    role: "Chief Technology Officer", 
-    bio: "25+ years in biomechanical engineering and fall protection systems. PhD from MIT.",
+    name: "Ari Fox",
+    role: "Founder & Creative Director", 
+    bio: "Intimacy choreographer and master rigger who has spent 15 years building bespoke suspension lounges for resorts, film sets, and private collectors.",
     image: "/images/team/sarah.jpg",
-    linkedin: "https://linkedin.com/in/sarah-mitchell"
+    linkedin: "https://linkedin.com/in/arifox"
   },
   {
-    name: "Marcus Rodriguez",
-    role: "VP Safety Engineering",
-    bio: "Former OSHA compliance officer with expertise in workplace safety standards and regulations.", 
+    name: "Lena Hart",
+    role: "Head of Rigging & Safety",
+    bio: "Former aerial performer and structural rigger focused on making every SkyFox install body-safe, whisper quiet, and indulgently smooth.", 
     image: "/images/team/marcus.jpg",
-    linkedin: "https://linkedin.com/in/marcus-rodriguez"
+    linkedin: "https://linkedin.com/in/lenahart"
   },
   {
-    name: "Jennifer Kim",
-    role: "Director of Product Development",
-    bio: "Industrial designer focused on ergonomic safety equipment innovation and user experience.",
+    name: "Devon Cruz",
+    role: "Director of Materials & Aftercare",
+    bio: "Textile engineer obsessed with vegan faux furs, washable velvets, and aftercare rituals that keep suites fresh for the next scene.",
     image: "/images/team/jennifer.jpg", 
-    linkedin: "https://linkedin.com/in/jennifer-kim"
+    linkedin: "https://linkedin.com/in/devoncruz"
   }
 ];
 
 const milestones = [
-  { year: "2018", title: "Company Founded", description: "Started with a mission to revolutionize fall protection technology" },
-  { year: "2020", title: "Patent Filed", description: "Kinetic Fall-Arrest System patent application submitted to USPTO" },
-  { year: "2022", title: "ANSI Certification", description: "First products receive ANSI Z359.1-2016 certification" },
-  { year: "2023", title: "5,000+ Sites", description: "Protecting workers across 5,000+ job sites nationwide" },
-  { year: "2024", title: "Global Expansion", description: "International certifications and distribution partnerships launched" }
+  { year: "2018", title: "First Loft Transformation", description: "Converted a Brooklyn walk-up into a weightless play lounge for a private client." },
+  { year: "2019", title: "Concierge Install Launch", description: "Introduced white-glove hardware planning, installer matchmaking, and post-install styling." },
+  { year: "2021", title: "Resort Partnerships", description: "Outfitted boutique hotels and lifestyle clubs with SkyFox suspension suites coast to coast." },
+  { year: "2023", title: "SkyFox Academy", description: "Certified 120+ professional riggers on our consent-first install standards." },
+  { year: "2024", title: "Sensory Capsule Collection", description: "Released limited faux fur textiles and lighting palettes curated by our studio." }
 ];
 
 const values = [
   {
-    icon: "🎯",
-    title: "Mission-Driven",
-    description: "Every decision we make is guided by our mission to eliminate preventable workplace injuries and save lives."
+    icon: "💋",
+    title: "Consent First",
+    description: "Every design, install, and concierge script begins with enthusiastic communication and intentional aftercare."
   },
   {
-    icon: "🔬", 
-    title: "Science-Based",
-    description: "We base our innovations on rigorous scientific research, biomechanical engineering, and real-world testing."
+    icon: "🪶", 
+    title: "Sensory Craft",
+    description: "We blend lush fabrics, lighting, and scent to create multi-sensory experiences that feel cinematic and safe." 
   },
   {
-    icon: "🤝",
-    title: "Partnership",
-    description: "We work closely with safety professionals, regulatory bodies, and industry leaders to create effective solutions."
+    icon: "🛠️",
+    title: "Rigging Excellence",
+    description: "Engineered hardware plans, redundant anchors, and certified installers keep every moment weightless and secure." 
   },
   {
-    icon: "🌍",
-    title: "Global Impact",
-    description: "Our vision extends beyond individual products to transforming workplace safety standards worldwide."
+    icon: "🤗",
+    title: "Inclusive Pleasure",
+    description: "SkyFox suites are weighted, sized, and styled to celebrate every body and every type of play partner." 
   }
 ];
 
@@ -66,18 +66,16 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
               <div className="inline-flex items-center gap-2 bg-primary-100 text-primary-800 px-4 py-2 rounded-full text-sm font-semibold mb-6 border border-primary-200">
-                <span className="text-lg">🏢</span>
+                <span className="text-lg">🦊</span>
                 Our Story
               </div>
               
               <h1 className="font-display text-5xl md:text-6xl font-bold text-primary-600 mb-6 leading-tight">
-                Revolutionizing <span className="text-accent-500">Safety</span> Through Innovation
+                Designing <span className="text-accent-500">Weightless Pleasure</span>
               </h1>
               
               <p className="text-xl text-neutral-700 mb-8 leading-relaxed">
-                At Skywalker Unlimited, we're on a mission to eliminate preventable workplace injuries 
-                and deaths from fall-related accidents. Our patent-pending kinetic geometry technology 
-                represents a fundamental breakthrough in fall protection.
+                SkyFox Swings choreographs luxury suspension suites for adults who crave immersive, consent-led play. From velvet cradles to pro-grade rigging plans, we blend sensual design with structural rigor so every scene feels indulgent, safe, and unforgettable.
               </p>
               
               <div className="grid md:grid-cols-2 gap-6">
@@ -87,7 +85,7 @@ export default function AboutPage() {
                   </div>
                   <div>
                     <div className="font-bold text-primary-600">Mission</div>
-                    <div className="text-neutral-700">Zero preventable fall injuries</div>
+                    <div className="text-neutral-700">Hold every body in decadent, confident suspension</div>
                   </div>
                 </div>
                 
@@ -97,7 +95,7 @@ export default function AboutPage() {
                   </div>
                   <div>
                     <div className="font-bold text-primary-600">Innovation</div>
-                    <div className="text-neutral-700">Science-based solutions</div>
+                    <div className="text-neutral-700">Sensory design backed by structural engineering</div>
                   </div>
                 </div>
               </div>
@@ -107,7 +105,7 @@ export default function AboutPage() {
               <div className="relative rounded-2xl overflow-hidden shadow-lg">
                 <img 
                   src="/images/about-hero.jpg" 
-                  alt="Skywalker team developing safety equipment"
+                  alt="SkyFox studio styling a luxury suspension swing"
                   className="w-full h-full object-cover aspect-[4/3]"
                   onError={(e) => {
                     e.currentTarget.src = "/images/hero.svg";
@@ -119,8 +117,8 @@ export default function AboutPage() {
               {/* Floating stats */}
               <div className="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-lg p-6 border border-neutral-200">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary-600">5,000+</div>
-                  <div className="text-sm text-neutral-600">Job Sites Protected</div>
+                  <div className="text-3xl font-bold text-primary-600">2,500+</div>
+                  <div className="text-sm text-neutral-600">Suites Styled Worldwide</div>
                 </div>
               </div>
             </div>
@@ -136,7 +134,7 @@ export default function AboutPage() {
               Our Core Values
             </h2>
             <p className="text-xl text-neutral-700 max-w-3xl mx-auto">
-              The principles that guide everything we do
+              The principles that shape every SkyFox encounter
             </p>
           </div>
 
@@ -159,11 +157,10 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl font-bold text-primary-600 mb-6">
-              The Problem We're Solving
+              Why Mass-Market Swings Fall Short
             </h2>
             <p className="text-xl text-neutral-700 max-w-4xl mx-auto leading-relaxed">
-              Traditional fall-arrest harnesses can cause suspension trauma, leading to serious injury or death 
-              even after a successful fall arrest. We're changing that with breakthrough technology.
+              Big-box swings weren’t built for long scenes, larger bodies, or concierge-level installs. They pinch, creak, and offer zero support once the fantasy fades. SkyFox was born to fix that.
             </p>
           </div>
 
@@ -176,8 +173,8 @@ export default function AboutPage() {
                     <span className="text-danger-600 text-2xl">⚠️</span>
                   </div>
                   <div>
-                    <div className="font-bold text-danger-800 mb-2">Suspension Trauma</div>
-                    <div className="text-danger-700">Concentrated strap pressure restricts blood flow, leading to unconsciousness</div>
+                    <div className="font-bold text-danger-800 mb-2">Pressure & Pinch Points</div>
+                    <div className="text-danger-700">Thin straps dig into hips and shoulders, leaving bruises and forcing early dismounts.</div>
                   </div>
                 </div>
                 
@@ -186,8 +183,8 @@ export default function AboutPage() {
                     <span className="text-danger-600 text-2xl">⏱️</span>
                   </div>
                   <div>
-                    <div className="font-bold text-danger-800 mb-2">Limited Time</div>
-                    <div className="text-danger-700">As little as 15 minutes before serious injury or death</div>
+                    <div className="font-bold text-danger-800 mb-2">No Install Guidance</div>
+                    <div className="text-danger-700">Generic hardware, no weight ratings, and zero structural planning for real-world ceilings.</div>
                   </div>
                 </div>
                 
@@ -196,23 +193,23 @@ export default function AboutPage() {
                     <span className="text-danger-600 text-2xl">🚫</span>
                   </div>
                   <div>
-                    <div className="font-bold text-danger-800 mb-2">Rescue Complications</div>
-                    <div className="text-danger-700">Worker cannot self-rescue or assist in rescue operations</div>
+                    <div className="font-bold text-danger-800 mb-2">Aftercare Blind Spots</div>
+                    <div className="text-danger-700">No cleaning rituals, textile care, or safety checklists between partners or guests.</div>
                   </div>
                 </div>
               </div>
             </div>
 
             <div>
-              <h3 className="font-display text-3xl font-bold text-primary-600 mb-8">Our Breakthrough Solution</h3>
+              <h3 className="font-display text-3xl font-bold text-primary-600 mb-8">The SkyFox Difference</h3>
               <div className="space-y-6">
                 <div className="flex items-start gap-4 p-6 bg-success-50 rounded-2xl border border-success-200">
                   <div className="w-12 h-12 bg-success-100 rounded-lg flex items-center justify-center flex-shrink-0">
                     <span className="text-success-600 text-2xl">✅</span>
                   </div>
                   <div>
-                    <div className="font-bold text-success-800 mb-2">Kinetic Geometry</div>
-                    <div className="text-success-700">Distributes load across multiple pressure points, preserving circulation</div>
+                    <div className="font-bold text-success-800 mb-2">Body-Hugging Cradles</div>
+                    <div className="text-success-700">Memory-foam cores and plush textiles cradle every curve without pressure hot spots.</div>
                   </div>
                 </div>
                 
@@ -221,8 +218,8 @@ export default function AboutPage() {
                     <span className="text-success-600 text-2xl">⏰</span>
                   </div>
                   <div>
-                    <div className="font-bold text-success-800 mb-2">Extended Time</div>
-                    <div className="text-success-700">Up to 3x longer survivable suspension time</div>
+                    <div className="font-bold text-success-800 mb-2">Concierge Rigging Plans</div>
+                    <div className="text-success-700">Personalized anchor maps, vetted installers, and redundant hardware for every space.</div>
                   </div>
                 </div>
                 
@@ -231,8 +228,8 @@ export default function AboutPage() {
                     <span className="text-success-600 text-2xl">🤝</span>
                   </div>
                   <div>
-                    <div className="font-bold text-success-800 mb-2">Active Rescue</div>
-                    <div className="text-success-700">Worker maintains mobility and can assist in rescue operations</div>
+                    <div className="font-bold text-success-800 mb-2">Aftercare Rituals</div>
+                    <div className="text-success-700">Washable covers, scent programs, and safety checklists keep suites pristine between scenes.</div>
                   </div>
                 </div>
               </div>
@@ -249,7 +246,7 @@ export default function AboutPage() {
               Our Journey
             </h2>
             <p className="text-xl text-neutral-700">
-              From research lab to protecting workers on job sites worldwide
+              From a hush-hush loft experiment to designing suites for resorts and private collectors worldwide
             </p>
           </div>
 
@@ -286,7 +283,7 @@ export default function AboutPage() {
               Leadership Team
             </h2>
             <p className="text-xl text-neutral-700">
-              Safety experts and engineers committed to protecting every worker
+              Designers, riggers, and textile obsessives crafting indulgent, consent-forward play spaces
             </p>
           </div>
 
@@ -333,22 +330,22 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div>
               <div className="text-5xl font-bold text-white mb-2">6</div>
-              <div className="text-xl text-white/90">Years of Innovation</div>
+              <div className="text-xl text-white/90">Years Designing Weightless Escapes</div>
             </div>
             
             <div>
-              <div className="text-5xl font-bold text-white mb-2">5,000+</div>
-              <div className="text-xl text-white/90">Job Sites Protected</div>
+              <div className="text-5xl font-bold text-white mb-2">2,500+</div>
+              <div className="text-xl text-white/90">Suites Styled & Counting</div>
             </div>
             
             <div>
-              <div className="text-5xl font-bold text-white mb-2">15+</div>
-              <div className="text-xl text-white/90">Safety Certifications</div>
+              <div className="text-5xl font-bold text-white mb-2">120+</div>
+              <div className="text-xl text-white/90">Certified Riggers & Installers</div>
             </div>
             
             <div>
-              <div className="text-5xl font-bold text-white mb-2">99.9%</div>
-              <div className="text-xl text-white/90">Safety Record</div>
+              <div className="text-5xl font-bold text-white mb-2">98%</div>
+              <div className="text-xl text-white/90">Client Repeat Rate</div>
             </div>
           </div>
         </div>
@@ -359,11 +356,10 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-3xl mx-auto">
             <h2 className="font-display text-4xl md:text-5xl font-bold text-primary-600 mb-6">
-              Ready to Join Our Mission?
+              Ready to Build Your SkyFox Suite?
             </h2>
             <p className="text-xl text-neutral-700 mb-8 leading-relaxed">
-              Whether you're a safety professional, distributor, or someone who shares our vision 
-              of zero preventable fall injuries, we'd love to work with you.
+              Partner with our concierge team to script the swing room of your dreams—whether it’s a private penthouse, boutique resort, or content studio that needs to feel limitless.
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center gap-6">

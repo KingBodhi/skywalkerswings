@@ -1,5 +1,5 @@
 {
-  "name": "skywalker-unlimited",
+  "name": "skyfox-swings",
   "private": true,
   "scripts": {
     "dev": "prisma generate && next dev",

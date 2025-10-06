@@ -23,7 +23,7 @@ export default function TermsPage() {
 
             <h2 className="font-display text-2xl font-bold text-primary-600 mt-8 mb-4">Limitation of Liability</h2>
             <p className="text-neutral-700 leading-relaxed mb-6">
-              In no event shall Skywalker Unlimited be liable for any direct, indirect, punitive, 
+              In no event shall SkyFox Swings be liable for any direct, indirect, punitive, 
               incidental, special, or consequential damages.
             </p>
 

@@ -6,7 +6,7 @@ import useSWR from "swr";
 
 const NAV_LINKS = [
   { label: "Swings", href: "/shop" },
-  { label: "Guides", href: "/blog" },
+  { label: "Journal", href: "/blog" },
   { label: "Support", href: "/support" },
 ] as const;
 
@@ -35,13 +35,13 @@ function CartIcon() {
 function ConciergeContact() {
   return (
     <a
-      href="tel:+18337946464"
+      href="tel:+1833759369"
       className="hidden lg:flex items-center gap-2 text-sm font-medium whitespace-nowrap hover:text-accent-200 transition-colors"
     >
       <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
       </svg>
-      1-833-SWINGS
+      1-833-SKYFOX
       <span className="text-xs text-white/70">Concierge daily 10a–10p ET</span>
     </a>
   );
@@ -63,7 +63,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-3 group">
             <div className="font-display text-lg font-bold tracking-wide transition-colors group-hover:text-accent-200 sm:text-xl">
-              SKYWALKER <span className="text-white/70">SWINGS</span>
+              SKYFOX <span className="text-white/70">SWINGS</span>
             </div>
           </Link>
 
@@ -113,7 +113,7 @@ export default function Navbar() {
           />
           <div className="fixed right-0 top-0 h-full w-80 max-w-[90vw] bg-neutral-950 text-white shadow-2xl border-l border-neutral-800">
             <div className="flex items-center justify-between p-6 border-b border-neutral-800 bg-primary-900">
-              <div className="font-display text-lg font-bold">SKYWALKER SWINGS</div>
+              <div className="font-display text-lg font-bold">SKYFOX SWINGS</div>
               <button
                 onClick={() => setOpen(false)}
                 className="p-2 rounded-lg hover:bg-white/10 transition-colors"
@@ -139,14 +139,14 @@ export default function Navbar() {
 
               <div className="pt-4 border-t border-neutral-800 space-y-3">
                 <a
-                  href="tel:+18337946464"
+                  href="tel:+1833759369"
                   className="flex items-center gap-3 px-4 py-3 text-base font-medium hover:bg-white/10 rounded-lg transition-colors"
                 >
                   <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                   <div>
-                    <div className="font-semibold">1-833-SWINGS</div>
+                    <div className="font-semibold">1-833-SKYFOX</div>
                     <div className="text-sm text-white/70">Concierge daily 10a–10p ET</div>
                   </div>
                 </a>

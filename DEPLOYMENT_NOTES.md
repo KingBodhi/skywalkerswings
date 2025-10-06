@@ -92,7 +92,7 @@ From the logs, I can see the application is working perfectly:
 - [ ] Configure production environment variables
 
 ### **For Production Deployment**
-- [ ] Set up production database (PostgreSQL recommended)
+- [ ] Set up production database (PostgreSQL r.commended)
 - [ ] Configure Redis for enhanced rate limiting
 - [ ] Set up proper email SMTP for contact forms
 - [ ] Configure monitoring and alerting

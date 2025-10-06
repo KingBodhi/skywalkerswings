@@ -3,6 +3,9 @@ import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { money } from "@/lib/utils";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 const categories = [
   {
     title: 'Signature Velvet Swings',
@@ -14,8 +17,8 @@ const categories = [
   },
   {
     title: 'Faux Fur & Fantasy',
-    description: 'Limited faux fur trims, feather tassels, and statement textiles direct from the Skywalker studio.',
-    image: '/images/products/swing-placeholder.svg',
+    description: 'Limited faux fur trims, feather tassels, and statement textiles direct from the SkyFox studio.',
+    image: '/images/skyfox-placeholder.png',
     href: '/collection/faux-fur',
     stats: 'Limited Run',
     features: ['Feather & faux fur accents', 'Monochrome or neon palettes', 'Ships with care guide']
@@ -67,10 +70,10 @@ export default async function ShopPage() {
               Shop Our Products
             </div>
             <h1 className="font-display text-display-1 font-bold text-primary-600 mb-4">
-              Skywalker Swings Collections
+              SkyFox Swings Collections
             </h1>
             <p className="text-body-lg text-neutral-600 max-w-3xl mx-auto">
-              Explore Skywalker Swings collections curated for suites, studios, travel play, and hospitality installs. Weight-tested hardware, concierge styling, and indulgent textiles come standard.
+              Explore SkyFox Swings collections curated for suites, studios, travel play, and hospitality installs. Weight-tested hardware, concierge styling, and indulgent textiles come standard.
             </p>
           </div>
 
@@ -124,7 +127,7 @@ export default async function ShopPage() {
                 All Products
               </h2>
               <p className="text-body-lg text-neutral-600">
-                Browse the full Skywalker Swings lineup and find the suspension style that fits your space.
+                Browse the full SkyFox Swings lineup and find the suspension style that fits your space.
               </p>
             </div>
 
@@ -206,10 +209,10 @@ export default async function ShopPage() {
               </Link>
               
               <a 
-                href="tel:+1-800-SKYWALKER"
+                href="tel:+1800759369"
                 className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/60 px-6 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-white/15"
               >
-                Call 1-800-SKYWALKER
+                Call 1-800-SKYFOX
               </a>
             </div>
           </div>

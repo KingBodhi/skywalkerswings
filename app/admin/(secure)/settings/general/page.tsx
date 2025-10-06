@@ -3,9 +3,9 @@ import { useState } from 'react';
 
 export default function GeneralSettingsPage() {
   const [settings, setSettings] = useState({
-    storeName: 'Skywalker Unlimited',
-    storeEmail: 'info@skywalker.com',
-    storePhone: '1-800-SKYWALKER',
+    storeName: 'SkyFox Swings',
+    storeEmail: 'info@skyfoxswings.com',
+    storePhone: '1-800-SKYFOX',
     currency: 'USD',
     timezone: 'America/New_York',
     storeOnline: true,

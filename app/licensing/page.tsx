@@ -8,14 +8,14 @@ export default function LicensingPage() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-primary-100 text-primary-800 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-              <span className="text-lg">🏭</span>
-              Technology Licensing
+              <span className="text-lg">🦊</span>
+              Experience Licensing
             </div>
             <h1 className="font-display text-5xl font-bold text-primary-600 mb-4">
-              Kinetic Technology Licensing
+              SkyFox Experience Licensing
             </h1>
             <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
-              License our patent-pending kinetic fall-arrest platform for integration across application classes and industries.
+              License the SkyFox suspension architecture to bring concierge-grade swings, textiles, and rituals to your brand, venue, or retail line.
             </p>
           </div>
 
@@ -25,12 +25,10 @@ export default function LicensingPage() {
                 <h2 className="font-display text-2xl font-bold text-primary-600 mb-6">Licensing Opportunities</h2>
                 <div className="space-y-4 text-neutral-700">
                   <p>
-                    We offer comprehensive IP licensing and co-development agreements for equipment 
-                    manufacturers serving military, construction, and recreational markets.
+                    We collaborate with hospitality groups, boutique retailers, luxury designers, and creators who want SkyFox-grade suspension in their spaces and product lines.
                   </p>
                   <p>
-                    Our licensing partners gain access to revolutionary kinetic geometry technology 
-                    that significantly improves worker safety and extends survivable suspension time.
+                    Licensing partners receive our rigging blueprints, textile palettes, and concierge playbooks so guests experience body-safe, cinematic suspension every time.
                   </p>
                 </div>
               </div>
@@ -39,11 +37,11 @@ export default function LicensingPage() {
                 <h3 className="font-display text-xl font-bold text-primary-600 mb-4">What's Included</h3>
                 <div className="space-y-3">
                   {[
-                    'Complete technical documentation under NDA',
-                    'Integration guidance and engineering support',
-                    'Access to proprietary test data and methodologies',
-                    'Manufacturing specifications and quality standards',
-                    'Ongoing product development collaboration'
+                    'Rigging and structural blueprints tailored to your venue',
+                    'Concierge training for in-house teams and installers',
+                    'Textile and scent capsule library with sourcing partners',
+                    'Operations and aftercare protocols for multi-guest use',
+                    'Co-branded marketing assets and launch playbooks'
                   ].map((item, index) => (
                     <div key={index} className="flex items-start gap-3">
                       <svg className="w-5 h-5 text-success-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
@@ -58,29 +56,29 @@ export default function LicensingPage() {
 
             <div className="space-y-8">
               <div className="card p-8">
-                <h3 className="font-display text-xl font-bold text-primary-600 mb-4">Market Applications</h3>
+                <h3 className="font-display text-xl font-bold text-primary-600 mb-4">Where SkyFox Thrives</h3>
                 <div className="space-y-4">
                   <div className="flex items-center gap-4 p-4 bg-neutral-50 rounded-xl">
-                    <div className="text-2xl">🏗️</div>
+                    <div className="text-2xl">🏨</div>
                     <div>
-                      <div className="font-semibold text-primary-600">Construction & Industrial</div>
-                      <div className="text-sm text-neutral-600">Jobsite safety equipment manufacturers</div>
+                      <div className="font-semibold text-primary-600">Hospitality & Resorts</div>
+                      <div className="text-sm text-neutral-600">Upgrade suites, lounges, and speakeasies with indulgent suspension rooms.</div>
                     </div>
                   </div>
                   
                   <div className="flex items-center gap-4 p-4 bg-neutral-50 rounded-xl">
-                    <div className="text-2xl">⚔️</div>
+                    <div className="text-2xl">🎥</div>
                     <div>
-                      <div className="font-semibold text-primary-600">Military & Tactical</div>
-                      <div className="text-sm text-neutral-600">Defense contractors and tactical gear manufacturers</div>
+                      <div className="font-semibold text-primary-600">Creators & Studios</div>
+                      <div className="text-sm text-neutral-600">Content houses and production teams needing camera-ready suspension rigs.</div>
                     </div>
                   </div>
                   
                   <div className="flex items-center gap-4 p-4 bg-neutral-50 rounded-xl">
                     <div className="text-2xl">🧗</div>
                     <div>
-                      <div className="font-semibold text-primary-600">Recreation & Sports</div>
-                      <div className="text-sm text-neutral-600">Outdoor equipment and climbing gear companies</div>
+                      <div className="font-semibold text-primary-600">Retail & Boutique Brands</div>
+                      <div className="text-sm text-neutral-600">Launch SkyFox-approved swing collections with full-service aftercare support.</div>
                     </div>
                   </div>
                 </div>
@@ -89,8 +87,7 @@ export default function LicensingPage() {
               <div className="card p-8">
                 <h3 className="font-display text-xl font-bold text-primary-600 mb-4">Get Started</h3>
                 <p className="text-neutral-700 mb-6">
-                  Ready to integrate kinetic technology into your product line? 
-                  Contact our licensing team with your market details and timeline.
+                  Ready to weave SkyFox suspension into your next concept? Share your project scope and launch timeline and our licensing team will curate the perfect package.
                 </p>
                 <Link 
                   href="/contact"
@@ -108,10 +105,10 @@ export default function LicensingPage() {
           {/* Call to Action */}
           <div className="bg-gradient-to-r from-primary-600 to-primary-700 rounded-3xl text-white p-12 text-center">
             <h2 className="font-display text-2xl font-bold mb-4">
-              Transform Your Safety Equipment Line
+              Elevate Your Guests' Suspension Experience
             </h2>
             <p className="text-white/90 mb-6 max-w-2xl mx-auto">
-              Join leading manufacturers who are revolutionizing worker safety with kinetic fall-arrest technology.
+              Join resorts, designers, and creators who trust SkyFox to deliver body-safe, unforgettable play.
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -123,10 +120,10 @@ export default function LicensingPage() {
               </Link>
               
               <a 
-                href="tel:+1-800-SKYWALKER"
+                href="tel:+1800759369"
                 className="bg-white/20 hover:bg-white/30 text-white px-8 py-4 rounded-xl font-bold transition-all duration-200"
               >
-                Call 1-800-SKYWALKER
+                Call 1-800-SKYFOX
               </a>
             </div>
           </div>

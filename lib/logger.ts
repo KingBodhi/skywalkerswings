@@ -27,7 +27,7 @@ export const logger = pino({
   base: {
     pid: process.pid,
     hostname: process.env.HOSTNAME || 'localhost',
-    service: 'skywalker-api'
+    service: 'skyfox-api'
   }
 });
 

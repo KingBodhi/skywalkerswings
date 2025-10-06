@@ -144,7 +144,7 @@ export default function TeamSettingsPage() {
                   value={newUser.email}
                   onChange={(e) => setNewUser({...newUser, email: e.target.value})}
                   className="admin-input"
-                  placeholder="user@skywalker.com"
+                  placeholder="user@skyfoxswings.com"
                 />
               </div>
               

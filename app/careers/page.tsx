@@ -51,7 +51,7 @@ export default function CareersPage() {
             <div className='inline-flex items-center gap-2 rounded-full bg-accent-100 px-4 py-2 text-sm font-semibold text-accent-700'>
               <span>💼</span> Shape Pleasure Futures
             </div>
-            <h1 className='mt-4 font-display text-5xl font-bold text-primary-800'>Careers at Skywalker Swings</h1>
+            <h1 className='mt-4 font-display text-5xl font-bold text-primary-800'>Careers at SkyFox Swings</h1>
             <p className='mt-4 text-lg text-neutral-600'>Join sensual technologists, artisans, and storytellers creating immersive suspension spaces for adults everywhere.</p>
           </div>
 
@@ -73,7 +73,7 @@ export default function CareersPage() {
                 <AfterDarkImage
                   src='/images/careers-studio.jpg'
                   fallbackSrc='/images/hero.svg'
-                  alt='Skywalker Swings studio moodboard with fabrics, hardware, and concept art'
+                  alt='SkyFox Swings studio moodboard with fabrics, hardware, and concept art'
                   className='h-full w-full object-cover'
                 />
               </div>
@@ -114,7 +114,7 @@ export default function CareersPage() {
               <div className='text-6xl'>🕊️</div>
               <p className='mx-auto max-w-2xl text-neutral-600'>No posted openings today, but we love hearing from designers, engineers, intimacy coaches, storytellers, and hospitality leaders who align with our mission.</p>
               <div className='flex flex-col gap-4 sm:flex-row sm:justify-center'>
-                <Link href='mailto:careers@skywalkerswings.com' className='btn-primary'>Send Your Portfolio</Link>
+                <Link href='mailto:careers@skyfoxswings.com' className='btn-primary'>Send Your Portfolio</Link>
                 <Link href='/contact' className='btn-secondary'>Book a Conversation</Link>
               </div>
             </div>
@@ -152,7 +152,7 @@ export default function CareersPage() {
               <h2 className='font-display text-3xl font-bold'>Let’s Create Magic Together</h2>
               <p className='text-white/80 text-lg'>Tell us about the worlds you want to build. We welcome collaborations with freelancers, studios, and hospitality groups looking to elevate sensual experiences.</p>
             </div>
-            <Link href='mailto:careers@skywalkerswings.com' className='inline-flex items-center gap-2 rounded-xl bg-white px-8 py-3 font-semibold text-primary-800 transition-colors duration-200 hover:bg-neutral-100'>
+            <Link href='mailto:careers@skyfoxswings.com' className='inline-flex items-center gap-2 rounded-xl bg-white px-8 py-3 font-semibold text-primary-800 transition-colors duration-200 hover:bg-neutral-100'>
               Introduce Yourself
               <svg className='h-4 w-4' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                 <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M17 8l4 4m0 0l-4 4m4-4H3' />

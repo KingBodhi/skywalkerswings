@@ -18,7 +18,7 @@ export default function PrivacyPage() {
             <h2 className="font-display text-2xl font-bold text-primary-600 mt-8 mb-4">How We Use Your Information</h2>
             <p className="text-neutral-700 leading-relaxed mb-6">
               We use the information we collect to provide, maintain, and improve our services, 
-              process transactions, and communicate with you.
+              process transactions, and.communicate with you.
             </p>
 
             <h2 className="font-display text-2xl font-bold text-primary-600 mt-8 mb-4">Information Sharing</h2>
@@ -32,7 +32,7 @@ export default function PrivacyPage() {
               <p className="text-primary-700">
                 If you have questions about this privacy policy, please contact us at:
                 <br />
-                <strong>privacy@skywalker.com</strong> or <strong>1-800-SKYWALKER</strong>
+                <strong>privacy@skyfoxswings.com</strong> or <strong>1-800-SKYFOX</strong>
               </p>
             </div>
           </div>

@@ -32,14 +32,14 @@ The blog system is configured to work in both development and production environ
 - **Development**: Uses localhost URLs for API calls
 - **Production**: Uses relative URLs that resolve to the current domain
 
-This is handled automatically by the blog page components. No additional configuration is needed.
+This is handled automatically by the blog page.components. No additional configuration is needed.
 
 ## Database Setup
 
 The application uses PostgreSQL in production with the following models:
 - User (admin authentication)
 - BlogPost (blog content)
-- Product/Collection/Cart/Order (e-commerce)
+- Product/Collection/Cart/Order (e.commerce)
 
 All blog posts are stored in the database and managed through the admin panel at `/admin`.
 

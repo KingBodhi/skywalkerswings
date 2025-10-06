@@ -32,28 +32,28 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-10">
           <div className="lg:col-span-2">
             <div className="font-display text-2xl font-bold mb-4">
-              SKYWALKER <span className="text-white/70">SWINGS</span>
+              SKYFOX <span className="text-white/70">SWINGS</span>
             </div>
             <p className="text-white/80 mb-6 max-w-md leading-relaxed">
-              Skywalker Swings crafts indulgent suspension experiences with plush textiles, weight-tested hardware, and concierge installation. Discreet packaging, white-glove guidance, and inclusive sizing come standard for every body we serve.
+              SkyFox Swings crafts indulgent suspension experiences with plush textiles, weight-tested hardware, and concierge installation. Discreet packaging, white-glove guidance, and inclusive sizing come standard for every body we serve.
             </p>
 
             <div className="space-y-3 text-white/90">
-              <a href="tel:+18337946464" className="flex items-center gap-3 hover:text-white transition-colors">
+              <a href="tel:+1833759369" className="flex items-center gap-3 hover:text-white transition-colors">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 <div>
-                  <div className="font-semibold">1-833-SWINGS</div>
+                  <div className="font-semibold">1-833-SKYFOX</div>
                   <div className="text-xs text-white/70">Concierge daily 10a–10p ET</div>
                 </div>
               </a>
 
-              <a href="mailto:concierge@skywalkerswings.com" className="flex items-center gap-3 hover:text-white transition-colors">
+              <a href="mailto:concierge@skyfoxswings.com" className="flex items-center gap-3 hover:text-white transition-colors">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                concierge@skywalkerswings.com
+                concierge@skyfoxswings.com
               </a>
             </div>
 
@@ -105,7 +105,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-white/20 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="text-sm text-white/70">© 2025 Skywalker Swings. Adults 18+ only.</div>
+          <div className="text-sm text-white/70">© 2025 SkyFox Swings. Adults 18+ only.</div>
           <div className="flex gap-6">
             {footerLinks.legal.map((link) => (
               <Link key={link.name} href={link.href} className="text-sm text-white/80 hover:text-white transition-colors">

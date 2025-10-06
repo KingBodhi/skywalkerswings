@@ -173,10 +173,10 @@ export default async function SolutionsPage() {
               </Link>
               
               <a 
-                href="tel:+1-800-SKYWALKER"
+                href="tel:+1800759369"
                 className="bg-white/20 hover:bg-white/30 text-white px-8 py-4 rounded-xl font-bold transition-all duration-200"
               >
-                Call 1-800-SKYWALKER
+                Call 1-800-SKYFOX
               </a>
             </div>
           </div>

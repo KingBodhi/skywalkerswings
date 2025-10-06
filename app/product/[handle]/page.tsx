@@ -267,7 +267,7 @@ export default function Page({ params }: { params: { handle: string } }) {
             "sku": activeVariant?.sku || "",
             "brand": {
               "@type": "Brand",
-              "name": "Skywalker Unlimited"
+              "name": "SkyFox Swings"
             },
             "offers": {
               "@type": "Offer",

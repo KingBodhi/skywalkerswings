@@ -43,9 +43,9 @@ const solutionCards = [
   },
   {
     heading: 'Faux Fur Fantasy',
-    description: 'Limited faux fur and feather trims inspired by our Skywalker studio mood boards.',
+    description: 'Limited faux fur and feather trims inspired by our SkyFox studio mood boards.',
     link: '/collection/faux-fur',
-    image: '/images/products/swing-placeholder.svg',
+    image: '/images/skyfox-placeholder.png',
   },
   {
     heading: 'Doorway & Travel Kits',
@@ -62,10 +62,10 @@ const solutionCards = [
 ];
 
 const flagshipFeatures = [
-  'Midnight velvet cradle with removable, machine-washable covers',
-  '360° swivel hub and quick-cinch straps for effortless repositioning',
-  'Accessory loops for cuffs, lighting, and sensory add-ons',
-  'Discreet packaging and concierge post-install check-ins',
+  'Ultra-plush faux fur upholstery with hidden memory-foam cradle',
+  'Dual-mount hardware kit rated to 600 lb with 360° swivel',
+  'Quick-clip straps for fast doorframe, beam, or stand installs',
+  'Concierge textile swatch kit and post-install styling session',
 ];
 
 function BlogSection({ posts }: { posts: BlogPost[] }) {
@@ -85,14 +85,14 @@ function BlogSection({ posts }: { posts: BlogPost[] }) {
             <p className="mt-2 max-w-xl text-neutral-600">Concierge tips, styling notes, and aftercare rituals from our studio team.</p>
           </div>
           <Link href="/blog" className="text-sm font-semibold text-accent-700 hover:text-accent-900">
-            View all articles
+            Open the journal
           </Link>
         </div>
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {posts.map((post) => (
             <article key={post.id} className="card overflow-hidden p-0">
               <AfterDarkImage
-                src={post.featuredImage || '/images/blog/default.jpg'}
+                src={post.featuredImage || '/images/skyfox-placeholder.png'}
                 fallbackSrc="/images/hero.svg"
                 alt={post.title}
                 className="h-48 w-full object-cover"
@@ -125,7 +125,7 @@ function HeroSection() {
             <span>✨</span> Luxury Suspension Suites
           </span>
           <h1 className="font-display text-[1.9rem] leading-tight text-white sm:text-[2.4rem] lg:text-[2.75rem]">
-            Float Above Ordinary with <span className="text-accent-200">Skywalker Swings</span>
+            Float Above Ordinary with <span className="text-accent-200">SkyFox Swings</span>
           </h1>
           <p className="text-sm text-white/85 sm:text-base lg:text-lg">
             We craft indulgent swings, plush cradles, and concierge installs for adults who want their intimate spaces to feel weightless, adventurous, and impeccably styled.
@@ -146,7 +146,7 @@ function HeroSection() {
             <AfterDarkImage
               src="/images/hero-suspension.jpg"
               fallbackSrc="/images/hero.svg"
-              alt="Skywalker Swings velvet suspension swing in a softly lit bedroom"
+              alt="SkyFox Swings velvet suspension swing in a softly lit bedroom"
               className="h-full w-full object-cover"
             />
           </div>
@@ -168,7 +168,7 @@ function VideoShowcase() {
         <button
           type="button"
           className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 text-primary-700 shadow transition-transform duration-200 hover:scale-105"
-          aria-label="Play Skywalker Swings video"
+          aria-label="Play SkyFox Swings video"
         >
           <svg className="h-8 w-8" fill="currentColor" viewBox="0 0 20 20">
             <path d="M6.5 5.5v9l8-4.5-8-4.5z" />
@@ -214,10 +214,10 @@ function FeaturedProduct() {
       <div className="mx-auto max-w-6xl overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-sm">
         <div className="grid gap-0 lg:grid-cols-[1.05fr,0.95fr]">
           <div className="flex flex-col justify-center space-y-5 px-8 py-12 sm:px-12 lg:px-14">
-            <span className="inline-flex w-fit items-center gap-2 rounded-full bg-accent-100 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.3em] text-accent-700">Featured Collection</span>
+            <span className="inline-flex w-fit items-center gap-2 rounded-full bg-accent-100 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.3em] text-accent-700">Featured Product</span>
             <div className="space-y-3">
-              <h2 className="font-display text-[2.1rem] font-bold text-primary-900 sm:text-4xl">Velvet Halo™ Suspension Swing</h2>
-              <p className="text-base text-neutral-600 sm:text-lg">Plush midnight velvet, a floating lumbar cradle, and dual-mount hardware make our flagship swing the centerpiece of suites, studios, and indulgent bedrooms.</p>
+              <h2 className="font-display text-[2.1rem] font-bold text-primary-900 sm:text-4xl">Deluxe Swing with Faux Fur</h2>
+              <p className="text-base text-neutral-600 sm:text-lg">Our best-selling faux fur swing wraps every edge in plush texture, pairing couture textiles with pro-grade suspension hardware for an indulgent, weightless ride.</p>
             </div>
             <div className="grid gap-3 sm:grid-cols-2">
               {flagshipFeatures.map((feature) => (
@@ -228,28 +228,28 @@ function FeaturedProduct() {
               ))}
             </div>
             <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center">
-              <Link href="/product/velvet-halo-suspension-swing" className="btn-primary">View Product Details</Link>
-              <span className="text-sm font-semibold text-primary-700">From $2,450 · concierge styling call included</span>
+              <Link href="/product/deluxe-swing-with-faux-fur" className="btn-primary">View Product Details</Link>
+              <span className="text-sm font-semibold text-primary-700">From $450 · faux fur swatch kit included</span>
             </div>
             <div className="flex flex-wrap gap-2 text-[11px] font-semibold uppercase tracking-wide text-neutral-400">
               <span>600 lb Rated</span>
-              <span>Washable Covers</span>
+              <span>Removable Covers</span>
               <span>360° Swivel</span>
               <span>Discreet Shipping</span>
             </div>
           </div>
           <div className="relative min-h-[300px] overflow-hidden bg-neutral-100">
             <AfterDarkImage
-              src="/images/products/WH-ORFF-CSFH-1.jpg"
+              src="/uploads/1759704073075-pink_swing.png"
               fallbackSrc="/images/hero.svg"
-              alt="Velvet Halo swing styled with plush pillows"
+              alt="Deluxe faux fur swing styled with blush textiles"
               className="h-full w-full object-cover"
             />
             <div className="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 text-[11px] font-semibold text-primary-800 shadow-sm">
-              <span className="inline-flex h-2 w-2 rounded-full bg-accent-500"></span>New Fabric Drop
+              <span className="inline-flex h-2 w-2 rounded-full bg-accent-500"></span>Luxe Textile Capsule
             </div>
             <div className="absolute bottom-5 left-1/2 -translate-x-1/2 rounded-full bg-white/90 px-4 py-2 text-[11px] font-semibold text-primary-800 shadow-sm">
-              Concierge install ready • 600 lb rating
+              Concierge install ready • Hand-trimmed faux fur
             </div>
           </div>
         </div>
@@ -306,7 +306,7 @@ function ConciergeCTA() {
           </div>
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
             <Link href="/contact" className="btn-primary bg-white text-primary-700 hover:bg-neutral-100">Start Your Design Call</Link>
-            <a href="mailto:concierge@skywalkerswings.com" className="btn-secondary border-white text-white hover:bg-white hover:text-primary-700">Email Concierge</a>
+            <a href="mailto:concierge@skyfoxswings.com" className="btn-secondary border-white text-white hover:bg-white hover:text-primary-700">Email Concierge</a>
           </div>
         </div>
       </div>

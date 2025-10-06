@@ -29,11 +29,11 @@ export async function GET(req: Request) {
     return new Response('Unauthorized', { status: 401 });
   }
 
-  // Return default settings - in real app would come from database
+  // Return default settings - in real app would.come from database
   const settings = {
-    storeName: 'Skywalker Unlimited',
-    storeEmail: 'info@skywalker.com',
-    storePhone: '1-800-SKYWALKER',
+    storeName: 'SkyFox Swings',
+    storeEmail: 'info@skyfoxswings.com',
+    storePhone: '1-800-SKYFOX',
     currency: 'USD',
     timezone: 'America/New_York',
     storeOnline: true,

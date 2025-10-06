@@ -38,37 +38,109 @@ export async function PATCH(req: Request, { params }: { params: { id: string } }
 
   try {
     const updates = await req.json();
-    const { images, ...productUpdates } = updates;
-    
-    // Start a transaction to handle images
+    const { images, variants: variantUpdates, ...rawProductUpdates } = updates ?? {};
+
+    const allowedFields = ['title', 'handle', 'description', 'status', 'metadata'];
+    const productUpdates = Object.fromEntries(
+      Object.entries(rawProductUpdates).filter(([key]) => allowedFields.includes(key))
+    );
+
     const product = await prisma.$transaction(async (tx) => {
-      // Update product basic info
-      const updatedProduct = await tx.product.update({
-        where: { id: params.id },
-        data: productUpdates
-      });
-
-      // Handle image updates if provided
-      if (images !== undefined) {
-        // Delete existing images
-        await tx.productImage.deleteMany({
-          where: { productId: params.id }
+      if (Object.keys(productUpdates).length > 0) {
+        await tx.product.update({
+          where: { id: params.id },
+          data: productUpdates
         });
+      }
 
-        // Create new images
-        if (images.length > 0) {
+      if (Array.isArray(variantUpdates)) {
+        const existingVariants = await tx.variant.findMany({
+          where: { productId: params.id },
+          select: { id: true }
+        });
+        const submittedIds = new Set<string>();
+
+        for (const [index, variant] of variantUpdates.entries()) {
+          if (variant?.id) {
+            submittedIds.add(variant.id);
+            await tx.variant.update({
+              where: { id: variant.id },
+              data: {
+                sku: variant.sku,
+                price: variant.price,
+                compareAt: variant.compareAt ?? null,
+                size: variant.size ?? null,
+                color: variant.color ?? null,
+                weightG: variant.weightG ?? null,
+                dims: variant.dims ?? null,
+                isDefault: index === 0
+              }
+            });
+
+            if (variant.inventory?.quantity !== undefined) {
+              await tx.inventoryLevel.upsert({
+                where: { variantId: variant.id },
+                update: { quantity: variant.inventory.quantity },
+                create: {
+                  variantId: variant.id,
+                  quantity: variant.inventory.quantity,
+                  reserved: 0
+                }
+              });
+            }
+          } else {
+            const createdVariant = await tx.variant.create({
+              data: {
+                productId: params.id,
+                sku: variant?.sku || `SKU-${Date.now()}`,
+                price: variant?.price ?? 0,
+                compareAt: variant?.compareAt ?? null,
+                size: variant?.size ?? null,
+                color: variant?.color ?? null,
+                weightG: variant?.weightG ?? null,
+                dims: variant?.dims ?? null,
+                isDefault: index === 0
+              }
+            });
+
+            submittedIds.add(createdVariant.id);
+
+            if (variant?.inventory?.quantity !== undefined) {
+              await tx.inventoryLevel.create({
+                data: {
+                  variantId: createdVariant.id,
+                  quantity: variant.inventory.quantity,
+                  reserved: 0
+                }
+              });
+            }
+          }
+        }
+
+        const existingIds = new Set(existingVariants.map((variant) => variant.id));
+        const toDelete = [...existingIds].filter((id) => !submittedIds.has(id));
+
+        if (toDelete.length > 0) {
+          await tx.inventoryLevel.deleteMany({ where: { variantId: { in: toDelete } } });
+          await tx.variant.deleteMany({ where: { id: { in: toDelete } } });
+        }
+      }
+
+      if (images !== undefined) {
+        await tx.productImage.deleteMany({ where: { productId: params.id } });
+
+        if (Array.isArray(images) && images.length > 0) {
           await tx.productImage.createMany({
             data: images.map((img: any, index: number) => ({
               productId: params.id,
               url: img.url,
-              alt: img.alt || `${updatedProduct.title} - Image ${index + 1}`,
+              alt: img.alt || `${productUpdates.title ?? 'Product'} - Image ${index + 1}`,
               sort: index
             }))
           });
         }
       }
 
-      // Return updated product with images
       return await tx.product.findUnique({
         where: { id: params.id },
         include: {

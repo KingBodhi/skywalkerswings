@@ -43,8 +43,7 @@ export default function CompliancePage() {
               Safety Standards & Certifications
             </h1>
             <p className="text-body-lg text-neutral-600 max-w-3xl mx-auto">
-              Our Kinetic Fall-Arrest Systems meet the most stringent international safety standards, 
-              ensuring your workers are protected with certified, compliant equipment.
+              SkyFox hardware is weight-tested, redundantly engineered, and audited against global suspension standards so every guest and play partner can relax into the moment.
             </p>
           </div>
 
@@ -80,7 +79,7 @@ export default function CompliancePage() {
                 Third-Party Testing & Certification
               </h2>
               <p className="text-body-lg text-white/90 max-w-3xl mx-auto mb-8">
-                All Skywalker harnesses undergo rigorous third-party testing at accredited facilities 
+                All SkyFox harnesses undergo rigorous third-party testing at accredited facilities 
                 to ensure they meet or exceed safety standards.
               </p>
               

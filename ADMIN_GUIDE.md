@@ -1,4 +1,4 @@
-# Skywalker Unlimited Admin Panel Guide
+# SkyFox Swings Admin Panel Guide
 
 ## Overview
 The admin panel is a comprehensive e-commerce management system with modern UI/UX, built with Next.js, TypeScript, and Tailwind CSS. It provides complete CRUD operations for managing products, collections, orders, customers, and store settings.

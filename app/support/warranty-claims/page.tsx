@@ -25,7 +25,7 @@ export default function WarrantyClaimsPage() {
             <div className="bg-success-50 border border-success-200 rounded-2xl p-8">
               <h2 className="font-display text-2xl font-bold text-success-800 mb-4">3-Year Warranty Coverage</h2>
               <p className="text-success-700 mb-6">
-                All Skywalker equipment includes comprehensive warranty coverage. Our claims process will include:
+                All SkyFox equipment includes comprehensive warranty coverage. Our claims process will include:
               </p>
               <ul className="space-y-2 text-success-700">
                 <li>• Online warranty registration</li>

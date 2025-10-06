@@ -25,7 +25,7 @@ async function getPost(slug: string): Promise<BlogPost | null> {
     const isServer = typeof window === 'undefined';
     const baseUrl = isServer
       ? (process.env.NODE_ENV === 'production'
-          ? 'https://skywalker.vercel.app'
+          ? 'https://skyfoxswings.com'
           : 'http://localhost:3001')
       : '';
 

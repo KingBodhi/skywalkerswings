@@ -20,7 +20,7 @@ async function handleContact(req: NextRequest & { validated: any }) {
 
     // Send email
     await transporter.sendMail({
-      from: `"Skywalker Unlimited" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
+      from: `"SkyFox Swings" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
       to: process.env.CONTACT_RECEIVER_EMAIL,
       replyTo: email,
       subject: `New Contact: ${name}${company ? ` - ${company}` : ''}`,
