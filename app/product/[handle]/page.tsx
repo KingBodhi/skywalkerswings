@@ -17,7 +17,6 @@ export default function Page({ params }: { params: { handle: string } }) {
   const { data, error, isLoading } = useSWR(`/api/products/${params.handle}`, fetcher);
   const [variantId, setVariantId] = useState<string | null>(null);
   const [qty, setQty] = useState(1);
-  const [ack, setAck] = useState(false);
 
   if (error) {
     return (
@@ -68,16 +67,11 @@ export default function Page({ params }: { params: { handle: string } }) {
       alert("Please select a variant.");
       return;
     }
-    if (!ack) {
-      alert("Please acknowledge that you understand proper training is required.");
-      return;
-    }
-
     try {
       const res = await fetch("/api/cart/items", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ variantId: activeId, qty, safetyAck: ack })
+        body: JSON.stringify({ variantId: activeId, qty })
       });
 
       if (!res.ok) {
@@ -226,19 +220,6 @@ export default function Page({ params }: { params: { handle: string } }) {
                 className="w-24 px-3 py-2 border border-neutral-300 rounded-lg bg-white text-neutral-900 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-all"
               />
             </div>
-
-            <label className="flex items-start gap-3 text-sm">
-              <input
-                type="checkbox"
-                checked={ack}
-                onChange={(e) => setAck(e.target.checked)}
-                className="mt-0.5 w-4 h-4 text-primary-600 bg-white border-neutral-300 rounded focus:ring-primary-500"
-              />
-              <span className="text-neutral-700">
-                I understand this safety equipment requires proper training, inspection, 
-                and compliance with applicable safety standards before use.
-              </span>
-            </label>
 
             <button
               onClick={add}
