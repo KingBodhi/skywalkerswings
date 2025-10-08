@@ -14,6 +14,7 @@ export default function NewProductPage() {
     status: 'DRAFT'
   });
   const [images, setImages] = useState<string[]>([]);
+  const [badgeLabel, setBadgeLabel] = useState('');
 
   async function createProduct() {
     if (!product.title || !product.handle) {
@@ -28,6 +29,7 @@ export default function NewProductPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...product,
+          metadata: badgeLabel.trim() ? JSON.stringify({ badgeLabel: badgeLabel.trim() }) : null,
           images: images.map((url, index) => ({
             url,
             alt: `${product.title} - Image ${index + 1}`,
@@ -126,6 +128,20 @@ export default function NewProductPage() {
               <option value="DRAFT">Draft</option>
               <option value="ACTIVE">Active</option>
             </select>
+          </div>
+
+          <div>
+            <label className="block text-sm font-semibold text-primary-600 mb-2">
+              Badge Label
+            </label>
+            <input
+              type="text"
+              value={badgeLabel}
+              onChange={(e) => setBadgeLabel(e.target.value)}
+              placeholder="e.g. Limited Edition, Concierge Favorite"
+              className="admin-input"
+            />
+            <div className="text-sm text-neutral-500 mt-1">Leave blank to hide the badge on product cards.</div>
           </div>
 
           <div>

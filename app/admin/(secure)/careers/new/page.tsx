@@ -34,16 +34,23 @@ export default function NewJobPostingPage() {
         body: JSON.stringify(job)
       });
 
-      if (res.ok) {
-        const result = await res.json();
-        if (result.success) {
-          // For now, just redirect back to careers since we don't have individual job edit pages yet
-          router.push('/admin/careers');
-        } else {
-          alert(result.message || 'Failed to create job posting');
-        }
+      if (res.status === 409) {
+        const conflict = await res.json();
+        alert(conflict.message || 'Another job already uses this URL slug.');
+        return;
+      }
+
+      if (!res.ok) {
+        const errorBody = await res.json().catch(() => null);
+        alert(errorBody?.message || 'Failed to create job posting');
+        return;
+      }
+
+      const result = await res.json();
+      if (result.success) {
+        router.push('/admin/careers');
       } else {
-        alert('Failed to create job posting');
+        alert(result.message || 'Failed to create job posting');
       }
     } catch (error) {
       alert('Network error');

@@ -104,6 +104,78 @@ async function main(){
     }
   });
 
+  const jobSeeds = [
+    {
+      title: 'Lead Suspension Designer',
+      slug: 'lead-suspension-designer',
+      department: 'Engineering',
+      location: 'Brooklyn, NY (Hybrid)',
+      type: 'FULL_TIME',
+      salaryRange: '$120,000 - $145,000',
+      description: 'Architect next-generation aerial rigs that balance indulgent comfort with enterprise-grade safety tolerances.',
+      responsibilities: [
+        '• Own the suspension design backlog from concept through production release',
+        '• Partner with somatic practitioners to translate sensation maps into mechanical requirements',
+        '• Model redundant load paths and certify designs against ANSI/OSHA performance standards',
+        '• Prototype iteratively with fabrication partners and lead quarterly burn-in testing rituals'
+      ].join('\n'),
+      requirements: [
+        '• 7+ years designing load-bearing hardware or theatrical rigging systems',
+        '• Demonstrated mastery of SolidWorks or Fusion 360 with FEA workflows',
+        '• Comfort collaborating with multidisciplinary teams of engineers, artisans, and intimacy coaches',
+        '• Ability to travel quarterly for lab intensives and on-site installations'
+      ].join('\n'),
+      benefits: [
+        '• Signature SkyFox retreat and lab immersion stipends',
+        '• Annual education budget for kink, somatics, and advanced rigging certifications',
+        '• Sliding-scale product access for you and designated partners'
+      ].join('\n'),
+      status: 'ACTIVE'
+    },
+    {
+      title: 'Experiential Hospitality Producer',
+      slug: 'experiential-hospitality-producer',
+      department: 'Experiences',
+      location: 'Los Angeles, CA or Remote (North America)',
+      type: 'REMOTE',
+      salaryRange: '$95,000 - $115,000',
+      description: 'Produce SkyFox takeover weekends and pop-up lounges that choreograph touch, lighting, and story into unforgettable evenings.',
+      responsibilities: [
+        '• Program multi-room journeys in collaboration with riggers, DJs, and consent facilitators',
+        '• Manage vendor relationships, budgets, and run-of-show documents',
+        '• Translate guest feedback into measurable experience improvements',
+        '• Ensure every activation meets SkyFox safety and inclusion protocols'
+      ].join('\n'),
+      requirements: [
+        '• 5+ years producing immersive, nightlife, or experiential events',
+        '• Proven ability to hold trauma-informed, consent-forward spaces',
+        '• Expertise coordinating cross-functional event teams with grace under pressure',
+        '• Bonus: familiarity with ADA requirements and sensory-friendly design'
+      ].join('\n'),
+      benefits: [
+        '• Monthly creative sabbatical days and personal sensory lab hours',
+        '• Revenue share incentives tied to event performance',
+        '• Comprehensive health benefits and mental wellness stipend'
+      ].join('\n'),
+      status: 'DRAFT'
+    }
+  ];
+
+  for (const job of jobSeeds) {
+    const publishedAt = job.status === 'ACTIVE' ? new Date() : null;
+    await prisma.jobPosting.upsert({
+      where: { slug: job.slug },
+      update: {
+        ...job,
+        publishedAt
+      },
+      create: {
+        ...job,
+        publishedAt
+      }
+    });
+  }
+
   // QUICK WINS IMPLEMENTATION
   await implementQuickWins();
 }

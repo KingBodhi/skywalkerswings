@@ -21,6 +21,19 @@ enum Status {
   ARCHIVED
 }
 
+enum JobType {
+  FULL_TIME
+  PART_TIME
+  CONTRACT
+  REMOTE
+}
+
+enum JobStatus {
+  DRAFT
+  ACTIVE
+  CLOSED
+}
+
 
 
 model User {
@@ -161,4 +174,22 @@ model BlogPost {
   publishedAt  DateTime?
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
+}
+
+model JobPosting {
+  id               String     @id @default(cuid())
+  title            String
+  slug             String     @unique
+  department       String
+  location         String?
+  type             JobType    @default(FULL_TIME)
+  salaryRange      String?
+  description      String?
+  requirements     String?
+  responsibilities String?
+  benefits         String?
+  status           JobStatus  @default(DRAFT)
+  publishedAt      DateTime?
+  createdAt        DateTime   @default(now())
+  updatedAt        DateTime   @updatedAt
 }

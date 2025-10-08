@@ -32,7 +32,7 @@ function CartIcon() {
   );
 }
 
-function ConciergeContact() {
+function SupportContact() {
   return (
     <a
       href="tel:+1833759369"
@@ -42,7 +42,7 @@ function ConciergeContact() {
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
       </svg>
       1-833-SKYFOX
-      <span className="text-xs text-white/70">Concierge daily 10a–10p ET</span>
+      <span className="text-xs text-white/70">Support 10a–10p ET</span>
     </a>
   );
 }
@@ -77,12 +77,12 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <ConciergeContact />
+            <SupportContact />
             <Link
               href="/contact"
               className="btn-primary"
             >
-              Book Concierge
+              Contact Us
             </Link>
             <CartIcon />
           </nav>
@@ -147,7 +147,7 @@ export default function Navbar() {
                   </svg>
                   <div>
                     <div className="font-semibold">1-833-SKYFOX</div>
-                    <div className="text-sm text-white/70">Concierge daily 10a–10p ET</div>
+                    <div className="text-sm text-white/70">Support 10a–10p ET</div>
                   </div>
                 </a>
 
@@ -156,7 +156,7 @@ export default function Navbar() {
                   onClick={() => setOpen(false)}
                   className="btn-primary w-full"
                 >
-                  Book Concierge
+                  Contact Us
                 </Link>
               </div>
             </nav>

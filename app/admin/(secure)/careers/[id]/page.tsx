@@ -6,7 +6,10 @@ import Link from 'next/link';
 export default function EditJobPostingPage() {
   const router = useRouter();
   const params = useParams();
+  const jobId = Array.isArray(params?.id) ? params.id[0] : (params?.id as string | undefined);
   const [loading, setLoading] = useState(false);
+  const [initialLoading, setInitialLoading] = useState(true);
+  const [loadError, setLoadError] = useState<string | null>(null);
   const [job, setJob] = useState({
     title: '',
     slug: '',
@@ -21,7 +24,55 @@ export default function EditJobPostingPage() {
     status: 'DRAFT'
   });
 
+  async function loadJob() {
+    if (!jobId) return;
+    setLoadError(null);
+    setInitialLoading(true);
+
+    try {
+      const res = await fetch(`/api/admin/careers/${jobId}`);
+      if (!res.ok) {
+        if (res.status === 404) {
+          setLoadError('This job posting could not be found. It may have been removed.');
+        } else {
+          setLoadError('Failed to load job details. Please try again.');
+        }
+        return;
+      }
+
+      const data = await res.json();
+      setJob({
+        title: data.title ?? '',
+        slug: data.slug ?? '',
+        department: data.department ?? '',
+        location: data.location ?? '',
+        type: data.type ?? 'FULL_TIME',
+        salaryRange: data.salaryRange ?? '',
+        description: data.description ?? '',
+        requirements: data.requirements ?? '',
+        responsibilities: data.responsibilities ?? '',
+        benefits: data.benefits ?? '',
+        status: data.status ?? 'DRAFT'
+      });
+    } catch (error) {
+      console.error('Failed to load job', error);
+      setLoadError('Network error while loading job details.');
+    } finally {
+      setInitialLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    loadJob();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [jobId]);
+
   async function updateJob() {
+    if (!jobId) {
+      alert('Missing job identifier.');
+      return;
+    }
+
     if (!job.title || !job.slug || !job.department) {
       alert('Please fill in required fields (Title, Department)');
       return;
@@ -29,27 +80,70 @@ export default function EditJobPostingPage() {
 
     setLoading(true);
     try {
-      const res = await fetch(`/api/admin/careers/${params.id}`, {
+      const res = await fetch(`/api/admin/careers/${jobId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(job)
       });
 
-      if (res.ok) {
-        const result = await res.json();
-        if (result.success) {
-          router.push('/admin/careers');
-        } else {
-          alert(result.message || 'Failed to update job posting');
-        }
+      if (res.status === 409) {
+        const conflict = await res.json();
+        alert(conflict.message || 'Another job already uses this URL slug.');
+        return;
+      }
+
+      if (!res.ok) {
+        const errorBody = await res.json().catch(() => null);
+        alert(errorBody?.message || 'Failed to update job posting');
+        return;
+      }
+
+      const result = await res.json();
+      if (result.success) {
+        router.push('/admin/careers');
       } else {
-        alert('Failed to update job posting');
+        alert(result.message || 'Failed to update job posting');
       }
     } catch (error) {
       alert('Network error');
     } finally {
       setLoading(false);
     }
+  }
+
+  if (initialLoading) {
+    return (
+      <div className="space-y-6">
+        <div className="bg-white rounded-2xl shadow-lg p-8 border border-neutral-200 animate-pulse">
+          <div className="h-6 w-40 bg-neutral-200 rounded mb-4" />
+          <div className="space-y-3">
+            <div className="h-4 w-full bg-neutral-200 rounded" />
+            <div className="h-4 w-2/3 bg-neutral-200 rounded" />
+            <div className="h-4 w-1/2 bg-neutral-200 rounded" />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (loadError) {
+    return (
+      <div className="bg-white rounded-2xl shadow-lg p-8 border border-danger-200">
+        <h1 className="font-display text-2xl font-bold text-danger-700 mb-4">Unable to load job posting</h1>
+        <p className="text-neutral-600 mb-6">{loadError}</p>
+        <div className="flex gap-3">
+          <button
+            onClick={loadJob}
+            className="btn-primary"
+          >
+            Retry
+          </button>
+          <Link href="/admin/careers" className="btn-secondary">
+            Back to Careers
+          </Link>
+        </div>
+      </div>
+    );
   }
 
   return (

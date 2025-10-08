@@ -10,7 +10,7 @@ const footerLinks = {
   company: [
     { name: 'Our Story', href: '/about' },
     { name: 'Pleasure Pledge', href: '/support/warranty' },
-    { name: 'Concierge Services', href: '/contact' },
+    { name: 'Contact Us', href: '/contact' },
     { name: 'Careers', href: '/careers' },
   ],
   support: [
@@ -35,7 +35,7 @@ export default function Footer() {
               SKYFOX <span className="text-white/70">SWINGS</span>
             </div>
             <p className="text-white/80 mb-6 max-w-md leading-relaxed">
-              SkyFox Swings crafts indulgent suspension experiences with plush textiles, weight-tested hardware, and concierge installation. Discreet packaging, white-glove guidance, and inclusive sizing come standard for every body we serve.
+              SkyFox Swings crafts indulgent suspension experiences with plush textiles, weight-tested hardware, and expert guidance. Discreet packaging, comprehensive support, and inclusive sizing come standard for every body we serve.
             </p>
 
             <div className="space-y-3 text-white/90">
@@ -45,15 +45,15 @@ export default function Footer() {
                 </svg>
                 <div>
                   <div className="font-semibold">1-833-SKYFOX</div>
-                  <div className="text-xs text-white/70">Concierge daily 10a–10p ET</div>
+                  <div className="text-xs text-white/70">Support 10a–10p ET</div>
                 </div>
               </a>
 
-              <a href="mailto:concierge@skyfoxswings.com" className="flex items-center gap-3 hover:text-white transition-colors">
+              <a href="mailto:support@skyfoxswings.com" className="flex items-center gap-3 hover:text-white transition-colors">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                concierge@skyfoxswings.com
+                support@skyfoxswings.com
               </a>
             </div>
 

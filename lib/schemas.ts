@@ -8,6 +8,9 @@ export const HandleSchema = z.string()
   .max(100)
   .regex(/^[a-z0-9-]+$/, 'Handle must contain only lowercase letters, numbers, and hyphens');
 
+export const JobTypeSchema = z.enum(['FULL_TIME', 'PART_TIME', 'CONTRACT', 'REMOTE']);
+export const JobStatusSchema = z.enum(['DRAFT', 'ACTIVE', 'CLOSED']);
+
 // User schemas
 export const LoginSchema = z.object({
   email: EmailSchema,
@@ -85,6 +88,24 @@ export const ContactSchema = z.object({
   email: EmailSchema,
   company: z.string().max(255).optional(),
   message: z.string().min(10).max(5000)
+});
+
+export const JobPostingSchema = z.object({
+  title: z.string().min(1).max(255),
+  slug: HandleSchema,
+  department: z.string().min(1).max(255),
+  location: z.string().max(255).optional(),
+  type: JobTypeSchema.default('FULL_TIME'),
+  salaryRange: z.string().max(255).optional(),
+  description: z.string().max(8000).optional(),
+  requirements: z.string().max(8000).optional(),
+  responsibilities: z.string().max(8000).optional(),
+  benefits: z.string().max(8000).optional(),
+  status: JobStatusSchema.default('DRAFT')
+});
+
+export const UpdateJobPostingSchema = JobPostingSchema.partial().extend({
+  slug: HandleSchema.optional()
 });
 
 // File upload schema

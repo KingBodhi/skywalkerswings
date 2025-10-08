@@ -34,7 +34,7 @@ export default async function BlogPage() {
               SkyFox Suspension Journal
             </h1>
             <p className="text-body-lg text-neutral-800 max-w-3xl mx-auto leading-relaxed">
-              Concierge notes on rigging, styling, aftercare, and troubleshooting so your SkyFox suite always feels weightless, safe, and indulgent.
+              Expert insights on rigging, styling, aftercare, and troubleshooting so your SkyFox suite always feels weightless, safe, and indulgent.
             </p>
           </div>
 

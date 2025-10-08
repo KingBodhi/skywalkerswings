@@ -28,7 +28,7 @@ const team = [
 
 const milestones = [
   { year: "2018", title: "First Loft Transformation", description: "Converted a Brooklyn walk-up into a weightless play lounge for a private client." },
-  { year: "2019", title: "Concierge Install Launch", description: "Introduced white-glove hardware planning, installer matchmaking, and post-install styling." },
+  { year: "2019", title: "Expert Install Support", description: "Introduced comprehensive hardware planning, installer matchmaking, and post-install styling support." },
   { year: "2021", title: "Resort Partnerships", description: "Outfitted boutique hotels and lifestyle clubs with SkyFox suspension suites coast to coast." },
   { year: "2023", title: "SkyFox Academy", description: "Certified 120+ professional riggers on our consent-first install standards." },
   { year: "2024", title: "Sensory Capsule Collection", description: "Released limited faux fur textiles and lighting palettes curated by our studio." }
@@ -38,7 +38,7 @@ const values = [
   {
     icon: "💋",
     title: "Consent First",
-    description: "Every design, install, and concierge script begins with enthusiastic communication and intentional aftercare."
+    description: "Every design, install, and customer interaction begins with enthusiastic communication and intentional aftercare."
   },
   {
     icon: "🪶", 
@@ -160,7 +160,7 @@ export default function AboutPage() {
               Why Mass-Market Swings Fall Short
             </h2>
             <p className="text-xl text-neutral-700 max-w-4xl mx-auto leading-relaxed">
-              Big-box swings weren’t built for long scenes, larger bodies, or concierge-level installs. They pinch, creak, and offer zero support once the fantasy fades. SkyFox was born to fix that.
+              Big-box swings weren't built for long sessions, larger bodies, or professional-grade installations. They pinch, creak, and offer zero support once the fantasy fades. SkyFox was born to fix that.
             </p>
           </div>
 
@@ -218,7 +218,7 @@ export default function AboutPage() {
                     <span className="text-success-600 text-2xl">⏰</span>
                   </div>
                   <div>
-                    <div className="font-bold text-success-800 mb-2">Concierge Rigging Plans</div>
+                    <div className="font-bold text-success-800 mb-2">Expert Rigging Plans</div>
                     <div className="text-success-700">Personalized anchor maps, vetted installers, and redundant hardware for every space.</div>
                   </div>
                 </div>
@@ -359,7 +359,7 @@ export default function AboutPage() {
               Ready to Build Your SkyFox Suite?
             </h2>
             <p className="text-xl text-neutral-700 mb-8 leading-relaxed">
-              Partner with our concierge team to script the swing room of your dreams—whether it’s a private penthouse, boutique resort, or content studio that needs to feel limitless.
+              Partner with our expert team to create the swing room of your dreams—whether it's a private penthouse, boutique resort, or content studio that needs to feel limitless.
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center gap-6">

@@ -6,41 +6,35 @@ import { money } from "@/lib/utils";
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-const categories = [
-  {
-    title: 'Signature Velvet Swings',
-    description: 'Midnight velvet, vegan leather, and satin cradles engineered for weightless indulgence.',
-    image: '/images/products/WH-ORFF-CSFH-1.jpg',
-    href: '/collection/signature-swings',
-    stats: 'Most Loved',
-    features: ['Plush washable covers', '600 lb weight tested', 'Concierge styling call']
-  },
-  {
-    title: 'Faux Fur & Fantasy',
-    description: 'Limited faux fur trims, feather tassels, and statement textiles direct from the SkyFox studio.',
-    image: '/images/skyfox-placeholder.png',
-    href: '/collection/faux-fur',
-    stats: 'Limited Run',
-    features: ['Feather & faux fur accents', 'Monochrome or neon palettes', 'Ships with care guide']
-  },
-  {
-    title: 'Doorway & Travel Kits',
-    description: 'Apartment-friendly rigs with padded straps, quick installs, and discreet storage bags.',
-    image: '/images/products/WH-TLSH-1.jpg',
-    href: '/collection/doorway',
-    stats: 'Traveler Fave',
-    features: ['Under 10-minute install', 'Fits standard frames', 'Padded pressure points']
-  },
-  {
-    title: 'Frames & Anchor Systems',
-    description: 'Freestanding Nebula frames and Aurora anchor bundles for suites, studios, and hospitality installs.',
-    image: '/images/products/WH-RCH-21-1.jpg',
-    href: '/collection/support-stands',
-    stats: 'Pro Install',
-    features: ['Indoor/outdoor frame options', 'Dual-mount hardware', 'Concierge install support']
+async function getCollections() {
+  try {
+    const collections = await prisma.collection.findMany({
+      where: { status: 'ACTIVE' },
+      include: {
+        _count: { select: { products: true } }
+      },
+      orderBy: [{ updatedAt: 'desc' }, { createdAt: 'desc' }]
+    });
+    return collections;
+  } catch (error) {
+    console.error('Failed to fetch collections:', error);
+    return [];
   }
-];
+}
 
+function formatDate(date: Date) {
+  return new Intl.DateTimeFormat('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric'
+  }).format(date);
+}
+
+function collectionCardStats(count: number) {
+  if (count === 0) return 'New';
+  if (count === 1) return '1 product';
+  return `${count} products`;
+}
 
 async function getProducts() {
   try {
@@ -57,7 +51,10 @@ async function getProducts() {
 }
 
 export default async function ShopPage() {
-  const products = await getProducts();
+  const [collections, products] = await Promise.all([
+    getCollections(),
+    getProducts()
+  ]);
 
   return (
     <div className="bg-gradient-to-br from-neutral-50 to-white min-h-screen">
@@ -79,45 +76,70 @@ export default async function ShopPage() {
 
           {/* Category Cards */}
           <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 mb-20">
-            {categories.map((category, index) => (
-              <Link key={index} href={category.href} className="group card p-6 hover:shadow-md transition-shadow duration-200">
-                <div className="relative mb-6">
-                  <div className="aspect-square bg-gradient-to-br from-neutral-100 to-neutral-200 rounded-2xl overflow-hidden">
-                    <img 
-                      src={category.image} 
-                      alt={category.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="absolute top-3 right-3 bg-primary-600 text-white px-2 py-1 rounded-full text-xs font-bold">
-                    {category.stats}
-                  </div>
-                </div>
-                
-                <h3 className="font-display text-lg font-bold text-primary-600 mb-2 group-hover:text-accent-500 transition-colors">
-                  {category.title}
-                </h3>
-                <p className="text-neutral-600 text-sm mb-4">{category.description}</p>
-                
-                <div className="space-y-1 mb-4">
-                  {category.features.slice(0, 2).map((feature, i) => (
-                    <div key={i} className="flex items-center gap-2">
-                      <svg className="w-3 h-3 text-success-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                      </svg>
-                      <span className="text-xs text-neutral-600">{feature}</span>
+            {collections.length > 0 ? (
+              collections.map((collection) => {
+                const productCount = collection._count.products;
+                const image = collection.heroImage || '/images/skyfox-placeholder.png';
+                const description = collection.description?.trim() || 'Curated swings, hardware, and textiles crafted for this category.';
+                const detailChips = [
+                  productCount > 0
+                    ? `${productCount} active ${productCount === 1 ? 'SKU' : 'SKUs'}`
+                    : 'Awaiting first product',
+                  `Updated ${formatDate(collection.updatedAt)}`
+                ];
+
+                return (
+                  <Link key={collection.id} href={`/collection/${collection.handle}`} className="group card p-6 hover:shadow-md transition-shadow duration-200">
+                    <div className="relative mb-6">
+                      <div className="aspect-square bg-gradient-to-br from-neutral-100 to-neutral-200 rounded-2xl overflow-hidden">
+                        <img
+                          src={image}
+                          alt={collection.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                      <div className="absolute top-3 right-3 bg-primary-600 text-white px-2 py-1 rounded-full text-xs font-bold">
+                        {collectionCardStats(productCount)}
+                      </div>
                     </div>
-                  ))}
-                </div>
-                
-                <div className="flex items-center text-accent-500 font-semibold text-sm">
-                  Browse Products
-                  <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </div>
-              </Link>
-            ))}
+
+                    <h3 className="font-display text-lg font-bold text-primary-600 mb-2 group-hover:text-accent-500 transition-colors">
+                      {collection.title}
+                    </h3>
+                    <p className="text-neutral-600 text-sm mb-4 line-clamp-3">{description}</p>
+
+                    <div className="space-y-1 mb-4">
+                      {detailChips.map((detail) => (
+                        <div key={detail} className="flex items-center gap-2">
+                          <svg className="w-3 h-3 text-success-500" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                          </svg>
+                          <span className="text-xs text-neutral-600">{detail}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="flex items-center text-accent-500 font-semibold text-sm">
+                      Browse Collection
+                      <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </div>
+                  </Link>
+                );
+              })
+            ) : (
+              <div className="col-span-full text-center py-12">
+                <div className="text-5xl mb-4">🌀</div>
+                <h3 className="font-display text-2xl font-bold text-primary-600 mb-2">No collections yet</h3>
+                <p className="text-neutral-600 mb-6 max-w-lg mx-auto">
+                  Collections you create in the admin will appear here instantly. Add a collection to curate swings for different audiences.
+                </p>
+                <Link href="/admin/collections/new" className="btn-primary px-6 py-3">
+                  Create First Collection
+                </Link>
+              </div>
+            )}
           </div>
 
           {/* Featured Products */}

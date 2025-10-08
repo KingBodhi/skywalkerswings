@@ -1,48 +1,95 @@
+import { ZodError } from 'zod';
+import type { JobStatus } from '@prisma/client';
+
 import { getSession } from '@/lib/auth';
+import { loggers } from '@/lib/logger';
+import { normalizeJobPayload, resolvePublishedAt } from '@/lib/jobs';
+import { prisma } from '@/lib/prisma';
+import { UpdateJobPostingSchema } from '@/lib/schemas';
+
+function unauthorizedResponse() {
+  return new Response('Unauthorized', { status: 401 });
+}
 
 export async function GET(req: Request, { params }: { params: { id: string } }) {
   const session = await getSession();
   if (!session || (session.role !== 'ADMIN' && session.role !== 'EDITOR')) {
-    return new Response('Unauthorized', { status: 401 });
+    return unauthorizedResponse();
   }
 
-  // For now, return mock data since we don't have a jobs table yet
-  // In the future, this would query a jobs/careers table by ID
-  return Response.json({
-    id: params.id,
-    title: 'Sample Job Position',
-    slug: 'sample-job-position',
-    department: 'Engineering',
-    location: 'Remote',
-    type: 'FULL_TIME',
-    salaryRange: '$60,000 - $80,000',
-    description: 'This is a sample job description.',
-    requirements: '• Sample requirement 1\n• Sample requirement 2',
-    responsibilities: '• Sample responsibility 1\n• Sample responsibility 2',
-    benefits: '• Health insurance\n• 401(k) matching',
-    status: 'DRAFT'
-  });
+  const job = await prisma.jobPosting.findUnique({ where: { id: params.id } });
+  if (!job) {
+    return new Response('Not Found', { status: 404 });
+  }
+
+  return Response.json(job);
 }
 
 export async function PUT(req: Request, { params }: { params: { id: string } }) {
   const session = await getSession();
   if (!session || (session.role !== 'ADMIN' && session.role !== 'EDITOR')) {
-    return new Response('Unauthorized', { status: 401 });
+    return unauthorizedResponse();
   }
 
   try {
-    const jobData = await req.json();
+    const payload = UpdateJobPostingSchema.parse(await req.json());
+    const job = await prisma.jobPosting.findUnique({ where: { id: params.id } });
 
-    // TODO: Update job posting in database
-    // For now, just return success
-    console.log('Updating job posting:', params.id, jobData);
+    if (!job) {
+      return new Response('Not Found', { status: 404 });
+    }
 
-    return Response.json({
-      success: true,
-      message: 'Job posting update functionality coming soon'
+    const normalized = normalizeJobPayload(payload);
+    const updateData = Object.entries(normalized).reduce<Record<string, unknown>>((acc, [key, value]) => {
+      if (value !== undefined) {
+        acc[key] = value;
+      }
+      return acc;
+    }, {});
+
+    if (typeof updateData.slug === 'string' && updateData.slug !== job.slug) {
+      const slugExists = await prisma.jobPosting.findUnique({
+        where: { slug: updateData.slug }
+      });
+
+      if (slugExists) {
+        return Response.json(
+          { success: false, message: 'Another job posting already uses this slug.' },
+          { status: 409 }
+        );
+      }
+    }
+
+    const finalStatus = (updateData.status ?? job.status) as JobStatus;
+    updateData.publishedAt = resolvePublishedAt(finalStatus, job.publishedAt);
+
+    const updated = await prisma.jobPosting.update({
+      where: { id: params.id },
+      data: updateData
     });
+
+    loggers.admin.info(
+      { jobId: updated.id, slug: updated.slug, userId: session.userId },
+      'Job posting updated'
+    );
+
+    return Response.json({ success: true, job: updated });
   } catch (error) {
-    console.error('Job update error:', error);
+    if (error instanceof ZodError) {
+      return Response.json(
+        {
+          success: false,
+          message: 'Invalid job data',
+          details: error.errors.map((err) => ({
+            field: err.path.join('.'),
+            message: err.message
+          }))
+        },
+        { status: 400 }
+      );
+    }
+
+    loggers.admin.error({ error, jobId: params.id }, 'Job posting update failed');
     return new Response('Internal Server Error', { status: 500 });
   }
 }
@@ -50,20 +97,24 @@ export async function PUT(req: Request, { params }: { params: { id: string } }) 
 export async function DELETE(req: Request, { params }: { params: { id: string } }) {
   const session = await getSession();
   if (!session || (session.role !== 'ADMIN' && session.role !== 'EDITOR')) {
-    return new Response('Unauthorized', { status: 401 });
+    return unauthorizedResponse();
   }
 
   try {
-    // TODO: Delete job posting from database
-    // For now, just return success
-    console.log('Deleting job posting:', params.id);
+    const deleted = await prisma.jobPosting.delete({ where: { id: params.id } });
 
-    return Response.json({
-      success: true,
-      message: 'Job posting deletion functionality coming soon'
-    });
+    loggers.admin.info(
+      { jobId: deleted.id, slug: deleted.slug, userId: session.userId },
+      'Job posting deleted'
+    );
+
+    return Response.json({ success: true });
   } catch (error) {
-    console.error('Job deletion error:', error);
+    if ((error as { code?: string }).code === 'P2025') {
+      return new Response('Not Found', { status: 404 });
+    }
+
+    loggers.admin.error({ error, jobId: params.id }, 'Job posting delete failed');
     return new Response('Internal Server Error', { status: 500 });
   }
 }

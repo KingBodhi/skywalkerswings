@@ -1,7 +1,12 @@
 import Link from 'next/link';
 
-import AfterDarkImage from '../../components/AfterDarkImage';
-import Section from '../../components/Section';
+import AfterDarkImage from '@/components/AfterDarkImage';
+import Section from '@/components/Section';
+import { summarizeJobContent } from '@/lib/jobs';
+import { prisma } from '@/lib/prisma';
+import type { JobPosting } from '@prisma/client';
+
+export const dynamic = 'force-dynamic';
 
 const cultureHighlights = [
   {
@@ -33,16 +38,25 @@ const benefits = [
   { label: 'Sliding-scale product discounts for employees & partners', icon: '🎁' },
 ];
 
-const openPositions: {
-  title: string;
-  team: string;
-  type: string;
-  location: string;
-  summary: string;
-  url: string;
-}[] = [];
+function formatType(type: JobPosting['type']): string {
+  return type.replace('_', ' ');
+}
 
-export default function CareersPage() {
+function formatPostedDate(job: JobPosting): string {
+  const date = job.publishedAt ?? job.createdAt;
+  return new Intl.DateTimeFormat('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric'
+  }).format(date);
+}
+
+export default async function CareersPage() {
+  const openPositions = await prisma.jobPosting.findMany({
+    where: { status: 'ACTIVE' },
+    orderBy: [{ publishedAt: 'desc' }, { createdAt: 'desc' }]
+  });
+
   return (
     <div className='bg-neutral-50'>
       <Section className='py-20'>
@@ -107,7 +121,7 @@ export default function CareersPage() {
       <Section className='bg-neutral-100 py-20'>
         <div className='mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center'>
           <h2 className='font-display text-4xl font-bold text-primary-800'>Open Roles</h2>
-          <p className='mt-3 text-neutral-600'>Share your portfolio and we will reach out when the perfect project opens.</p>
+          <p className='mt-3 text-neutral-600'>Share your portfolio or apply directly to these roles crafted for sensation engineers and hospitality storytellers.</p>
 
           {openPositions.length === 0 ? (
             <div className='card mt-10 space-y-6 rounded-3xl border border-neutral-200 bg-white p-10 text-center shadow-soft'>
@@ -121,18 +135,26 @@ export default function CareersPage() {
           ) : (
             <div className='mt-10 space-y-6 text-left'>
               {openPositions.map((role) => (
-                <div key={role.title} className='card border border-neutral-200 bg-white p-8 shadow-soft'>
+                <div key={role.id} className='card border border-neutral-200 bg-white p-8 shadow-soft'>
                   <div className='flex flex-wrap items-center gap-3'>
                     <h3 className='font-display text-2xl font-semibold text-primary-800'>{role.title}</h3>
-                    <span className='rounded-full bg-primary-100 px-3 py-1 text-sm font-semibold text-primary-700'>{role.team}</span>
-                    <span className='rounded-full bg-accent-100 px-3 py-1 text-sm font-semibold text-accent-700'>{role.type}</span>
+                    <span className='rounded-full bg-primary-100 px-3 py-1 text-sm font-semibold text-primary-700'>{role.department}</span>
+                    <span className='rounded-full bg-accent-100 px-3 py-1 text-sm font-semibold text-accent-700'>{formatType(role.type)}</span>
                   </div>
                   <div className='mt-3 flex flex-wrap items-center gap-3 text-sm text-neutral-600'>
-                    <span>{role.location}</span>
+                    <span>{role.location || 'Hybrid / Remote-friendly'}</span>
                     <span className='text-neutral-400'>•</span>
-                    <span>{role.summary}</span>
+                    <span>{summarizeJobContent(role)}</span>
+                    {role.salaryRange && (
+                      <>
+                        <span className='text-neutral-400'>•</span>
+                        <span>{role.salaryRange}</span>
+                      </>
+                    )}
+                    <span className='text-neutral-400'>•</span>
+                    <span>Posted {formatPostedDate(role)}</span>
                   </div>
-                  <Link href={role.url} className='mt-6 inline-flex items-center gap-2 text-accent-700 font-semibold hover:text-accent-900'>
+                  <Link href={`/careers/${role.slug}`} className='mt-6 inline-flex items-center gap-2 text-accent-700 font-semibold hover:text-accent-900'>
                     View role details
                     <svg className='h-4 w-4' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                       <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M17 8l4 4m0 0l-4 4m4-4H3' />

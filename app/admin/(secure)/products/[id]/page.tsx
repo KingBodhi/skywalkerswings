@@ -21,6 +21,8 @@ export default function ProductDetailPage() {
   });
   const [images, setImages] = useState<string[]>([]);
   const [variants, setVariants] = useState<any[]>([]);
+  const [metadata, setMetadata] = useState<Record<string, any>>({});
+  const [badgeLabel, setBadgeLabel] = useState('');
 
   // Update local state when product data loads
   React.useEffect(() => {
@@ -33,16 +35,33 @@ export default function ProductDetailPage() {
       });
       setImages(product.images?.map((img: any) => img.url) || []);
       setVariants(product.variants || []);
+      let parsedMeta: Record<string, any> = {};
+      try {
+        parsedMeta = product.metadata ? JSON.parse(product.metadata) : {};
+      } catch (err) {
+        parsedMeta = {};
+      }
+      setMetadata(parsedMeta);
+      setBadgeLabel(parsedMeta.badgeLabel || '');
     }
   }, [product]);
 
   const saveChanges = async () => {
     try {
+      const updatedMetadata = { ...metadata } as Record<string, any>;
+      if (badgeLabel.trim()) {
+        updatedMetadata.badgeLabel = badgeLabel.trim();
+      } else {
+        delete updatedMetadata.badgeLabel;
+      }
+      const metadataPayload = Object.keys(updatedMetadata).length > 0 ? JSON.stringify(updatedMetadata) : null;
+
       const response = await fetch(`/api/admin/products/${params.id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...productData,
+          metadata: metadataPayload,
           images: images.map((url, index) => ({
             url,
             alt: `${productData.title} - Image ${index + 1}`,
@@ -179,6 +198,18 @@ export default function ProductDetailPage() {
                   <option value="ACTIVE">Active</option>
                   <option value="ARCHIVED">Archived</option>
                 </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-primary-600 mb-2">Badge Label</label>
+                <input
+                  type="text"
+                  value={badgeLabel}
+                  onChange={(e) => setBadgeLabel(e.target.value)}
+                  placeholder="e.g. Limited Edition, Concierge Favorite"
+                  className="w-full px-4 py-3 border border-neutral-300 rounded-xl focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-all"
+                />
+                <p className="text-sm text-neutral-500 mt-1">Leave blank to hide the badge on product cards.</p>
               </div>
             </div>
           )}

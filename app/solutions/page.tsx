@@ -2,6 +2,17 @@ import Section from "../../components/Section";
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { money } from "@/lib/utils";
+function getBadgeLabel(metadata?: string | null) {
+  if (!metadata) return '';
+  try {
+    const parsed = JSON.parse(metadata);
+    const label = parsed?.badgeLabel;
+    return typeof label === 'string' ? label : '';
+  } catch (error) {
+    console.warn('Failed to parse product metadata badge', error);
+  }
+  return '';
+}
 
 const categories = [
   {
@@ -129,9 +140,14 @@ export default async function SolutionsPage() {
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
                       />
                     )}
-                    <div className="absolute top-4 left-4 bg-success-500 text-white px-2 py-1 rounded text-xs font-semibold">
-                      ANSI Certified
-                    </div>
+                    {(() => {
+                      const badge = getBadgeLabel(product.metadata);
+                      return badge ? (
+                        <div className="absolute top-4 left-4 bg-success-500 text-white px-2 py-1 rounded text-xs font-semibold">
+                          {badge}
+                        </div>
+                      ) : null;
+                    })()}
                   </div>
                   <div className="p-6">
                     <h3 className="font-display font-bold text-primary-600 mb-2 group-hover:text-accent-500 transition-colors">

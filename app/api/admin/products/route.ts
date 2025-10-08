@@ -36,14 +36,15 @@ export async function POST(req:Request){
   const sess = await getSession();
   if(!sess || (sess.role!=="ADMIN" && sess.role!=="EDITOR")) return new Response("Unauthorized",{status:401});
   const body = await req.json();
-  const { title, handle, description, status, images } = body || {};
+  const { title, handle, description, status, images, metadata } = body || {};
   if(!title || !handle) return new Response("Missing fields",{status:400});
   
   const productData: any = { 
     title, 
     handle, 
     description: description || "",
-    status: status || 'DRAFT'
+    status: status || 'DRAFT',
+    metadata: metadata ?? null
   };
 
   if (images && images.length > 0) {

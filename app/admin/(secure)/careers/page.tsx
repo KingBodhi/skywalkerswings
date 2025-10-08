@@ -16,7 +16,10 @@ export default function CareersAdminPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('ALL');
 
-  const filteredJobs = (jobs || []).filter((job: any) => {
+  const jobList = jobs ?? [];
+  const isLoading = !jobs && !error;
+
+  const filteredJobs = jobList.filter((job: any) => {
     const matchesSearch = job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          job.department.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesStatus = statusFilter === 'ALL' || job.status === statusFilter;
@@ -31,7 +34,13 @@ export default function CareersAdminPage() {
       if (res.ok) {
         mutate();
       } else {
-        alert('Failed to delete job posting');
+        const body = await res.json().catch(() => null);
+        if (res.status === 404) {
+          alert('Job posting was already removed.');
+          mutate();
+        } else {
+          alert(body?.message || 'Failed to delete job posting');
+        }
       }
     } catch (error) {
       alert('Network error');
@@ -76,24 +85,24 @@ export default function CareersAdminPage() {
       {/* Stats */}
       <div className="grid md:grid-cols-4 gap-6">
         <div className="bg-white rounded-2xl shadow-lg p-6 border border-neutral-200">
-          <div className="text-3xl font-bold text-primary-600 mb-2">{jobs?.length || 0}</div>
+          <div className="text-3xl font-bold text-primary-600 mb-2">{jobList.length}</div>
           <div className="text-neutral-600">Total Jobs</div>
         </div>
         <div className="bg-white rounded-2xl shadow-lg p-6 border border-neutral-200">
           <div className="text-3xl font-bold text-success-600 mb-2">
-            {jobs?.filter((j: any) => j.status === 'ACTIVE').length || 0}
+            {jobList.filter((j: any) => j.status === 'ACTIVE').length}
           </div>
           <div className="text-neutral-600">Active</div>
         </div>
         <div className="bg-white rounded-2xl shadow-lg p-6 border border-neutral-200">
           <div className="text-3xl font-bold text-warning-600 mb-2">
-            {jobs?.filter((j: any) => j.status === 'DRAFT').length || 0}
+            {jobList.filter((j: any) => j.status === 'DRAFT').length}
           </div>
           <div className="text-neutral-600">Draft</div>
         </div>
         <div className="bg-white rounded-2xl shadow-lg p-6 border border-neutral-200">
           <div className="text-3xl font-bold text-accent-600 mb-2">
-            {jobs?.filter((j: any) => j.type === 'REMOTE').length || 0}
+            {jobList.filter((j: any) => j.type === 'REMOTE').length}
           </div>
           <div className="text-neutral-600">Remote</div>
         </div>
@@ -126,7 +135,13 @@ export default function CareersAdminPage() {
 
       {/* Jobs Table */}
       <div className="bg-white rounded-2xl shadow-lg border border-neutral-200 overflow-hidden">
-        {filteredJobs.length > 0 ? (
+        {isLoading ? (
+          <div className="p-8 space-y-4">
+            {[...Array(3)].map((_, idx) => (
+              <div key={idx} className="h-20 bg-neutral-100 animate-pulse rounded-xl" />
+            ))}
+          </div>
+        ) : filteredJobs.length > 0 ? (
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead className="bg-neutral-50">
@@ -152,7 +167,7 @@ export default function CareersAdminPage() {
                     </td>
                     <td className="px-6 py-4">
                       <span className="px-3 py-1 bg-neutral-100 text-neutral-700 rounded-full text-sm font-medium">
-                        {job.type}
+                        {job.type.replace('_', ' ')}
                       </span>
                     </td>
                     <td className="px-6 py-4">
