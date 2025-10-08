@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import AfterDarkImage from '@/components/AfterDarkImage';
+import HeroImageRotator from '@/components/HeroImageRotator';
 import Section from '@/components/Section';
 import TrustBadges from '@/components/TrustBadges';
 import blogPostsData from '@/data/blog-posts.json';
@@ -32,6 +33,18 @@ const sensoryHighlights = [
     title: 'Bodies Held In Softness',
     copy: 'Memory-foam cradles, inclusive strap lengths, and washable covers tuned for every curve.',
   },
+];
+
+const heroImages = [
+  { src: '/uploads/candy-floss-1.png', alt: 'Candy Floss faux fur swing' },
+  { src: '/uploads/blue-rainbow-1.png', alt: 'Blue Rainbow faux fur swing' },
+  { src: '/uploads/honeybee-express-1.png', alt: 'HoneyBee Express faux fur swing' },
+  { src: '/uploads/red-velvet-1.png', alt: 'Red Velvet faux fur swing' },
+  { src: '/uploads/caramel-cream-1.png', alt: 'Caramel Cream faux fur swing' },
+  { src: '/uploads/kiwi-stars-1.png', alt: 'Kiwi Stars faux fur swing' },
+  { src: '/uploads/brandy-snap-1.png', alt: 'Brandy Snap faux fur swing' },
+  { src: '/uploads/orange-crush-1.png', alt: 'Orange Crush faux fur swing' },
+  { src: '/uploads/purple-crush-1.png', alt: 'Purple Crush faux fur swing' },
 ];
 
 const solutionCards = [
@@ -119,22 +132,22 @@ function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-primary-900 via-primary-700 to-primary-500 text-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,126,172,0.25),_transparent_60%)]" />
-      <div className="relative mx-auto flex max-w-6xl flex-col-reverse items-center gap-8 px-4 py-12 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:py-16">
+      <div className="relative mx-auto flex min-h-[80vh] max-w-6xl flex-col-reverse items-center gap-8 px-4 py-12 sm:px-6 sm:min-h-[85vh] lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:py-20 lg:min-h-[92vh]">
         <div className="w-full max-w-xl space-y-5 text-center lg:max-w-none lg:flex-1 lg:text-left">
           <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.3em]">
-            <span>✨</span> Luxury Suspension Suites
+            <span>✨</span> Luxury Suspension Systems
           </span>
           <h1 className="font-display text-[1.9rem] leading-tight text-white sm:text-[2.4rem] lg:text-[2.75rem]">
-            Float Above Ordinary with <span className="text-accent-200">SkyFox Swings</span>
+            Elevate Indulgence with <span className="text-accent-200">SkyFox Suspension Systems</span>
           </h1>
           <p className="text-sm text-white/85 sm:text-base lg:text-lg">
-            We craft indulgent swings, plush cradles, and concierge installs for adults who want their intimate spaces to feel weightless, adventurous, and impeccably styled.
+            A SkyFox Swing transforms any room into a suspended sanctuary, fusing bespoke materials with certified hardware for nights that never touch the floor.
           </p>
           <div className="flex flex-col gap-2.5 sm:flex-row sm:items-center sm:justify-start">
             <Link href="/shop" className="btn-primary">Shop Suspension Swings</Link>
             <Link
               href="/contact"
-              className="btn-secondary border-white text-white hover:border-white/0 hover:bg-white/90 hover:text-primary-700"
+              className="btn-secondary bg-white text-primary-700 border-transparent shadow-sm hover:bg-accent-50 hover:text-primary-900"
             >
               Book Concierge Consult
             </Link>
@@ -142,17 +155,17 @@ function HeroSection() {
         </div>
         <div className="relative w-full max-w-xl lg:flex-1">
           <div className="absolute -top-8 -left-6 hidden h-32 w-32 rounded-full bg-accent-400/30 blur-3xl lg:block" />
-          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-primary-800/40 shadow-lg backdrop-blur-sm">
-            <AfterDarkImage
-              src="/images/hero-suspension.jpg"
-              fallbackSrc="/images/hero.svg"
-              alt="SkyFox Swings velvet suspension swing in a softly lit bedroom"
-              className="h-full w-full object-cover"
-            />
-          </div>
-          <div className="absolute -bottom-6 right-6 left-6 rounded-2xl border border-white/20 bg-white/90 p-4 text-primary-800 shadow-sm lg:w-72 lg:-right-6 lg:left-auto">
-            <div className="text-[11px] font-semibold uppercase tracking-wide text-primary-500">Concierge Spotlight</div>
-            <p className="mt-1.5 text-xs text-primary-800/80">Virtual layout reviews, textile samples, and pro installer intros come with every swing.</p>
+          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-primary-800/40 shadow-lg backdrop-blur-sm aspect-square max-h-[520px] w-full lg:max-h-[600px]">
+            {heroImages.length ? (
+              <HeroImageRotator images={heroImages} className="h-full w-full" />
+            ) : (
+              <AfterDarkImage
+                src="/images/hero-suspension.jpg"
+                fallbackSrc="/images/hero.svg"
+                alt="SkyFox Swing"
+                className="h-full w-full object-cover"
+              />
+            )}
           </div>
         </div>
       </div>
