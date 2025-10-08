@@ -42,7 +42,6 @@ function SupportContact() {
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
       </svg>
       1-833-SKYFOX
-      <span className="text-xs text-white/70">Support 10a–10p ET</span>
     </a>
   );
 }
@@ -79,10 +78,10 @@ export default function Navbar() {
             ))}
             <SupportContact />
             <Link
-              href="/contact"
+              href="/shop"
               className="btn-primary"
             >
-              Contact Us
+              Shop Swings
             </Link>
             <CartIcon />
           </nav>
@@ -111,7 +110,7 @@ export default function Navbar() {
             onClick={() => setOpen(false)}
             onTouchEnd={() => setOpen(false)}
           />
-          <div className="fixed right-0 top-0 h-full w-80 max-w-[90vw] bg-neutral-950 text-white shadow-2xl border-l border-neutral-800">
+          <div className="fixed right-0 top-0 h-full w-80 max-w-[90vw] bg-gradient-to-b from-primary-900 via-neutral-950 to-neutral-950 text-white shadow-2xl border-l border-neutral-800 flex flex-col">
             <div className="flex items-center justify-between p-6 border-b border-neutral-800 bg-primary-900">
               <div className="font-display text-lg font-bold">SKYFOX SWINGS</div>
               <button
@@ -125,7 +124,7 @@ export default function Navbar() {
               </button>
             </div>
 
-            <nav className="p-6 space-y-2">
+            <nav className="flex-1 p-6 space-y-2 overflow-y-auto">
               {NAV_LINKS.map((link) => (
                 <Link
                   key={link.href}
@@ -152,11 +151,11 @@ export default function Navbar() {
                 </a>
 
                 <Link
-                  href="/contact"
+                  href="/shop"
                   onClick={() => setOpen(false)}
                   className="btn-primary w-full"
                 >
-                  Contact Us
+                  Shop Swings
                 </Link>
               </div>
             </nav>
