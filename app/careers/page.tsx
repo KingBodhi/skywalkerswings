@@ -51,11 +51,20 @@ function formatPostedDate(job: JobPosting): string {
   }).format(date);
 }
 
+async function loadOpenPositions() {
+  try {
+    return await prisma.jobPosting.findMany({
+      where: { status: 'ACTIVE' },
+      orderBy: [{ publishedAt: 'desc' }, { createdAt: 'desc' }]
+    });
+  } catch (error) {
+    console.error('Failed to load job postings for careers page:', error);
+    return [];
+  }
+}
+
 export default async function CareersPage() {
-  const openPositions = await prisma.jobPosting.findMany({
-    where: { status: 'ACTIVE' },
-    orderBy: [{ publishedAt: 'desc' }, { createdAt: 'desc' }]
-  });
+  const openPositions = await loadOpenPositions();
 
   return (
     <div className='bg-neutral-50'>

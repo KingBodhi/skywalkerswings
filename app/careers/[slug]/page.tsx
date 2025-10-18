@@ -9,26 +9,38 @@ import { prisma } from '@/lib/prisma';
 export const dynamic = 'force-dynamic';
 
 async function fetchJob(slug: string) {
-  return prisma.jobPosting.findFirst({
-    where: {
-      slug,
-      status: 'ACTIVE'
-    }
-  });
+  try {
+    return await prisma.jobPosting.findFirst({
+      where: {
+        slug,
+        status: 'ACTIVE'
+      }
+    });
+  } catch (error) {
+    console.error('Failed to load job posting', slug, error);
+    return null;
+  }
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const job = await prisma.jobPosting.findFirst({ where: { slug: params.slug } });
-  if (!job) {
+  try {
+    const job = await prisma.jobPosting.findFirst({ where: { slug: params.slug } });
+    if (!job) {
+      return {
+        title: 'Role not found | SkyFox Swings Careers'
+      };
+    }
+
     return {
-      title: 'Role not found | SkyFox Swings Careers'
+      title: `${job.title} | SkyFox Swings Careers`,
+      description: summarizeJobContent(job)
+    };
+  } catch (error) {
+    console.error('Failed to generate job metadata', params.slug, error);
+    return {
+      title: 'SkyFox Swings Careers'
     };
   }
-
-  return {
-    title: `${job.title} | SkyFox Swings Careers`,
-    description: summarizeJobContent(job)
-  };
 }
 
 export default async function CareerDetailPage({ params }: { params: { slug: string } }) {

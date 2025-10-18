@@ -104,15 +104,16 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="fixed inset-0 z-50 md:hidden">
+        <>
           <div
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm"
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[9998] md:hidden"
             onClick={() => setOpen(false)}
             onTouchEnd={() => setOpen(false)}
           />
-          <div className="fixed right-0 top-0 h-full w-80 max-w-[90vw] bg-gradient-to-b from-primary-900 via-neutral-950 to-neutral-950 text-white shadow-2xl border-l border-neutral-800 flex flex-col">
-            <div className="flex items-center justify-between p-6 border-b border-neutral-800 bg-primary-900">
-              <div className="font-display text-lg font-bold">SKYFOX SWINGS</div>
+
+          <div className="fixed right-0 top-0 bottom-0 w-80 max-w-[90vw] bg-primary-900 text-white shadow-2xl border-l border-primary-700 z-[9999] md:hidden flex flex-col">
+            <div className="flex items-center justify-between p-6 border-b border-primary-700/70 flex-shrink-0">
+              <div className="font-display text-lg font-bold tracking-wide">SKYFOX SWINGS</div>
               <button
                 onClick={() => setOpen(false)}
                 className="p-2 rounded-lg hover:bg-white/10 transition-colors"
@@ -124,43 +125,42 @@ export default function Navbar() {
               </button>
             </div>
 
-            <nav className="flex-1 p-6 space-y-2 overflow-y-auto">
-              {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  className="block px-4 py-3 text-lg font-medium rounded-lg transition-all hover:bg-white/10"
-                >
-                  {link.label}
-                </Link>
-              ))}
+            <nav className="flex-1 overflow-y-auto p-6">
+              <div className="space-y-2">
+                {NAV_LINKS.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    className="block px-4 py-3 text-lg font-semibold rounded-lg transition-colors hover:bg-white/10"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
 
-              <div className="pt-4 border-t border-neutral-800 space-y-3">
+              <div className="pt-6 mt-6 border-t border-primary-700/70 space-y-3">
                 <a
                   href="tel:+1833759369"
-                  className="flex items-center gap-3 px-4 py-3 text-base font-medium hover:bg-white/10 rounded-lg transition-colors"
+                  className="flex items-center gap-3 px-4 py-3 text-base font-medium rounded-lg transition-colors hover:bg-white/10"
                 >
                   <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
-                  <div>
-                    <div className="font-semibold">1-833-SKYFOX</div>
-                    <div className="text-sm text-white/70">Support 10a–10p ET</div>
-                  </div>
+                  <span className="font-semibold">1-833-SKYFOX</span>
                 </a>
 
                 <Link
                   href="/shop"
                   onClick={() => setOpen(false)}
-                  className="btn-primary w-full"
+                  className="inline-flex w-full items-center justify-center rounded-lg bg-white px-4 py-3 text-base font-semibold text-primary-800 shadow-sm transition-colors hover:bg-neutral-100"
                 >
                   Shop Swings
                 </Link>
               </div>
             </nav>
           </div>
-        </div>
+        </>
       )}
     </header>
   );

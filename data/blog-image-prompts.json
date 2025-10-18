@@ -1,8 +1,8 @@
 [
   {
-    "slug": "rigging-rituals-skyfox",
-    "title": "Rigging Rituals Playbook",
-    "imagePrompt": "Moody boutique loft scene with two adults performing a pre-flight swing inspection, checking anchors and straps under warm amber lighting, cinematic and sensual yet tasteful."
+    "slug": "install-requirements-checklist",
+    "title": "Install Requirements Checklist",
+    "imagePrompt": "Moody boutique loft scene with two adults performing an anchor and strap inspection under warm amber lighting, cinematic and tasteful."
   },
   {
     "slug": "scene-styling-skyfox-suite",
@@ -20,18 +20,18 @@
     "imagePrompt": "SkyFox concierge desk with hotline phone, tablets showing rigging diagrams, and emergency checklist cards, modern luxe aesthetic."
   },
   {
-    "slug": "skyfox-mount-comparison",
-    "title": "Ceiling vs. Stand Installs: Choosing Your SkyFox Mount",
+    "slug": "mount-selection-guide",
+    "title": "Mount Selection Guide",
     "imagePrompt": "Split-screen illustration comparing ceiling-mounted swing and freestanding frame in chic interiors, annotated with elegant labels."
   },
   {
-    "slug": "doorway-suspension-safety",
-    "title": "Doorframe Safeguards for Hotel Suspensions",
+    "slug": "doorway-safeguards",
+    "title": "Doorway Safeguards for Travel",
     "imagePrompt": "Traveler setting up a doorway swing in a stylish hotel room, adding protective pads and straps, cinematic night lighting."
   },
   {
-    "slug": "pre-scene-suspension-check",
-    "title": "Pre-Scene Suspension Checklist",
+    "slug": "pre-flight-safety-check",
+    "title": "Pre-Flight Safety Check",
     "imagePrompt": "Flat-lay of SkyFox checklist card, torque wrench, microfiber cloth, and essential accessories on a marble table."
   },
   {
@@ -50,9 +50,9 @@
     "imagePrompt": "Couple seated beside swing sharing conversation cards and safe word tokens, warm supportive lighting."
   },
   {
-    "slug": "skyfox-textile-care",
-    "title": "SkyFox Textile Laundry Guide",
-    "imagePrompt": "Laundry studio with velvet and faux fur swing covers hanging to dry, pastel hues and premium materials focus."
+    "slug": "cleaning-and-storage-guide",
+    "title": "Cleaning & Storage",
+    "imagePrompt": "Laundry studio with swing covers drying on padded racks and storage bags ready for stowing, pastel hues and premium materials focus."
   },
   {
     "slug": "hardware-polish-guide",
@@ -70,13 +70,13 @@
     "imagePrompt": "SkyFox support specialist video chatting with client, big screen showing repair steps, modern concierge office vibe."
   },
   {
-    "slug": "warranty-magic-skyfox",
-    "title": "Warranty Magic 101",
+    "slug": "warranty-magic",
+    "title": "Warranty Magic",
     "imagePrompt": "Elegant flat-lay of warranty card, gold embossed SkyFox envelope, and swing hardware components on velvet background."
   },
   {
-    "slug": "returns-refresh-skyfox",
-    "title": "Returns & Refresh",
-    "imagePrompt": "Eco-friendly packaging station with SkyFox boxes, recycled materials, and swing accessories ready for refresh program."
+    "slug": "return-policy",
+    "title": "Return Policy",
+    "imagePrompt": "Packaging station with SkyFox boxes, original inserts, and checklist for returns, clean modern aesthetic."
   }
 ]

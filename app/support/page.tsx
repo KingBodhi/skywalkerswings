@@ -3,47 +3,25 @@ import Link from "next/link";
 
 const supportCategories = [
   {
-    title: "Rigging & Suspension",
-    description: "Hardware checklists, anchor maps, and pre-scene rituals so your swing floats with zero guesswork.",
-    icon: "🔧",
-    links: [
-      { name: "Rigging Rituals Playbook", href: "/blog/rigging-rituals-skyfox" },
-      { name: "Ceiling vs. Stand Installs", href: "/blog/skyfox-mount-comparison" },
-      { name: "Doorframe Safeguards", href: "/blog/doorway-suspension-safety" },
-      { name: "Pre-Scene Checklist", href: "/blog/pre-scene-suspension-check" }
-    ]
-  },
-  {
-    title: "Scene Styling & Flow",
-    description: "Lighting, music, and choreography cues to choreograph a five-star SkyFox suite from warm-up to afterglow.",
-    icon: "🎓",
-    links: [
-      { name: "Suite Styling Starter", href: "/blog/scene-styling-skyfox-suite" },
-      { name: "Playlist & Lighting Pairings", href: "/blog/skyfox-playlist-lighting" },
-      { name: "Position Flow Guide", href: "/blog/suspension-flow-guide" },
-      { name: "Consent & Safe Words", href: "/blog/consent-scripts-skyfox" }
-    ]
-  },
-  {
-    title: "Care & Aftercare",
-    description: "Cleaning blends, textile care, and partner aftercare to keep every swing plush and ready for the next scene.",
+    title: "Install & Safety Essentials",
+    description: "Get your SkyFox rig mounted, vetted, and ready for flight with clear hardware requirements and final safety checks.",
     icon: "🛠️",
     links: [
-      { name: "Afterglow Care Ritual", href: "/blog/afterglow-care-skyfox" },
-      { name: "Textile Laundry Guide", href: "/blog/skyfox-textile-care" },
-      { name: "Hardware Polishing 101", href: "/blog/hardware-polish-guide" },
-      { name: "Retire & Refresh", href: "/blog/when-to-retire-swing-gear" }
+      { name: "Install Requirements Checklist", href: "/blog/install-requirements-checklist" },
+      { name: "Mount Selection Guide", href: "/blog/mount-selection-guide" },
+      { name: "Doorway Safeguards", href: "/blog/doorway-safeguards" },
+      { name: "Pre-Flight Safety Check", href: "/blog/pre-flight-safety-check" }
     ]
   },
   {
-    title: "Concierge & Troubleshooting",
-    description: "Direct lines, emergency scripts, and DIY fixes from the SkyFox concierge bench.",
-    icon: "💬",
+    title: "Ownership Support",
+    description: "Keep your swing kit in mint condition and know exactly how to get help, warranty claims, or a return processed.",
+    icon: "📦",
     links: [
-      { name: "Concierge SOS Toolkit", href: "/blog/concierge-sos-skyfox" },
-      { name: "Service Request Roadmap", href: "/blog/service-request-roadmap" },
-      { name: "Warranty Magic 101", href: "/blog/warranty-magic-skyfox" },
-      { name: "Returns & Refresh", href: "/blog/returns-refresh-skyfox" }
+      { name: "Cleaning & Storage", href: "/blog/cleaning-and-storage-guide" },
+      { name: "Service Requests", href: "/blog/service-request-roadmap" },
+      { name: "Warranty Magic", href: "/blog/warranty-magic" },
+      { name: "Return Policy", href: "/blog/return-policy" }
     ]
   }
 ];
