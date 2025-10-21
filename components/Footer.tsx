@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { cache } from 'react';
 import { prisma } from '@/lib/prisma';
 
 const companyLinks = [
@@ -20,13 +21,17 @@ const legalLinks = [
   { name: 'Age & Consent', href: '/licensing' },
 ];
 
-export default async function Footer() {
-  const collections = await prisma.collection.findMany({
+const getCollections = cache(async () => {
+  return prisma.collection.findMany({
     where: { status: 'ACTIVE' },
     orderBy: { title: 'asc' },
     select: { id: true, title: true, handle: true },
     take: 8,
   });
+});
+
+export default async function Footer() {
+  const collections = await getCollections();
 
   return (
     <footer className="bg-primary-900 text-white">
