@@ -21,12 +21,18 @@ const legalLinks = [
 ];
 
 export default async function Footer() {
-  const collections = await prisma.collection.findMany({
-    where: { status: 'ACTIVE' },
-    orderBy: { title: 'asc' },
-    select: { id: true, title: true, handle: true },
-    take: 8,
-  });
+  let collections: { id: string; title: string; handle: string }[] = [];
+
+  try {
+    collections = await prisma.collection.findMany({
+      where: { status: 'ACTIVE' },
+      orderBy: { title: 'asc' },
+      select: { id: true, title: true, handle: true },
+      take: 8,
+    });
+  } catch (error) {
+    console.error('Footer collection query failed, falling back to static list:', error);
+  }
 
   return (
     <footer className="bg-primary-900 text-white">
