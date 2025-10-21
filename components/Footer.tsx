@@ -1,17 +1,12 @@
 import Link from "next/link";
 
+import { prisma } from '@/lib/prisma';
+
 const companyLinks = [
   { name: 'Our Story', href: '/about' },
   { name: 'Pleasure Pledge', href: '/support/warranty' },
   { name: 'Contact Us', href: '/contact' },
   { name: 'Careers', href: '/careers' },
-];
-
-const collectionLinks = [
-  { name: 'Deluxe Faux Fur Swings', href: '/collection/deluxe-faux-fur-swings' },
-  { name: 'Doorway Swings', href: '/collection/doorway' },
-  { name: 'Freestanding Frames', href: '/collection/support-stands' },
-  { name: 'Accessories', href: '/collection/accessories' },
 ];
 
 const communityLinks = [
@@ -25,7 +20,14 @@ const legalLinks = [
   { name: 'Age & Consent', href: '/licensing' },
 ];
 
-export default function Footer() {
+export default async function Footer() {
+  const collections = await prisma.collection.findMany({
+    where: { status: 'ACTIVE' },
+    orderBy: { title: 'asc' },
+    select: { id: true, title: true, handle: true },
+    take: 8,
+  });
+
   return (
     <footer className="bg-primary-900 text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
@@ -71,13 +73,20 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-white mb-4">Collections</h3>
             <ul className="space-y-2">
-              {collectionLinks.map((link) => (
-                <li key={link.name}>
-                  <Link href={link.href} className="text-white/80 hover:text-white transition-colors text-sm">
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
+              {collections.length > 0 ? (
+                collections.map((collection) => (
+                  <li key={collection.id}>
+                    <Link
+                      href={`/collection/${collection.handle}`}
+                      className="text-white/80 hover:text-white transition-colors text-sm"
+                    >
+                      {collection.title}
+                    </Link>
+                  </li>
+                ))
+              ) : (
+                <li className="text-white/60 text-sm">Collections coming soon.</li>
+              )}
             </ul>
           </div>
 
