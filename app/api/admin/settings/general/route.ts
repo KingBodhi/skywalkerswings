@@ -33,7 +33,7 @@ export async function GET(req: Request) {
   const settings = {
     storeName: 'SkyFox Swings',
     storeEmail: 'info@skyfoxswings.com',
-    storePhone: '1-800-SKYFOX',
+    storePhone: '',
     currency: 'USD',
     timezone: 'America/New_York',
     storeOnline: true,

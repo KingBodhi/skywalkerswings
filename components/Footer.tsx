@@ -1,31 +1,33 @@
 import Link from "next/link";
 
-const footerLinks = {
-  products: [
-    { name: 'Suspension Swings', href: '/shop' },
-    { name: 'Doorway Bundles', href: '/collection/doorway' },
-    { name: 'Freestanding Frames', href: '/collection/support-stands' },
-    { name: 'Accessories', href: '/collection/accessories' },
-  ],
-  company: [
-    { name: 'Our Story', href: '/about' },
-    { name: 'Pleasure Pledge', href: '/support/warranty' },
-    { name: 'Contact Us', href: '/contact' },
-    { name: 'Careers', href: '/careers' },
-  ],
-  support: [
-    { name: 'Installation Guides', href: '/support' },
-    { name: 'Cleaning & Care', href: '/support/cleaning' },
-    { name: 'Compliance & Safety', href: '/compliance' },
-  ],
-  legal: [
-    { name: 'Privacy Policy', href: '/privacy' },
-    { name: 'Terms of Service', href: '/terms' },
-    { name: 'Age & Consent', href: '/licensing' },
-  ],
-};
+import { prisma } from '@/lib/prisma';
 
-export default function Footer() {
+const companyLinks = [
+  { name: 'Our Story', href: '/about' },
+  { name: 'Pleasure Pledge', href: '/support/warranty' },
+  { name: 'Contact Us', href: '/contact' },
+  { name: 'Careers', href: '/careers' },
+];
+
+const communityLinks = [
+  { name: 'Instagram', href: 'https://www.instagram.com/skyfoxswings' },
+  { name: 'Facebook', href: 'https://www.facebook.com/skyfoxswings' },
+];
+
+const legalLinks = [
+  { name: 'Privacy Policy', href: '/privacy' },
+  { name: 'Terms of Service', href: '/terms' },
+  { name: 'Age & Consent', href: '/licensing' },
+];
+
+export default async function Footer() {
+  const collections = await prisma.collection.findMany({
+    where: { status: 'ACTIVE' },
+    orderBy: { title: 'asc' },
+    select: { id: true, title: true, handle: true },
+    take: 8,
+  });
+
   return (
     <footer className="bg-primary-900 text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
@@ -40,7 +42,6 @@ export default function Footer() {
 
             <div className="space-y-3 text-white/90">
               {/* Phone support temporarily disabled while the voice agent is offline. */}
-
               <a href="mailto:support@skyfoxswings.com" className="flex items-center gap-3 hover:text-white transition-colors">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -57,22 +58,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold text-white mb-4">Collections</h3>
-            <ul className="space-y-2">
-              {footerLinks.products.map((link) => (
-                <li key={link.name}>
-                  <Link href={link.href} className="text-white/80 hover:text-white transition-colors text-sm">
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
             <h3 className="font-semibold text-white mb-4">Company</h3>
             <ul className="space-y-2">
-              {footerLinks.company.map((link) => (
+              {companyLinks.map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} className="text-white/80 hover:text-white transition-colors text-sm">
                     {link.name}
@@ -83,11 +71,36 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold text-white mb-4">Support</h3>
+            <h3 className="font-semibold text-white mb-4">Collections</h3>
             <ul className="space-y-2">
-              {footerLinks.support.map((link) => (
+              {collections.length > 0 ? (
+                collections.map((collection) => (
+                  <li key={collection.id}>
+                    <Link
+                      href={`/collection/${collection.handle}`}
+                      className="text-white/80 hover:text-white transition-colors text-sm"
+                    >
+                      {collection.title}
+                    </Link>
+                  </li>
+                ))
+              ) : (
+                <li className="text-white/60 text-sm">Collections coming soon.</li>
+              )}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-semibold text-white mb-4">Community</h3>
+            <ul className="space-y-2">
+              {communityLinks.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-white/80 hover:text-white transition-colors text-sm">
+                  <Link
+                    href={link.href}
+                    className="text-white/80 hover:text-white transition-colors text-sm"
+                    target={link.href.startsWith('http') ? '_blank' : undefined}
+                    rel={link.href.startsWith('http') ? 'noopener' : undefined}
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -99,7 +112,7 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-white/20 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-sm text-white/70">© 2025 SkyFox Swings. Adults 18+ only.</div>
           <div className="flex gap-6">
-            {footerLinks.legal.map((link) => (
+            {legalLinks.map((link) => (
               <Link key={link.name} href={link.href} className="text-sm text-white/80 hover:text-white transition-colors">
                 {link.name}
               </Link>

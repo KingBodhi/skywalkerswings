@@ -197,7 +197,15 @@ function FeaturedProduct({ product }: { product: {
     <Section className="bg-white">
       <div className="mx-auto max-w-6xl overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-sm">
         <div className="grid gap-0 lg:grid-cols-[1.05fr,0.95fr]">
-          <div className="flex flex-col justify-center space-y-5 px-8 py-12 sm:px-12 lg:px-14">
+          <div className="order-1 lg:order-2 relative min-h-[300px] overflow-hidden bg-neutral-100">
+            <AfterDarkImage
+              src={heroImage}
+              fallbackSrc="/images/hero.svg"
+              alt={heroAlt}
+              className="h-full w-full object-cover"
+            />
+          </div>
+          <div className="order-2 flex flex-col justify-center space-y-5 px-8 py-12 sm:px-12 lg:order-1 lg:px-14">
             <span className="inline-flex w-fit items-center gap-2 rounded-full bg-accent-100 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.3em] text-accent-700">Featured Product</span>
             <div className="space-y-3">
               <h2 className="font-display text-[2.1rem] font-bold text-primary-900 sm:text-4xl">{product.title}</h2>
@@ -217,14 +225,6 @@ function FeaturedProduct({ product }: { product: {
               <Link href={`/product/${product.handle}`} className="btn-primary">View Product Details</Link>
               <span className="text-sm font-semibold text-primary-700">{startingPrice !== null ? `From ${money(startingPrice)}` : 'Pricing available on request'}</span>
             </div>
-          </div>
-          <div className="relative min-h-[300px] overflow-hidden bg-neutral-100">
-            <AfterDarkImage
-              src={heroImage}
-              fallbackSrc="/images/hero.svg"
-              alt={heroAlt}
-              className="h-full w-full object-cover"
-            />
           </div>
         </div>
       </div>
@@ -306,7 +306,7 @@ function ContactCTA() {
             <p className="text-sm text-white/80 sm:text-base">Have questions about installation, materials, or custom orders? Our team is here to help you find the perfect suspension solution.</p>
           </div>
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
-            <Link href="/contact" className="btn-primary bg-white text-primary-700 hover:bg-neutral-100">Get in Touch</Link>
+            <Link href="/contact" className="btn-primary">Get in Touch</Link>
             <a
               href="mailto:support@skyfoxswings.com"
               className="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-5 py-2.5 text-sm font-semibold text-primary-700 transition-colors duration-200 hover:bg-neutral-100"

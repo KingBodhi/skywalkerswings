@@ -21,7 +21,7 @@ export default function ContactPage() {
         name: formData.get('name'),
         email: formData.get('email'),
         phone: formData.get('phone'),
-        vibe: formData.get('vibe'),
+        topic: formData.get('topic'),
         message: formData.get('message'),
       };
 
@@ -76,14 +76,14 @@ export default function ContactPage() {
                     <input className='input-field w-full' name='phone' placeholder='Optional' />
                   </div>
                   <div>
-                    <label className='mb-2 block text-sm font-semibold text-primary-700'>Desired Mood</label>
-                    <select className='input-field w-full' defaultValue='' name='vibe'>
-                      <option value='' disabled>Pick the vibe</option>
-                      <option value='romantic-retreat'>Romantic retreat</option>
-                      <option value='kink-suite'>Kink suite</option>
-                      <option value='content-studio'>Content studio</option>
-                      <option value='hospitality'>Boutique hospitality</option>
-                      <option value='other'>Other dream</option>
+                    <label className='mb-2 block text-sm font-semibold text-primary-700'>Topic *</label>
+                    <select className='input-field w-full' defaultValue='' name='topic' required>
+                      <option value='' disabled>Select a topic</option>
+                      <option value='support'>Support</option>
+                      <option value='sales'>Sales</option>
+                      <option value='warranty'>Warranty</option>
+                      <option value='partnerships'>Partnerships</option>
+                      <option value='other'>Other</option>
                     </select>
                   </div>
                 </div>
@@ -124,17 +124,13 @@ export default function ContactPage() {
                 <h2 className='font-display text-xl font-semibold text-primary-800'>Talk to Our Team</h2>
                 <p className='mt-3 text-sm text-neutral-600'>Our support team is available daily to help with installation, materials, orders, and custom builds.</p>
                 <div className='mt-6 space-y-4 text-sm text-neutral-700'>
-                  <a className='flex items-center gap-3 rounded-xl bg-neutral-100 px-4 py-3 transition-colors hover:bg-neutral-200' href='tel:+1833759369'>
-                    <span className='inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary-700 text-white'>📞</span>
-                    <span>1-833-SKYFOX (10a–10p ET)</span>
-                  </a>
                   <a className='flex items-center gap-3 rounded-xl bg-neutral-100 px-4 py-3 transition-colors hover:bg-neutral-200' href='mailto:support@skyfoxswings.com'>
                     <span className='inline-flex h-10 w-10 items-center justify-center rounded-lg bg-accent-500 text-neutral-900'>✉️</span>
                     <span>support@skyfoxswings.com</span>
                   </a>
                   <div className='rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-3'>
-                    <div className='font-semibold text-neutral-800'>Text (Beta)</div>
-                    <div className='text-xs text-neutral-600'>Message “FLOAT” to (917) 555-7420 for quick-fit tips and hardware guidance.</div>
+                    <div className='font-semibold text-neutral-800'>Concierge Response</div>
+                    <div className='text-xs text-neutral-600'>Email responses Sun–Thu 10a–10p ET with limited after-hours monitoring for urgent rigging questions.</div>
                   </div>
                 </div>
               </div>

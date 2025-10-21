@@ -1165,8 +1165,7 @@ module.exports = [
 
       <h2>Support Channels</h2>
       <ul>
-        <li><strong>Phone:</strong> 1-800-SKYFOX (Mon-Fri, 6am-6pm CT) for immediate assistance.</li>
-        <li><strong>Email:</strong> support@skyfoxswings.com for non-urgent requests with attachments.</li>
+        <li><strong>Email:</strong> support@skyfoxswings.com for concierge responses and attachments.</li>
         <li><strong>Portal:</strong> Submit tickets, track status, and access knowledge base articles.</li>
         <li><strong>Live chat:</strong> Available inside the Safety Hub app for on-site questions.</li>
       </ul>

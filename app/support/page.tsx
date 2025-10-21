@@ -49,16 +49,6 @@ export default function SupportPage() {
               
               <div className="flex flex-col md:flex-row justify-center gap-6">
                 <a 
-                  href="tel:+1800759369" 
-                  className="bg-white/20 hover:bg-white/30 text-white px-8 py-4 rounded-xl font-bold transition-all duration-200 inline-flex items-center justify-center gap-3"
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                  Call 1-800-SKYFOX
-                </a>
-                
-                <a 
                   href="mailto:support@skyfoxswings.com" 
                   className="bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 rounded-xl font-bold transition-all duration-200 inline-flex items-center justify-center gap-3"
                 >
@@ -69,7 +59,7 @@ export default function SupportPage() {
                 </a>
               </div>
               
-              <p className="text-white/70 text-sm mt-4">Concierge Sun–Thu 10a–10p ET • After-hours emergency rigging line 24/7</p>
+              <p className="text-white/70 text-sm mt-4">Concierge Sun–Thu 10a–10p ET • Email monitored after-hours for urgent rigging needs</p>
             </div>
           </div>
 
@@ -136,7 +126,7 @@ export default function SupportPage() {
                   
                   <div>
                     <h3 className="font-bold text-danger-800 mb-2">3. Call SkyFox Concierge</h3>
-                    <p className="text-sm">Once everyone is safe, contact our emergency line at <strong>1-800-SKYFOX</strong> for rigging diagnostics and next steps.</p>
+                    <p className="text-sm">Once everyone is safe, email <strong>support@skyfoxswings.com</strong> for rigging diagnostics and next steps.</p>
                   </div>
                 </div>
               </div>

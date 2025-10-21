@@ -5,7 +5,7 @@ export default function GeneralSettingsPage() {
   const [settings, setSettings] = useState({
     storeName: 'SkyFox Swings',
     storeEmail: 'info@skyfoxswings.com',
-    storePhone: '1-800-SKYFOX',
+    storePhone: '',
     currency: 'USD',
     timezone: 'America/New_York',
     storeOnline: true,

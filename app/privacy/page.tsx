@@ -32,7 +32,7 @@ export default function PrivacyPage() {
               <p className="text-primary-700">
                 If you have questions about this privacy policy, please contact us at:
                 <br />
-                <strong>privacy@skyfoxswings.com</strong> or <strong>1-800-SKYFOX</strong>
+                <strong>privacy@skyfoxswings.com</strong>
               </p>
             </div>
           </div>

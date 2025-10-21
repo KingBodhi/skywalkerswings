@@ -1,42 +1,11 @@
 import Link from 'next/link';
 
-import AfterDarkImage from '@/components/AfterDarkImage';
 import Section from '@/components/Section';
 import { summarizeJobContent } from '@/lib/jobs';
 import { prisma } from '@/lib/prisma';
 import type { JobPosting } from '@prisma/client';
 
 export const dynamic = 'force-dynamic';
-
-const cultureHighlights = [
-  {
-    title: 'Design With Desire',
-    description:
-      'Collaborate with artisans, product engineers, and intimacy educators to craft the next generation of luxury suspension experiences.',
-    icon: '🎨',
-  },
-  {
-    title: 'Inclusive From Day One',
-    description:
-      'We champion LGBTQIA+, kink-positive, and body-diverse perspectives across every team and product decision.',
-    icon: '🤝',
-  },
-  {
-    title: 'Hybrid Flexibility',
-    description:
-      'Studio hubs in NYC and LA with remote creatives across North America supporting asynchronous rituals.',
-    icon: '🌎',
-  },
-];
-
-const benefits = [
-  { label: 'Premium health, dental, and mental wellness stipends', icon: '💗' },
-  { label: 'Quarterly retreat & sensory lab immersion', icon: '🛫' },
-  { label: 'Home studio & swing allowances', icon: '🛠️' },
-  { label: 'Unlimited personal days with required unplug weeks', icon: '🌴' },
-  { label: 'Education credits for kink, somatic, and design certifications', icon: '📚' },
-  { label: 'Sliding-scale product discounts for employees & partners', icon: '🎁' },
-];
 
 function formatType(type: JobPosting['type']): string {
   return type.replace('_', ' ');
@@ -69,61 +38,12 @@ export default async function CareersPage() {
   return (
     <div className='bg-neutral-50'>
       <Section className='py-20'>
-        <div className='mx-auto max-w-6xl px-4 sm:px-6 lg:px-8'>
-          <div className='mb-16 text-center'>
-            <div className='inline-flex items-center gap-2 rounded-full bg-accent-100 px-4 py-2 text-sm font-semibold text-accent-700'>
-              <span>💼</span> Shape Pleasure Futures
-            </div>
-            <h1 className='mt-4 font-display text-5xl font-bold text-primary-800'>Careers at SkyFox Swings</h1>
-            <p className='mt-4 text-lg text-neutral-600'>Join sensual technologists, artisans, and storytellers creating immersive suspension spaces for adults everywhere.</p>
+        <div className='mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center'>
+          <div className='inline-flex items-center gap-2 rounded-full bg-accent-100 px-4 py-2 text-sm font-semibold text-accent-700'>
+            <span>💼</span> Shape Pleasure Futures
           </div>
-
-          <div className='grid items-center gap-12 lg:grid-cols-2'>
-            <div className='space-y-6'>
-              {cultureHighlights.map((item) => (
-                <div key={item.title} className='card flex gap-4 border border-neutral-200 p-6'>
-                  <div className='text-3xl'>{item.icon}</div>
-                  <div>
-                    <h2 className='font-display text-2xl font-bold text-primary-800'>{item.title}</h2>
-                    <p className='mt-2 text-neutral-600 leading-relaxed'>{item.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className='relative'>
-              <div className='overflow-hidden rounded-3xl border border-primary-100 shadow-strong'>
-                <AfterDarkImage
-                  src='/images/careers-studio.jpg'
-                  fallbackSrc='/images/hero.svg'
-                  alt='SkyFox Swings studio moodboard with fabrics, hardware, and concept art'
-                  className='h-full w-full object-cover'
-                />
-              </div>
-              <div className='absolute -bottom-6 -right-6 w-64 rounded-2xl border border-neutral-200 bg-white p-6 shadow-soft'>
-                <div className='text-xs font-semibold uppercase tracking-wide text-neutral-500'>Studio Snapshot</div>
-                <div className='mt-1 font-display text-xl text-primary-800'>Sensory Lab • Brooklyn</div>
-                <p className='mt-2 text-xs text-neutral-600'>Open lab nights connect our team with riggers, performers, and somatic guides.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Section>
-
-      <Section className='bg-white py-20'>
-        <div className='mx-auto max-w-6xl px-4 sm:px-6 lg:px-8'>
-          <div className='mb-12 text-center'>
-            <h2 className='font-display text-4xl font-bold text-primary-800'>Benefits That Hold You</h2>
-            <p className='mt-3 text-neutral-600'>We craft environments where creativity, consent, and wellbeing flourish together.</p>
-          </div>
-          <div className='grid gap-6 sm:grid-cols-2 lg:grid-cols-3'>
-            {benefits.map((benefit) => (
-              <div key={benefit.label} className='card border border-neutral-200 bg-neutral-50 p-6 text-left'>
-                <div className='mb-3 text-3xl text-accent-700'>{benefit.icon}</div>
-                <p className='text-sm text-neutral-700 leading-relaxed'>{benefit.label}</p>
-              </div>
-            ))}
-          </div>
+          <h1 className='mt-4 font-display text-5xl font-bold text-primary-800'>Careers at SkyFox Swings</h1>
+          <p className='mt-4 text-lg text-neutral-600'>Join sensual technologists, artisans, and storytellers creating immersive suspension spaces for adults everywhere.</p>
         </div>
       </Section>
 
