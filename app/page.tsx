@@ -307,7 +307,12 @@ function ContactCTA() {
           </div>
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
             <Link href="/contact" className="btn-primary bg-white text-primary-700 hover:bg-neutral-100">Get in Touch</Link>
-            <a href="mailto:support@skyfoxswings.com" className="btn-secondary border-white text-white hover:bg-white hover:text-primary-700">Email Us</a>
+            <a
+              href="mailto:support@skyfoxswings.com"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-5 py-2.5 text-sm font-semibold text-primary-700 transition-colors duration-200 hover:bg-neutral-100"
+            >
+              Email Us
+            </a>
           </div>
         </div>
       </div>

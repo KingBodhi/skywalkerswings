@@ -33,17 +33,8 @@ function CartIcon() {
 }
 
 function SupportContact() {
-  return (
-    <a
-      href="tel:+1833759369"
-      className="hidden lg:flex items-center gap-2 text-sm font-medium whitespace-nowrap hover:text-accent-200 transition-colors"
-    >
-      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-      </svg>
-      1-833-SKYFOX
-    </a>
-  );
+  // Phone support temporarily disabled while the voice agent is offline.
+  return null;
 }
 
 export default function Navbar() {
@@ -76,7 +67,6 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <SupportContact />
             <Link
               href="/shop"
               className="btn-primary"
@@ -104,63 +94,63 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <>
-          <div
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[9998] md:hidden"
-            onClick={() => setOpen(false)}
-            onTouchEnd={() => setOpen(false)}
-          />
+        <div className="fixed inset-0 z-[9999] flex min-h-screen w-screen flex-col bg-gradient-to-b from-[#301050] via-[#3f1d6f] to-[#512b8f] text-white md:hidden">
+          <header className="relative flex items-center justify-center px-6 pt-12 pb-8">
+            <Link
+              href="/"
+              onClick={() => setOpen(false)}
+              className="text-center"
+            >
+              <span className="block font-display text-4xl tracking-[0.4em]">SKYFOX</span>
+              <span className="block font-display text-sm tracking-[0.58em] text-white/70">SWINGS</span>
+            </Link>
+            <button
+              onClick={() => setOpen(false)}
+              className="absolute right-6 top-10 flex h-11 w-11 items-center justify-center rounded-full border border-white/40 bg-white/15 text-white transition-colors hover:bg-white/30"
+              aria-label="Close menu"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </header>
 
-          <div className="fixed right-0 top-0 bottom-0 w-80 max-w-[90vw] bg-primary-900 text-white shadow-2xl border-l border-primary-700 z-[9999] md:hidden flex flex-col">
-            <div className="flex items-center justify-between p-6 border-b border-primary-700/70 flex-shrink-0">
-              <div className="font-display text-lg font-bold tracking-wide">SKYFOX SWINGS</div>
-              <button
-                onClick={() => setOpen(false)}
-                className="p-2 rounded-lg hover:bg-white/10 transition-colors"
-                aria-label="Close menu"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-
-            <nav className="flex-1 overflow-y-auto p-6">
-              <div className="space-y-2">
-                {NAV_LINKS.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setOpen(false)}
-                    className="block px-4 py-3 text-lg font-semibold rounded-lg transition-colors hover:bg-white/10"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
-
-              <div className="pt-6 mt-6 border-t border-primary-700/70 space-y-3">
-                <a
-                  href="tel:+1833759369"
-                  className="flex items-center gap-3 px-4 py-3 text-base font-medium rounded-lg transition-colors hover:bg-white/10"
-                >
-                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                  <span className="font-semibold">1-833-SKYFOX</span>
-                </a>
-
+          <main className="flex flex-1 flex-col items-center justify-center px-6 text-center">
+            <nav className="flex flex-col items-center gap-9 text-4xl font-display uppercase tracking-[0.32em] text-white/95">
+              {NAV_LINKS.map((link) => (
                 <Link
-                  href="/shop"
+                  key={link.href}
+                  href={link.href}
                   onClick={() => setOpen(false)}
-                  className="inline-flex w-full items-center justify-center rounded-lg bg-white px-4 py-3 text-base font-semibold text-primary-800 shadow-sm transition-colors hover:bg-neutral-100"
+                  className="transition-transform hover:scale-105"
                 >
-                  Shop Swings
+                  {link.label}
                 </Link>
-              </div>
+              ))}
             </nav>
-          </div>
-        </>
+
+            <div className="mt-14 flex flex-col items-center gap-5 text-xs font-semibold uppercase tracking-[0.32em] text-white/85">
+              <Link
+                href="/shop"
+                onClick={() => setOpen(false)}
+                className="inline-flex items-center justify-center rounded-full border border-white/35 bg-white/15 px-10 py-3 text-xs font-semibold tracking-[0.3em] text-white transition-colors hover:bg-white/25"
+              >
+                Shop Swings
+              </Link>
+            </div>
+          </main>
+
+          <footer className="pb-12">
+            <div className="flex items-center justify-center gap-10 text-sm uppercase tracking-[0.35em] text-white/70">
+              <Link href="https://www.facebook.com/skyfoxswings" target="_blank" rel="noopener" className="hover:text-white">
+                Facebook
+              </Link>
+              <Link href="https://www.instagram.com/skyfoxswings" target="_blank" rel="noopener" className="hover:text-white">
+                Instagram
+              </Link>
+            </div>
+          </footer>
+        </div>
       )}
     </header>
   );
