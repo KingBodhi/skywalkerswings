@@ -323,28 +323,39 @@ function ContactCTA() {
 export default async function HomePage() {
   const blogPosts = blogPostsData as BlogPost[];
 
-  const featuredProduct = await prisma.product.findUnique({
-    where: { handle: 'purple-crush-swing' },
-    include: {
-      images: { orderBy: { sort: 'asc' } },
-      variants: { orderBy: { price: 'asc' } }
-    }
-  });
+  let featuredProduct = null;
+  let spotlightProducts: SpotlightProduct[] = [];
 
-  const spotlightProducts = await prisma.product.findMany({
-    where: {
-      status: 'ACTIVE',
-      handle: { not: 'purple-crush-swing' },
-      collections: {
-        some: { collection: { handle: 'deluxe-faux-fur-swings' } }
+  try {
+    featuredProduct = await prisma.product.findUnique({
+      where: { handle: 'purple-crush-swing' },
+      include: {
+        images: { orderBy: { sort: 'asc' } },
+        variants: { orderBy: { price: 'asc' } }
       }
-    },
-    include: {
-      images: { orderBy: { sort: 'asc' } }
-    },
-    orderBy: { createdAt: 'desc' },
-    take: 3
-  });
+    });
+  } catch (error) {
+    console.warn('Failed to fetch featured product:', error);
+  }
+
+  try {
+    spotlightProducts = await prisma.product.findMany({
+      where: {
+        status: 'ACTIVE',
+        handle: { not: 'purple-crush-swing' },
+        collections: {
+          some: { collection: { handle: 'deluxe-faux-fur-swings' } }
+        }
+      },
+      include: {
+        images: { orderBy: { sort: 'asc' } }
+      },
+      orderBy: { createdAt: 'desc' },
+      take: 3
+    });
+  } catch (error) {
+    console.warn('Failed to fetch spotlight products:', error);
+  }
 
   return (
     <div className="bg-white">
