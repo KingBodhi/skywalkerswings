@@ -22,12 +22,17 @@ const legalLinks = [
 ];
 
 const getCollections = cache(async () => {
-  return prisma.collection.findMany({
-    where: { status: 'ACTIVE' },
-    orderBy: { title: 'asc' },
-    select: { id: true, title: true, handle: true },
-    take: 8,
-  });
+  try {
+    return await prisma.collection.findMany({
+      where: { status: 'ACTIVE' },
+      orderBy: { title: 'asc' },
+      select: { id: true, title: true, handle: true },
+      take: 8,
+    });
+  } catch (error) {
+    console.warn('Failed to fetch collections for footer:', error);
+    return [];
+  }
 });
 
 export default async function Footer() {
