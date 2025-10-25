@@ -155,23 +155,34 @@ export default async function ShopPage() {
 
             {products.length > 0 ? (
               <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                {products.map((product: any) => (
+                {products.map((product: any) => {
+                  let badgeLabel = '';
+                  try {
+                    const metadata = product.metadata ? JSON.parse(product.metadata) : {};
+                    badgeLabel = metadata.badgeLabel || '';
+                  } catch (err) {
+                    badgeLabel = '';
+                  }
+
+                  return (
                   <Link key={product.id} href={`/product/${product.handle}`} className="group card hover:shadow-strong transition-all duration-300">
                     <div className="aspect-[4/3] bg-gradient-to-br from-neutral-100 to-neutral-200 relative overflow-hidden rounded-t-2xl">
                       {product.images[0] ? (
-                        <img 
-                          src={product.images[0].url} 
-                          alt={product.images[0].alt || product.title} 
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
+                        <img
+                          src={product.images[0].url}
+                          alt={product.images[0].alt || product.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center text-6xl text-neutral-400">
                           📦
                         </div>
                       )}
-                      <div className="absolute top-4 left-4 bg-success-500 text-white px-2 py-1 rounded text-xs font-semibold">
-                        ANSI Certified
-                      </div>
+                      {badgeLabel && (
+                        <div className="absolute top-4 left-4 bg-success-500 text-white px-2 py-1 rounded text-xs font-semibold">
+                          {badgeLabel}
+                        </div>
+                      )}
                       {product.status === 'DRAFT' && (
                         <div className="absolute top-4 right-4 bg-warning-500 text-white px-2 py-1 rounded text-xs font-semibold">
                           Draft
@@ -196,7 +207,8 @@ export default async function ShopPage() {
                       </div>
                     </div>
                   </Link>
-                ))}
+                  );
+                })}
               </div>
             ) : (
               <div className="text-center py-16">
